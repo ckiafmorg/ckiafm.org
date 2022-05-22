@@ -1,0 +1,6 @@
+fr:
+  auth:
+    form_title: 'Connexion'
+    email_label: 'Courriel'
+    password_label: 'Mot de passe'
+    signin_button_text: 'Se connecter'
