@@ -9,10 +9,10 @@ ruby File.read('.ruby-version').chomp
 gem 'rails', '~> 7.0.3'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
 gem 'bootstrap'
 gem 'bootstrap-icons-helper'
 gem 'sassc-rails'
+gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -52,7 +52,9 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 
   # codestyle guide and linting
   gem 'rubocop', require: false
