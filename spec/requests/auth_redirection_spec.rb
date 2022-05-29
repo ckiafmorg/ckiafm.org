@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'admin authentication', type: :request do
   it 'redirects to the login page when you are not logged in' do
     get admin_path

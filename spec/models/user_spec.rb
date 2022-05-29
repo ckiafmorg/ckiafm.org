@@ -5,12 +5,12 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'validations' do
     subject(:user) { build :user }
-    it { should have_secure_password }
-    it { should validate_presence_of :email }
-    it { should validate_uniqueness_of :email }
-    it { should validate_presence_of(:password) }
-  end
 
+    it { is_expected.to have_secure_password }
+    it { is_expected.to validate_presence_of :email }
+    it { is_expected.to validate_uniqueness_of :email }
+    it { is_expected.to validate_presence_of(:password) }
+  end
 
   describe '#strip_email_whitespace' do
     it 'strip spaces in email' do
