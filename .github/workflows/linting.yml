@@ -1,9 +1,9 @@
 on: [push]
 
-name: Linting - Rubocop
+name: Linting
 
 jobs:
-  run:
+  rubocop:
     runs-on: ubuntu-latest
 
     steps:
