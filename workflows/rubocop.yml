@@ -12,6 +12,8 @@ jobs:
 
       - name: Setup ruby
         uses: ruby/setup-ruby@master
+        with:
+          bundler-cache: true
 
       - name: Install ruby gems
         run: |
