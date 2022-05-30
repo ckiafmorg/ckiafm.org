@@ -14,12 +14,6 @@ jobs:
           POSTGRES_DB: ckia_fm_test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: ''
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     env:
       RAILS_ENV: test
       DATABASE_URL: 'postgres://postgres@localhost:5432/ckia_fm_test'
