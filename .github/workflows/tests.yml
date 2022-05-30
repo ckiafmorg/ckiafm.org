@@ -18,6 +18,8 @@ jobs:
       RAILS_ENV: test
       DATABASE_URL: 'postgres://postgres@localhost:5432/ckia_fm_test'
     steps:
+      - name: Install system libs
+        run: sudo apt-get -y install libpq-dev
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install Ruby and gems
