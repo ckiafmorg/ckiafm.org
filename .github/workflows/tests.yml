@@ -12,11 +12,15 @@ jobs:
           - "5432:5432"
         env:
           POSTGRES_DB: ckia_fm_test
-          # POSTGRES_USER: postgres
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: ''
     env:
       RAILS_ENV: test
-      # DATABASE_URL: 'postgres://postgres@localhost:5432/ckia_fm_test'
+      DATABASE_URL: 'postgres://postgres@localhost:5432/ckia_fm_test'
+      PG_DATABASE: ckia_fm_test
+      PG_USERNAME: postgres
+      PG_PASSWORD: ''
+      PG_HOST: 'localhost'
     steps:
       - name: Install system libs
         run: sudo apt-get -y install libpq-dev
