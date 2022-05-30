@@ -15,6 +15,7 @@ jobs:
           PGPASSWORD: ''
     env:
       RAILS_ENV: test
+      DATABASE_URL: "postgres://postgres@localhost/ckia_fm_test"
     steps:
       - name: Install system libs
         run: sudo apt-get -y install libpq-dev
