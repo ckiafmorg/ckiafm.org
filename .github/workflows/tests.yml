@@ -1,0 +1,42 @@
+on: [push]
+
+name: Tests
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11.6-alpine
+        ports: ['5432:5432']
+        env:
+          PGUSER: postgres
+          PGPASSWORD: ''
+        # Ensure Postgres container passes a health check
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      RAILS_ENV: test
+      PGUSER: postgres
+    steps:
+      - name: Install system libraries
+        run: |
+          sudo apt-get -y install libpq-dev
+
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@master
+        with:
+          bundler-cache: true
+
+      - name: Configure database
+        run: bundle exec rails db:create
+
+      - name: Run tests
+        run: bundle exec rspec -f p
