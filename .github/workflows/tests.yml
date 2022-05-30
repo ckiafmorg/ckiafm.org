@@ -19,8 +19,8 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
-    env:
-      RAILS_ENV: test
+    # env:
+    #   RAILS_ENV: test
     steps:
       - name: Install system libs
         run: sudo apt-get -y install libpq-dev
@@ -31,6 +31,6 @@ jobs:
         with:
           bundler-cache: true
       - name: Set up database schema
-        run: bin/rails db:schema:load
+        run: bundle exec rails db:create
       - name: Run tests
         run: bundle exec rspec -f p
