@@ -74,7 +74,7 @@ jobs:
           bundler-cache: true
 
       - name: Configure database
-        run: bundle exec rails db:schema:load
+        run: bundle exec rails db:create
 
       - name: Run tests
         run: bundle exec rspec -f p
