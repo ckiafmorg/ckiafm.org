@@ -12,7 +12,7 @@ jobs:
           - "5432:5432"
         env:
           POSTGRES_DB: ckia_fm_test
-          POSTGRES_USER: postgres
+          # POSTGRES_USER: postgres
           POSTGRES_PASSWORD: ''
     env:
       RAILS_ENV: test
