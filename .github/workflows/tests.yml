@@ -13,9 +13,14 @@ jobs:
         env:
           PGUSER: postgres
           PGPASSWORD: ''
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     env:
       RAILS_ENV: test
-      DATABASE_URL: "postgres://postgres@localhost/ckia_fm_test"
     steps:
       - name: Install system libs
         run: sudo apt-get -y install libpq-dev
