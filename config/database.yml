@@ -57,7 +57,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ckia_fm_test
+  host: <%= ENV.fetch('PG_HOST') { nil } %>
+  database: <%= ENV.fetch('PG_DATABASE') { 'ckia_fm_test' } %>
+  username: <%= ENV.fetch('PG_USERNAME') { nil } %>
+  password: <%= ENV.fetch('PG_PASSWORD') { nil } %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
