@@ -1,36 +1,95 @@
+# on: [push]
+#
+# name: Tests
+#
+# jobs:
+#   rspec:
+#     runs-on: ubuntu-latest
+#     services:
+#       postgres:
+#         image: postgres:11.6-alpine
+#         ports:
+#           - "5432:5432"
+#         env:
+#           PGUSER: postgres
+#           PGPASSWORD: ''
+#         options: >-
+#           --health-cmd pg_isready
+#           --health-interval 10s
+#           --health-timeout 5s
+#           --health-retries 5
+#
+#     # env:
+#     #   RAILS_ENV: test
+#     steps:
+#       - name: Install system libs
+#         run: sudo apt-get -y install libpq-dev
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+#       - name: Install Ruby and gems
+#         uses: ruby/setup-ruby@master # v1.92
+#         with:
+#           bundler-cache: true
+#       - name: Set up database schema
+#         run: bundle exec rails db:create
+#       - name: Run tests
+#         run: bundle exec rspec -f p
+
 on: [push]
 
-name: Tests
+name: Tests, non-system
 
 jobs:
-  rspec:
+  run:
     runs-on: ubuntu-latest
+
     services:
       postgres:
-        image: postgres:11-alpine
-        ports:
-          - "5432:5432"
+        image: postgres:11.6-alpine
+        ports: ['5432:5432']
         env:
           PGUSER: postgres
           PGPASSWORD: ''
+        # Ensure Postgres container passes a health check
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
 
-    # env:
-    #   RAILS_ENV: test
     steps:
-      - name: Install system libs
-        run: sudo apt-get -y install libpq-dev
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Install Ruby and gems
-        uses: ruby/setup-ruby@master # v1.92
+      - name: Install system libraries
+        run: |
+          sudo apt-get -y install libpq-dev
+
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@master
+
+      - name: Cache bundled gems
+        uses: actions/cache@v1
         with:
-          bundler-cache: true
-      - name: Set up database schema
-        run: bundle exec rails db:create
+          path: vendor/bundle
+          key: ${{ runner.os }}-new-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-new-gems-
+
+      - name: Install Ruby gems
+        run: |
+          gem install bundler --no-document
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Configure database
+        env:
+          PGUSER: postgres
+        run: |
+          bundle exec rails db:create
+
       - name: Run tests
-        run: bundle exec rspec -f p
+        env:
+          PGUSER: postgres
+        run: |
+          bundle exec rspec --exclude-pattern="spec/system/*"
