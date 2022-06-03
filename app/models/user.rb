@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   PASSWORD_MINIMAL_LENGTH = 24
 
+  # TODO: use the `EmailValidator`
   validates :email, presence: true, uniqueness: true, on: %i[create update]
   validates :password, presence: true, on: :create, length: { minimum: PASSWORD_MINIMAL_LENGTH }
 
