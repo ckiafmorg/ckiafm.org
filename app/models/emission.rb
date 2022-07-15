@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class Emission < ApplicationRecord
-  SHOW_STATUSES = %w[brouillon active vacance archive].freeze
-  enum status: SHOW_STATUSES
+  STATUS = { brouillon: 0, active: 1, vacance: 2, archive: 3 }.freeze
+  enum status: STATUS
 
   validates :nom, presence: true, uniqueness: true
   validates :description, presence: true
-  validates :status, presence: true, inclusion: { in: SHOW_STATUSES }
+  validates :status, presence: true, inclusion: { in: statuses.keys }
   # TODO: add email: true when the `EmailValidator` will be created
   validates :email, presence: true
 end

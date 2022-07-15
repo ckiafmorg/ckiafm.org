@@ -4,3 +4,17 @@ fr:
     email_label: 'Courriel'
     password_label: 'Mot de passe'
     signin_button_text: 'Se connecter'
+  admin:
+    nav:
+      shows: 'Émissions'
+    form:
+      soumettre: 'Soumettre'
+      retour: 'Retour'
+    emissions:
+      successfully_created: "L'émission a été créé avec succès."
+      form:
+        nom: 'Nom'
+        description: 'Description'
+        email: 'Email'
+        status: 'Status'
+        speciale: 'Spéciale'
