@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_03_201020) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nom"], name: "index_emissions_on_nom", unique: true
+    t.index ["slug"], name: "index_emissions_on_slug", unique: true
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

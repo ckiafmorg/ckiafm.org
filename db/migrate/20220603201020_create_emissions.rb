@@ -8,7 +8,7 @@ class CreateEmissions < ActiveRecord::Migration[7.0]
       t.boolean :speciale, null: false, default: false
       t.integer :status, null: false
       t.string :email, null: false
-      t.string :slug
+      t.string :slug, index: { unique: true }
 
       t.timestamps
     end
