@@ -104,6 +104,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    importmap-rails (1.1.5)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
@@ -237,6 +240,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stimulus-rails (1.1.0)
+      railties (>= 6.0.0)
     strscan (3.0.4)
     thor (1.2.1)
     tilt (2.0.11)
@@ -265,6 +270,7 @@ DEPENDENCIES
   debug
   factory_bot_rails
   faker
+  importmap-rails
   jbuilder
   pg (~> 1.4)
   puma (~> 5.0)
@@ -277,6 +283,7 @@ DEPENDENCIES
   sassc-rails
   shoulda-matchers
   sprockets-rails
+  stimulus-rails
   tzinfo-data
   web-console
 

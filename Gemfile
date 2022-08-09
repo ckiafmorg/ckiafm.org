@@ -14,6 +14,10 @@ gem 'bootstrap-icons-helper'
 gem 'sassc-rails'
 gem 'sprockets-rails'
 
+# Javascript / Hotwire
+gem 'importmap-rails'
+gem 'stimulus-rails'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.4'
 
