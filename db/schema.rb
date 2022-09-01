@@ -18,7 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_03_201020) do
   create_table "emissions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "nom", null: false
     t.text "description", null: false
-    t.boolean "speciale", default: false, null: false
     t.integer "status", null: false
     t.string "email", null: false
     t.string "slug"
