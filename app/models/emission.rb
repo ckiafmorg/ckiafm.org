@@ -7,6 +7,5 @@ class Emission < ApplicationRecord
   validates :nom, presence: true, uniqueness: true
   validates :description, presence: true
   validates :status, presence: true, inclusion: { in: statuses.keys }
-  # TODO: add email: true when the `EmailValidator` will be created
-  validates :email, presence: true
+  validates :email, email: true, presence: true
 end
