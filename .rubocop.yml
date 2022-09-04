@@ -14,8 +14,23 @@ Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*'
 
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/AbcSize:
+  Max: 30
+
 Style/Documentation:
   Enabled: false
 
 Style/HashSyntax:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/NestedGroups:
   Enabled: false

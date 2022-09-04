@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_03_201020) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_02_181101) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "diffusions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "debut_heure", null: false
+    t.integer "debut_minute", null: false
+    t.integer "fin_heure", null: false
+    t.integer "fin_minute", null: false
+    t.boolean "diffuse_lundi"
+    t.boolean "diffuse_mardi"
+    t.boolean "diffuse_mercredi"
+    t.boolean "diffuse_jeudi"
+    t.boolean "diffuse_vendredi"
+    t.boolean "diffuse_samedi"
+    t.boolean "diffuse_dimanche"
+    t.boolean "redifussion"
+    t.uuid "emission_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emission_id"], name: "index_diffusions_on_emission_id"
+  end
 
   create_table "emissions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "nom", null: false
@@ -35,4 +54,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_03_201020) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "diffusions", "emissions"
 end

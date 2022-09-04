@@ -18,3 +18,12 @@ fr:
         email: 'Email'
         status: 'Status'
         speciale: 'Spéciale'
+activerecord:
+  errors:
+    models:
+      diffusion:
+        fin_heure:
+          smaller_then_debut_heure: "L'heure de début doit être plus petite que l'heure de fin"
+        fin_minute:
+          smaller_then_debut_minute: "L'heure de début doit être plus petite que l'heure de fin"
+# vim: ft=yaml
