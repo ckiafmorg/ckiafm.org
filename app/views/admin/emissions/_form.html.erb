@@ -21,14 +21,6 @@
       <%= form.select(:status, Emission.statuses.keys.map {|status| [status.titleize, status]}, {}, class: 'form-select') %>
     </div>
   </div>
-  <div class="row mb-3">
-    <div class="col-lg">
-      <div class="form-check mt-3">
-        <%= form.check_box :speciale, class: 'form-check-input' %>
-        <%= form.label :speciale, class: 'form-check-label' %>
-      </div>
-    </div>
-  </div>
   <div class="mt-3">
     <%= form.submit t('admin.form.soumettre'), class: 'btn btn-primary'%>
     <%= link_to t('admin.form.retour'), admin_emissions_path, class: 'btn btn-light' %>

@@ -33,7 +33,7 @@ module Admin
     private
 
     def emission_params
-      params.require(:emission).permit(:nom, :description, :email, :status, :speciale)
+      params.require(:emission).permit(:nom, :description, :email, :status)
     end
   end
 end
