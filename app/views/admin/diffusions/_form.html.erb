@@ -1,0 +1,37 @@
+<h2><%= t('admin.diffusion.form.title') %></h2>
+<%= form_with model: [:admin, emission, diffusion], local: true do |form| %>
+  <%= form.hidden_field :emission_id, value: emission.id %>
+  <div class="row">
+    <div class="col-lg">
+      <%= form.label :temps_debut, t('admin.diffusion.form.temps_debut_label'), class: 'form-label' %>
+      <%= form.time_field :temps_debut, class: 'form-control' %>
+    </div>
+    <div class="col-lg">
+      <%= form.label :temps_fin, t('admin.diffusion.form.temps_fin_label'), class: 'form-label' %>
+      <%= form.time_field :temps_fin, class: 'form-control' %>
+    </div>
+    <div class="col-lg">
+      <%= form.label :date_debut, t('admin.diffusion.form.date_debut_label'), class: 'form-label' %>
+      <%= form.date_field :date_debut, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-lg">
+    <h3><%= t('admin.diffusion.form.jour_diffusion_header') %></h3>
+      <% %w[lundi mardi mercredi jeudi vendredi samedi dimanche].each do |jour| %>
+        <div class="form-check form-check mb-3">
+          <%= form.check_box "diffuse_#{jour}", class: 'form-check-input' %>
+          <%= form.label "diffuse_#{jour}", t("admin.diffusion.form.diffuse_#{jour}_label"), class: 'form-check-label' %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-lg">
+      <h3><%= t('admin.diffusion.form.rediffusion_header') %></h3>
+      <div class="form-check form-check mb-3">
+        <%= form.check_box :rediffusion, class: 'form-check-input' %>
+        <%= form.label :rediffusion, class: 'form-check-label' %>
+      </div>
+    </div>
+  </div>
+  <%= render 'admin/shared/form_actions', locals: { return_path: admin_emission_path(emission), submit_btn_label: t('admin.diffusion.form.submit_label') }
+<% end %>

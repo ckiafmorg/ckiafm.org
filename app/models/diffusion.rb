@@ -3,28 +3,33 @@
 class Diffusion < ApplicationRecord
   belongs_to :emission
 
-  validates :debut_heure, presence: true, numericality: { min: 0, max: 23, only_integer: true }
-  validates :debut_minute, presence: true, numericality: { min: 0, max: 59, only_integer: true }
-  validates :fin_heure, presence: true, numericality: { min: 0, max: 23, only_integer: true }
-  validates :fin_minute, presence: true, numericality: { min: 0, max: 59, only_integer: true }
-  validate :valider_debut_fin
+  validates :temps_debut, presence: true
+  validates :temps_fin, presence: true
+  validates :date_debut, presence: true
+  validate :valider_temps_debut_avant_temps_fin
+
+  def jours_diffusion
+    # Ce n'est pas super, mais ça évite de faire une table juste pour les jours
+    # de la semaine. L'autre solution serait de faire un enum, de permettre le
+    # multiselect et sauvegarder les jours dans un seuls champ de la table avec
+    # un séparateur.
+    jours = []
+    jours << 'lundi' if diffuse_lundi
+    jours << 'mardi' if diffuse_mardi
+    jours << 'mercredi' if diffuse_mercredi
+    jours << 'jeudi' if diffuse_jeudi
+    jours << 'vendredi' if diffuse_vendredi
+    jours << 'samedi' if diffuse_samedi
+    jours << 'dimanche' if diffuse_dimanche
+
+    jours.to_sentence(last_word_connector: ' et ', two_words_connector: ' et ')
+  end
 
   private
 
-  def valider_debut_fin
-    # We need to check for blank since validation are chain and do not throw
-    # error if presence validation failed earlier
-    return if debut_heure.blank? or debut_minute.blank? or fin_heure.blank? or fin_minute.blank?
+  def valider_temps_debut_avant_temps_fin
+    return unless temps_debut > temps_fin
 
-    if fin_heure < debut_heure
-      errors.add(:fin_heure, I18n.t('activerecord.errors.models.diffusion.fin_heure.smaller_then_debut_heure'))
-    end
-
-    # rubocop:disable Style/GuardClause:
-    if debut_heure == fin_heure and debut_minute > fin_minute
-      errors.add(:fin_minute,
-                 I18n.t('activerecord.errors.models.diffusion.fin_minute.smaller_then_debut_minute'))
-    end
-    # rubocop:enable Style/GuardClause:
+    errors.add(:temps_debut, I18n.t('activerecord.errors.models.diffusion.temps_debut.greater_then_temps_fin'))
   end
 end

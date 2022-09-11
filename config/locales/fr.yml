@@ -5,6 +5,9 @@ fr:
     password_label: 'Mot de passe'
     signin_button_text: 'Se connecter'
   admin:
+    shared:
+      form_action:
+        back_btn: 'Retour'
     nav:
       shows: 'Émissions'
     form:
@@ -12,18 +15,34 @@ fr:
       retour: 'Retour'
     emissions:
       successfully_created: "L'émission a été créé avec succès."
+      create_diffusion_btn: "Créer une diffusion"
       form:
         nom: 'Nom'
         description: 'Description'
         email: 'Email'
         status: 'Status'
         speciale: 'Spéciale'
+    diffusion:
+      title: 'Diffusions'
+      form:
+        title: 'Ajouter une nouvelle diffusion'
+        temps_debut_label: 'Heure de début de la diffusion'
+        temps_fin_label: 'Heure de fin de la diffusion'
+        date_debut_label: "Date de début de l'émission"
+        jour_diffusion_header: 'Les jours de diffusion'
+        rediffusion_header: 'Rediffusion'
+        submit_label: 'Créer la diffusion'
+        diffuse_lundi_label: 'Ludni'
+        diffuse_mardi_label: 'Mardi'
+        diffuse_mercredi_label: 'Mercredi'
+        diffuse_jeudi_label: 'Jeudi'
+        diffuse_vendredi_label: 'Vendredi'
+        diffuse_samedi_label: 'Samedi'
+        diffuse_dimanche_label: 'Dimanche'
 activerecord:
   errors:
     models:
       diffusion:
-        fin_heure:
-          smaller_then_debut_heure: "L'heure de début doit être plus petite que l'heure de fin"
-        fin_minute:
-          smaller_then_debut_minute: "L'heure de début doit être plus petite que l'heure de fin"
+        temps_debut:
+          greater_then_temps_fin: "L'émission ne peut pas commencer après son heure de fin."
 # vim: ft=yaml

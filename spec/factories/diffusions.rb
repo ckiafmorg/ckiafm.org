@@ -2,10 +2,9 @@
 
 FactoryBot.define do
   factory :diffusion do
-    debut_heure { 1 }
-    debut_minute { 0 }
-    fin_heure { 5 }
-    fin_minute { 0 }
+    temps_debut { Time.zone.now }
+    temps_fin { 1.hour.from_now }
+    date_debut { Time.zone.today }
     diffuse_lundi { false }
     diffuse_mardi { false }
     diffuse_mercredi { false }
@@ -13,10 +12,14 @@ FactoryBot.define do
     diffuse_vendredi { false }
     diffuse_samedi { false }
     diffuse_dimanche { false }
-    redifussion { false }
+    rediffusion { false }
     emission
 
-    trait :all_week_show do
+    trait :diffuse_seulement_lundi do
+      diffuse_lundi { true }
+    end
+
+    trait :diffuse_seulement_jours_semaine do
       diffuse_lundi { true }
       diffuse_mardi { true }
       diffuse_mercredi { true }
