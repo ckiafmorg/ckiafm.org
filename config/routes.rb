@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get :admin, to: redirect('/admin/dashboard'), as: :admin
   namespace :admin do
     resource :dashboard, only: [:show]
-    resources :emissions
+    resources :emissions do
+      resources :diffusions
+    end
   end
 end

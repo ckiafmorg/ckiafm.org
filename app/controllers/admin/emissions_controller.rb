@@ -10,8 +10,9 @@ module Admin
 
     def show
       emission = Emission.find(params[:id])
+      diffusion = Diffusion.new
 
-      render :show, locals: { emission: emission }
+      render :show, locals: { emission: emission, diffusion: diffusion }
     end
 
     def new
@@ -24,7 +25,7 @@ module Admin
       emission = Emission.new(emission_params)
 
       if emission.save
-        redirect_to [:admin, emission], notive: t('admin.emissions.successfully_created')
+        redirect_to [:admin, emission], notice: t('admin.emissions.successfully_created')
       else
         render :new, locals: { emission: emission }
       end
