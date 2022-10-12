@@ -232,7 +232,7 @@ GEM
       tilt
     shoulda-matchers (5.2.0)
       activesupport (>= 5.2.0)
-    sorbet-runtime (0.5.10482)
+    sorbet-runtime (0.5.10484)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
