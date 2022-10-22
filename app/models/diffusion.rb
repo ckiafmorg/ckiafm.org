@@ -28,7 +28,8 @@ class Diffusion < ApplicationRecord
   private
 
   def valider_temps_debut_avant_temps_fin
-    return unless temps_debut > temps_fin
+    # TODO: extract to an external validator
+    return unless temps_debut.present? and temps_fin.present? and temps_debut > temps_fin
 
     errors.add(:temps_debut, I18n.t('activerecord.errors.models.diffusion.temps_debut.greater_then_temps_fin'))
   end

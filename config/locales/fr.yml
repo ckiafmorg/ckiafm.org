@@ -39,6 +39,9 @@ fr:
         diffuse_vendredi_label: 'Vendredi'
         diffuse_samedi_label: 'Samedi'
         diffuse_dimanche_label: 'Dimanche'
+  validations:
+    email_validator:
+      invalid_email: 'Ce email est invalid'
 activerecord:
   errors:
     models:
