@@ -1,7 +1,6 @@
 require:
   - rubocop-performance
   - rubocop-rails
-  - rubocop-rspec
 
 AllCops:
   NewCops: enable
@@ -13,6 +12,10 @@ AllCops:
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*'
+
+Layout/LineLength:
+  Exclude:
+  - 'test/**/*'
 
 Metrics/CyclomaticComplexity:
   Max: 10
@@ -27,10 +30,4 @@ Style/HashSyntax:
   Enabled: false
 
 Style/AndOr:
-  Enabled: false
-
-RSpec/ContextWording:
-  Enabled: false
-
-RSpec/NestedGroups:
   Enabled: false
