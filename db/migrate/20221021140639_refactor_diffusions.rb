@@ -5,10 +5,10 @@ class RefactorDiffusions < ActiveRecord::Migration[7.0]
     # ActiveRecord supporte les colonne de type `Time`, on va donc utiliser ça
     # au lieu de gérer les heures et les minutes à la main.
     change_table :diffusions, bulk: true do |t|
-      t.remove_column :debut_heure
-      t.remove_column :debut_minute
-      t.remove_column :fin_heure
-      t.remove_column :fin_minute
+      t.remove :debut_heure
+      t.remove :debut_minute
+      t.remove :fin_heure
+      t.remove :fin_minute
     end
 
     # We can't set a default value here without the user logic
