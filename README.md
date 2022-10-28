@@ -1,24 +1,37 @@
-# README
+# CKIAFM.ORG - l'application Web de CKIA
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dépendances
 
-Things you may want to cover:
+* ruby: la version spécifiée dans le fichier `.ruby-version`, normalement c'est la dernière.
+* postgresql: la version disponible sur ton poste ou la dernière version stable.
 
-* Ruby version
+## Installation de l'environnement de développement
 
-* System dependencies
+```shell
+git clone git@github.com:ckiafmorg/ckiafm.org
+```
 
-* Configuration
+Si bundler n'est pas installé, rouler la commande suivante :
 
-* Database creation
+```shell
+gem install bundler
+```
 
-* Database initialization
+Ensuite installer les dépendances ruby du projet:
 
-* How to run the test suite
+```shell
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Une fois la base de données lancée, il faut créer les tables et migrer exécuter
+les migrations. Pour ce faire, rouler la commande suivante :
 
-* Deployment instructions
+```shell
+bin/rails db:create db:migrate
+```
 
-* ...
+Pour lancer le serveur de développement, lancer la commande suivante :
+
+```shell
+bin/rails server # on peut aussi utiliser bin/rails s
+```
