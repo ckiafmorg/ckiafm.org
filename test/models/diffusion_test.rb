@@ -9,18 +9,6 @@ class DiffusionTest < ActiveSupport::TestCase
     should validate_presence_of :date_debut
   end
 
-  test 'etant donne temps_debut avant temps_fin quand #valid? alors retourne true' do
-    diffusion = build :diffusion
-
-    assert diffusion.valid?
-  end
-
-  test 'etant donne temps_debut apres temps_fin quand #valid? alors retourne false' do
-    diffusion = build :diffusion, temps_fin: 1.hour.ago
-
-    assert_not diffusion.valid?
-  end
-
   test 'etant donne un seul jour de diffusion quand #jours_diffusion alors retourne le seul jour' do
     diffusion = build :diffusion, :diffuse_seulement_lundi
 
