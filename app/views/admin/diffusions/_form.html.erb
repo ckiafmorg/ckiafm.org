@@ -33,5 +33,5 @@
       </div>
     </div>
   </div>
-  <%= render 'admin/shared/form_actions', locals: { return_path: admin_emission_path(emission), submit_btn_label: t('admin.diffusion.form.submit_label') }
+  <%= render 'admin/shared/form_actions',  cancel_path: admin_emission_path(emission), button_label: t('admin.diffusion.form.submit_label') %>
 <% end %>
