@@ -2,6 +2,7 @@ import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
   connect() {
+    console.log("Web player js controller here");
     fetch('https://ecoutez.ckiafm.org:8001/json.xsl')
       .then(response => {
         if(!response.ok) {
