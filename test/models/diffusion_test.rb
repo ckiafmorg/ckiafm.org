@@ -9,27 +9,11 @@ class DiffusionTest < ActiveSupport::TestCase
     should validate_presence_of :date_debut
   end
 
-  test 'etant donne un seul jour de diffusion quand #jours_diffusion alors retourne le seul jour' do
-    diffusion = build :diffusion, :diffuse_seulement_lundi
+  test 'quand #jours_diffusion alors retourne una array de boolean si diffuse ou non ou index zero est dimanche' do
+    diffusion = build :diffusion, diffuse_mardi: true, diffuse_mercredi: true
 
     jours = diffusion.jours_diffusion
 
-    assert_equal jours, 'lundi'
-  end
-
-  test 'etant donne deux jours de diffusion quand #jours_diffusion alors retourne les deux jours separe par "et"' do
-    diffusion = build :diffusion, diffuse_lundi: true, diffuse_mardi: true
-
-    jours = diffusion.jours_diffusion
-
-    assert_equal jours, 'lundi et mardi'
-  end
-
-  test 'etant donne plusieurs jours de diffusion quand #jours_diffusion alors retourne une enumeration des jours de diffusion' do
-    diffusion = build :diffusion, :diffuse_seulement_jours_semaine
-
-    jours = diffusion.jours_diffusion
-
-    assert_equal jours, 'lundi, mardi, mercredi, jeudi et vendredi'
+    assert_equal jours, [false, false, true, true, false, false, false]
   end
 end

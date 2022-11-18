@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_142005) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_18_032328) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_142005) do
     t.time "temps_debut", null: false
     t.time "temps_fin", null: false
     t.date "date_debut", null: false
+    t.string "type"
     t.index ["emission_id"], name: "index_diffusions_on_emission_id"
   end
 

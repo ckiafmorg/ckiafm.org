@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :diffusion do
+  factory :diffusion_speciale do
     temps_debut { Time.zone.now }
     temps_fin { 1.hour.from_now }
     date_debut { Time.zone.today }

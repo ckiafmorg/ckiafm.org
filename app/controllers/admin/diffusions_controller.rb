@@ -6,14 +6,19 @@ module Admin
       emission = Emission.find(params[:emission_id])
       diffusion = Diffusion.new
 
+      # TODO: faire un form object pour diffusion
+      diffusion.rediffusion = true if emission.diffusions.count.positive?
+
       render :new, locals: { emission: emission, diffusion: diffusion }
     end
 
     def create
       emission = Emission.find(params.dig(:diffusion, :emission_id))
-      diffusion = emission.diffusions.build(diffusion_params)
+      type_diffusion = params.dig(:diffusion, :type_diffusion).to_sym
+      diffusion = DiffusionFactory.create_for(type_diffusion, diffusion_params)
+      emission.diffusions << diffusion
 
-      if diffusion.save! and emission.save!
+      if diffusion.save and emission.save
         redirect_to [:admin, emission], notice: t('admin.diffusions.successfully_created')
       else
         render :new, locals: { emission: emission, diffusion: diffusion }

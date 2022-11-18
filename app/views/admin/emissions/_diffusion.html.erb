@@ -1,0 +1,8 @@
+<div class="card mt-3 mb-3">
+  <div class="card-body">
+    <%# TODO: use translated string here #%>
+    <h5 class="card-title"><%= "(R) - " if diffusion.rediffusion %><%= diffusion.type.titleize %></h5>
+    <p><%= format_time diffusion.temps_debut %> - <%= format_time diffusion.temps_fin %></p>
+    <p><%= diffusion.jours_diffusion_formate %></p>
+  </div>
+</div>

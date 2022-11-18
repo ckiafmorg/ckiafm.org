@@ -32,13 +32,14 @@ fr:
         jour_diffusion_header: 'Les jours de diffusion'
         rediffusion_header: 'Rediffusion'
         submit_label: 'Créer la diffusion'
-        diffuse_lundi_label: 'Ludni'
+        diffuse_lundi_label: 'Lundi'
         diffuse_mardi_label: 'Mardi'
         diffuse_mercredi_label: 'Mercredi'
         diffuse_jeudi_label: 'Jeudi'
         diffuse_vendredi_label: 'Vendredi'
         diffuse_samedi_label: 'Samedi'
         diffuse_dimanche_label: 'Dimanche'
+        type_diffusion_label: "Type de diffusion"
   validations:
     email_validator:
       invalid_email: 'Ce email est invalid'

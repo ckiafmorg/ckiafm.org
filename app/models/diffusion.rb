@@ -7,20 +7,28 @@ class Diffusion < ApplicationRecord
   validates :temps_fin, presence: true
   validates :date_debut, presence: true
 
-  def jours_diffusion
-    # Ce n'est pas super, mais ça évite de faire une table juste pour les jours
-    # de la semaine. L'autre solution serait de faire un enum, de permettre le
-    # multiselect et sauvegarder les jours dans un seuls champ de la table avec
-    # un séparateur.
-    jours = []
-    jours << 'lundi' if diffuse_lundi
-    jours << 'mardi' if diffuse_mardi
-    jours << 'mercredi' if diffuse_mercredi
-    jours << 'jeudi' if diffuse_jeudi
-    jours << 'vendredi' if diffuse_vendredi
-    jours << 'samedi' if diffuse_samedi
-    jours << 'dimanche' if diffuse_dimanche
+  TYPE_DIFFUSION = %i[hebdomadaire deux_semaines mensuelle speciale].freeze
 
-    jours.to_sentence(last_word_connector: ' et ', two_words_connector: ' et ')
+  def jours_diffusion
+    [diffuse_dimanche, diffuse_lundi, diffuse_mardi, diffuse_mercredi, diffuse_jeudi, diffuse_vendredi, diffuse_samedi]
+  end
+
+  def jour_de_la_semaine(jour_nombre)
+    case jour_nombre
+    when 0
+      'Dimanche'
+    when 1
+      'Lundi'
+    when 2
+      'Mardi'
+    when 3
+      'Mercredi'
+    when 4
+      'Jeudi'
+    when 5
+      'Vendredi'
+    when 6
+      'Samedi'
+    end
   end
 end
