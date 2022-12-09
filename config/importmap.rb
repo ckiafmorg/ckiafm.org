@@ -12,3 +12,4 @@ pin '@hotwired/stimulus-loading', to: 'stimulus-loading.js', preload: true
 # `admin_controllers` in their own pin and load only the users visible
 # controllers under controllers
 pin_all_from 'app/javascript/controllers', under: 'controllers'
+pin '@hotwired/turbo-rails', to: 'turbo.min.js', preload: true
