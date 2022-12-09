@@ -24,6 +24,9 @@ fr:
         speciale: 'Spéciale'
     diffusion:
       title: 'Diffusions'
+      successfully_created: 'La diffusion a été créée avec succès.'
+      failed_to_delete: 'Une erreur est survenue lors de la supression de la diffusion.'
+      delete_confirmation: 'Voulez-vous vraiment supprimer cette diffusion?'
       form:
         title: 'Ajouter une nouvelle diffusion'
         temps_debut_label: 'Heure de début de la diffusion'
