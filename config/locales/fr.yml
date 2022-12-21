@@ -16,6 +16,7 @@ fr:
     emissions:
       successfully_created: "L'émission a été créé avec succès."
       create_diffusion_btn: "Créer une diffusion"
+      update_diffusion_btn: "Modifier la diffusion"
       form:
         nom: 'Nom'
         description: 'Description'

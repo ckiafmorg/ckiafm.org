@@ -5,7 +5,8 @@
   <div class="row">
     <div class="col-lg">
       <%= form.label :type_diffusion, t('admin.diffusion.form.type_diffusion_label'), class: 'form-label' %>
-      <%= form.select :type_diffusion, Diffusion::TYPE_DIFFUSION.map { |type| [type.to_s.titleize, type] }, {}, { class: 'form-select', data: { action: "change->admin--diffusion-form#updateDaysSelectorAvailability", "admin--diffusion-form-target" => "diffusionType" } } %>
+      <% disabled_if_not_new_record = !diffusion.new_record? %>
+      <%= form.select :type_diffusion, Diffusion::TYPE_DIFFUSION.map { |type| [type.to_s.titleize, type] }, {}, { class: 'form-select', data: { action: "change->admin--diffusion-form#updateDaysSelectorAvailability", "admin--diffusion-form-target" => "diffusionType" }, disabled: disabled_if_not_new_record } %>
     </div>
   </div>
   <div class="row">
@@ -40,5 +41,5 @@
       </div>
     </div>
   </div>
-  <%= render 'admin/shared/form_actions',  cancel_path: admin_emission_path(emission), button_label: t('admin.diffusion.form.submit_label') %>
+  <%= render 'admin/shared/form_actions',  cancel_path: admin_emission_path(emission), button_label: button_label %>
 <% end %>

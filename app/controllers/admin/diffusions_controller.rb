@@ -4,12 +4,20 @@ module Admin
   class DiffusionsController < AdminController
     def new
       emission = Emission.find(params[:emission_id])
+      # TODO: there should really have a form object for that
       diffusion = Diffusion.new
 
       # TODO: faire un form object pour diffusion
       diffusion.rediffusion = true if emission.diffusions.count.positive?
 
       render :new, locals: { emission: emission, diffusion: diffusion }
+    end
+
+    def edit
+      emission = Emission.find(params[:emission_id])
+      diffusion = Diffusion.find(params[:id])
+
+      render :edit, locals: { emission: emission, diffusion: diffusion }
     end
 
     def create
@@ -22,6 +30,16 @@ module Admin
         redirect_to [:admin, emission], notice: t('admin.diffusion.successfully_created')
       else
         render :new, locals: { emission: emission, diffusion: diffusion }
+      end
+    end
+
+    def update
+      diffusion = Diffusion.find(params[:id])
+      emission = Emission.find(params[:emission_id])
+      if diffusion.update(diffusion_params)
+        redirect_to [:admin, emission]
+      else
+        render :edit, locals: { emission: emission, diffusion: diffusion }
       end
     end
 
