@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class DiffusionMensuelle < Diffusion
+  def model_name
+    Diffusion.model_name
+  end
+
   def en_onde_aujourdhui?
     return false unless same_month_week?
 
@@ -10,6 +14,10 @@ class DiffusionMensuelle < Diffusion
   def jours_diffusion_formate
     # TODO: use translation and localisation here too
     "Tous les #{month_week date_debut}e #{jour_de_la_semaine date_debut.wday} du mois"
+  end
+
+  def type_diffusion
+    'mensuelle'
   end
 
   private
