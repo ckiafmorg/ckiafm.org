@@ -135,7 +135,7 @@ GEM
       minitest (~> 5.10)
       railties (~> 7.0.0)
     msgpack (1.6.0)
-    net-imap (0.3.3)
+    net-imap (0.3.4)
       date
       net-protocol
     net-pop (0.1.2)
