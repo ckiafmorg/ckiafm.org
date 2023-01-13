@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class DiffusionsController < AdminController
+  class DiffusionsController < Admin::AdminController
     def new
       emission = Emission.find(params[:emission_id])
       # TODO: there should really have a form object for that

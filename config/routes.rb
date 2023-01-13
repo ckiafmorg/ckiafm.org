@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :emissions do
       resources :diffusions
     end
+    resources :publicites
   end
 end
