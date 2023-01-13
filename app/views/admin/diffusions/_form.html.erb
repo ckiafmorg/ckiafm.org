@@ -1,40 +1,40 @@
-<h2><%= t('admin.diffusion.form.title') %></h2>
+<h2><%= t('admin.diffusions.form.title') %></h2>
 <%= form_with model: [:admin, emission, diffusion], local: true, data: { controller: "admin--diffusion-form" } do |form| %>
   <%= form.hidden_field :emission_id, value: emission.id %>
 
   <div class="row">
     <div class="col-lg">
-      <%= form.label :type_diffusion, t('admin.diffusion.form.type_diffusion_label'), class: 'form-label' %>
+      <%= form.label :type_diffusion, t('admin.diffusions.form.type_diffusion_label'), class: 'form-label' %>
       <% disabled_if_not_new_record = !diffusion.new_record? %>
       <%= form.select :type_diffusion, Diffusion::TYPE_DIFFUSION.map { |type| [type.to_s.titleize, type] }, {}, { class: 'form-select', data: { action: "change->admin--diffusion-form#updateDaysSelectorAvailability", "admin--diffusion-form-target" => "diffusionType" }, disabled: disabled_if_not_new_record } %>
     </div>
   </div>
   <div class="row">
     <div class="col-lg">
-      <%= form.label :temps_debut, t('admin.diffusion.form.temps_debut_label'), class: 'form-label' %>
+      <%= form.label :temps_debut, t('admin.diffusions.form.temps_debut_label'), class: 'form-label' %>
       <%= form.time_field :temps_debut, class: 'form-control' %>
     </div>
     <div class="col-lg">
-      <%= form.label :temps_fin, t('admin.diffusion.form.temps_fin_label'), class: 'form-label' %>
+      <%= form.label :temps_fin, t('admin.diffusions.form.temps_fin_label'), class: 'form-label' %>
       <%= form.time_field :temps_fin, class: 'form-control' %>
     </div>
     <div class="col-lg">
-      <%= form.label :date_debut, t('admin.diffusion.form.date_debut_label'), class: 'form-label' %>
+      <%= form.label :date_debut, t('admin.diffusions.form.date_debut_label'), class: 'form-label' %>
       <%= form.date_field :date_debut, class: 'form-control' %>
     </div>
   </div>
   <div class="row mt-3">
     <div class="col-lg">
-    <h3><%= t('admin.diffusion.form.jour_diffusion_header') %></h3>
+    <h3><%= t('admin.diffusions.form.jour_diffusion_header') %></h3>
       <% %w[lundi mardi mercredi jeudi vendredi samedi dimanche].each do |jour| %>
         <div class="form-check form-check mb-3">
           <%= form.check_box "diffuse_#{jour}", { class: 'form-check-input', data: { "admin--diffusion-form-target" => "daySelector" } } %>
-          <%= form.label "diffuse_#{jour}", t("admin.diffusion.form.diffuse_#{jour}_label"), class: 'form-check-label' %>
+          <%= form.label "diffuse_#{jour}", t("admin.diffusions.form.diffuse_#{jour}_label"), class: 'form-check-label' %>
         </div>
       <% end %>
     </div>
     <div class="col-lg">
-      <h3><%= t('admin.diffusion.form.rediffusion_header') %></h3>
+      <h3><%= t('admin.diffusions.form.rediffusion_header') %></h3>
       <div class="form-check form-check mb-3">
         <%= form.check_box :rediffusion, class: 'form-check-input' %>
         <%= form.label :rediffusion, class: 'form-check-label' %>
