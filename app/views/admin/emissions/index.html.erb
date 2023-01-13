@@ -1,3 +1,12 @@
+<%= link_to t('admin.emissions.create_emission_btn'), new_admin_emission_path, class: 'btn btn-primary mb-3' %>
 <% emissions.each do |emission| %>
-  <%= link_to emission.nom, [:admin, emission] %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to emission.nom, [:admin, emission] %></h5>
+      <p class="card-text">
+        Émission <%= emission.status %><br/>
+        <a href="mailto:<%= emission.email %>"><%= emission.email %></a>
+      </p>
+    </div>
+  </div>
 <% end %>

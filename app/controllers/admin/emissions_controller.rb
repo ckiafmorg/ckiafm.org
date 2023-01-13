@@ -3,7 +3,7 @@
 module Admin
   class EmissionsController < Admin::AdminController
     def index
-      emissions = Emission.all
+      emissions = Emission.all.order(:status)
 
       render :index, locals: { emissions: emissions }
     end

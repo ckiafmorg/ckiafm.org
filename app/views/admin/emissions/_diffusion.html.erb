@@ -5,7 +5,7 @@
       <h5 class="card-title d-inline-block"><%= "(R) - " if diffusion.rediffusion %><%= diffusion.type.titleize %></h5>
       <p class="d-inline-block float-end">
         <%= link_to bootstrap_icon(:pencil), edit_admin_emission_diffusion_path(diffusion.emission, diffusion) %>
-        <%= link_to bootstrap_icon(:trash), admin_emission_diffusion_path(diffusion.emission, diffusion), data: { turbo_method: :delete, turbo_confirm: t('admin.diffusion.delete_confirmation') } %>
+        <%= link_to bootstrap_icon(:trash), admin_emission_diffusion_path(diffusion.emission, diffusion), data: { turbo_method: :delete, turbo_confirm: t('admin.diffusions.delete_confirmation') } %>
       </p>
     </div>
     <p class="card-text"><%= format_time diffusion.temps_debut %> - <%= format_time diffusion.temps_fin %><br/>

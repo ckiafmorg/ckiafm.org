@@ -15,19 +15,20 @@ fr:
       retour: 'Retour'
     emissions:
       successfully_created: "L'émission a été créé avec succès."
-      create_diffusion_btn: "Créer une diffusion"
-      update_diffusion_btn: "Modifier la diffusion"
+      create_emission_btn: 'Créer une émission'
       form:
         nom: 'Nom'
         description: 'Description'
         email: 'Email'
         status: 'Status'
         speciale: 'Spéciale'
-    diffusion:
+    diffusions:
       title: 'Diffusions'
       successfully_created: 'La diffusion a été créée avec succès.'
       failed_to_delete: 'Une erreur est survenue lors de la supression de la diffusion.'
       delete_confirmation: 'Voulez-vous vraiment supprimer cette diffusion?'
+      create_diffusion_btn: "Créer une diffusion"
+      update_diffusion_btn: "Modifier la diffusion"
       form:
         title: 'Ajouter une nouvelle diffusion'
         temps_debut_label: 'Heure de début de la diffusion'

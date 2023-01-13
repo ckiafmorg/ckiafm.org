@@ -27,7 +27,7 @@ module Admin
       emission.diffusions << diffusion
 
       if diffusion.save and emission.save
-        redirect_to [:admin, emission], notice: t('admin.diffusion.successfully_created')
+        redirect_to [:admin, emission], notice: t('admin.diffusions.successfully_created')
       else
         render :new, locals: { emission: emission, diffusion: diffusion }
       end
@@ -48,9 +48,9 @@ module Admin
       emission = Emission.find(params[:emission_id])
 
       if diffusion.destroy
-        redirect_to [:admin, emission], notice: t('admin.diffusion.successfully_deleted')
+        redirect_to [:admin, emission], notice: t('admin.diffusions.successfully_deleted')
       else
-        redirect_to [:admin, emission], error: t('admin.diffusion.failed_to_delete')
+        redirect_to [:admin, emission], error: t('admin.diffusions.failed_to_delete')
       end
     end
 

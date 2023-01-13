@@ -1,9 +1,9 @@
 <h1><%= emission.nom %></h1>
 
-<h2><%= t 'admin.diffusion.title' %></h2>
+<h2><%= t 'admin.diffusions.title' %></h2>
 
 <% emission.diffusions.each do |diffusion| %>
   <%= render 'admin/emissions/diffusion', diffusion: diffusion %>
 <% end %>
 
-<%= link_to t('admin.emissions.create_diffusion_btn'), new_admin_emission_diffusion_path(emission), class: 'btn btn-primary' %>
+<%= link_to t('admin.diffusions.create_diffusion_btn'), new_admin_emission_diffusion_path(emission), class: 'btn btn-primary' %>
