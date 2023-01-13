@@ -22,7 +22,7 @@ class EmailValidatorTest < ActiveSupport::TestCase
 
   test 'quand email est invalide une erreur est ajoutee' do
     validable = EmailValidable.new
-    validable.email = 'fakeemail'
+    validable.email = 'invalidemail'
 
     is_valid = validable.valid?
 

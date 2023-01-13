@@ -8,11 +8,10 @@ fr:
     shared:
       form_action:
         back_btn: 'Retour'
+        save_btn: 'Enregistrer'
     nav:
       shows: 'Émissions'
-    form:
-      soumettre: 'Soumettre'
-      retour: 'Retour'
+      ads: 'Publicités'
     emissions:
       successfully_created: "L'émission a été créé avec succès."
       create_emission_btn: 'Créer une émission'
@@ -45,9 +44,29 @@ fr:
         diffuse_samedi_label: 'Samedi'
         diffuse_dimanche_label: 'Dimanche'
         type_diffusion_label: "Type de diffusion"
+    pub:
+      form:
+        nom_label: 'Nom'
+        nom_help: 'Le nom sert uniquement à identifier la publicité pour un-e gestionnaire.'
+        liens_label: 'Lien'
+        format_label: 'Format'
+        date_debut_label: "Date de début d'affichage"
+        date_fin_label: "Date de fin d'affichage"
+        image_label: "Image"
+      validation:
+        date_fin_invalide: 'la date de fin est avant la date de debut'
+      error:
+        pub_deleted: 'Votre publicité a été supprimé avec succès'
+        pub_erreur: "Une erreur est survenue, votre publicité n'a pas été supprimé."
+      format:
+        banner: 'Bannière'
+        square: 'carré'
+        vertical: 'Verticale'
   validations:
     email_validator:
-      invalid_email: 'Ce email est invalid'
+      invalid_email: 'Ce email est invalide'
+    url_validator:
+      invalid_url: 'Cette URL est invalide'
 activerecord:
   errors:
     models:

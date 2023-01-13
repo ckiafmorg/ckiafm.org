@@ -1,0 +1,16 @@
+<h1>Les publicités</h1>
+
+<% publicites.each do |pub| %>
+  <div class="card mt-3 mb-3">
+    <div class="card-body">
+        <p class="float-end">
+          <%=  link_to bootstrap_icon(:pencil), edit_admin_publicite_path(pub)%>
+          <%=  link_to bootstrap_icon(:trash), admin_publicite_path(pub), data: { turbo_method: :delete, turbo_confirm: t('admin.pub.error.pub_deleted')}%>
+        </p>     
+        <h3><%= pub.nom %></h3>
+        <p><%= t('admin.pub.form.date_debut_label') %>: <%= pub.date_debut %></p>
+        <p><%= t('admin.pub.form.date_fin_label') %>: <%= pub.date_fin %></p>
+        <p><%= t('admin.pub.form.liens_label') %>: <%= link_to pub.liens, pub.liens %> </p>
+    </div>
+  </div>
+<%end%>

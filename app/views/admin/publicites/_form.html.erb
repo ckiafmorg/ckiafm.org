@@ -1,0 +1,42 @@
+<%= form_with model: [:admin, pub], local: true do |form| %>
+  <div class="row">
+    <div class="col-lg">
+      <%= form.label t('admin.pub.form.nom_label'), class: 'form-label' %>
+      <%= form.text_field :nom, class: 'form-control' %>
+      <div class="form-text"><%= t('admin.pub.form.nom_help') %></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg">
+      <%= form.label t('admin.pub.form.liens_label'), class: 'form-label' %>
+      <%= form.text_field :liens, class: 'form-control' %>
+    </div>
+    <div class="col-lg">
+      <%= form.label t('admin.pub.form.format_label'), class: 'form-label' %>
+      <%= form.select :format_id, FormatPublicite.all.map { |format| [t("admin.pub.format.#{format.nom}"), format.nom] }, {}, class: 'form-select' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg">
+      <%= form.label t('admin.pub.form.date_debut_label'), class: 'form-label' %>
+      <%= form.date_field :date_debut, class: 'form-control' %>
+    </div>
+    <div class="col-lg">
+      <%= form.label t('admin.pub.form.date_fin_label'), class: 'form-label' %>
+      <%= form.date_field :date_fin, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg">
+      <%= form.label t('admin.pub.form.image_label'), class: "form-label" %>
+      <%= form.file_field :image, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col--lg-3">
+      <%= form.submit t('admin.shared.form_action.save_btn'), class: 'btn btn-primary' %>
+      <%= link_to t('admin.shared.form_action.back_btn'), admin_publicites_path, class: 'btn btn-light' %>
+    </div>
+  </div>
+<% end %>

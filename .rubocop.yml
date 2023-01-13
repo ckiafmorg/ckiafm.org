@@ -32,3 +32,6 @@ Style/HashSyntax:
 
 Style/AndOr:
   Enabled: false
+
+Rails/ReversibleMigration:
+  Enabled: false
