@@ -1,0 +1,14 @@
+<h1>Catégories actives</h1>
+<%= link_to t('Ajouter une nouvelle catégorie'), new_admin_categorie_emission_path, class: "btn btn-primary" %>
+<% categorie.each do |categorie| %>
+  <div class="card">
+    <div class="card-body" style="background-color: <%= categorie.couleur %>">
+      <p class="float-end">
+        <%=  link_to bootstrap_icon(:pencil), edit_admin_categorie_emission_path(categorie)%>
+        <%=  link_to bootstrap_icon(:trash), admin_categorie_emissions_path(categorie), data: { turbo_method: :delete, turbo_confirm: t('admin.pub.error.pub_deleted')}%>
+      </p>
+      <p class="card-text">
+        <%= categorie.nom %></p>
+    </div>
+  </div>
+<% end %>

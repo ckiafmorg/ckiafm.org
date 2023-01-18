@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_19_021617) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_20_142738) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -43,6 +43,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_021617) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "categorie_emissions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "nom"
+    t.string "couleur"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "diffusions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.boolean "diffuse_lundi"
     t.boolean "diffuse_mardi"
@@ -70,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_021617) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "categorie_emission_id"
     t.index ["nom"], name: "index_emissions_on_nom", unique: true
     t.index ["slug"], name: "index_emissions_on_slug", unique: true
   end
@@ -96,4 +104,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_021617) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "diffusions", "emissions"
+  add_foreign_key "emissions", "categorie_emissions"
 end
