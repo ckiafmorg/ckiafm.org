@@ -13,5 +13,6 @@ Rails.application.routes.draw do
       resources :diffusions
     end
     resources :publicites
+    resources :categorie_emissions
   end
 end

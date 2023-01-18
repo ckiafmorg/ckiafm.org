@@ -1,0 +1,18 @@
+  <h1>Enregistrer une nouvelle catégorie d'émission</h1>
+<%= form_with model: [:admin, categorie], local: true do |form| %>
+  <div class="row mb-3">
+    <div class="col-lg">
+      <%= form.label "nom de la catégorie : ", class: "form-label" %>
+      <%= form.text_field :nom, class: 'form-control' %>
+    </div>
+    <div class="col-lg-6">
+      <%= form.label "Choisir la couleur de l'émission : ", class: "form-label" %>
+      <%= form.color_field :couleur, class: "form-control form-control-color" %>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-lg-6">
+      <%= form.submit "Enregistrer la catégorie", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

@@ -10,4 +10,6 @@ class Emission < ApplicationRecord
   validates :email, email: true, presence: true
 
   has_many :diffusions, dependent: :destroy
+
+  belongs_to :categorie_emission, dependent: :destroy
 end

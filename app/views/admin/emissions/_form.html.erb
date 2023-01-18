@@ -1,4 +1,5 @@
 <%= form_with model: [:admin, emission], local: true do |form| %>
+
   <div class="row mb-3">
     <div class="col-lg">
       <%= form.label :nom, class: 'form-label' %>
@@ -20,6 +21,13 @@
       <%= form.label :status, class: 'form-label' %>
       <%= form.select(:status, Emission.statuses.keys.map {|status| [status.titleize, status]}, {}, class: 'form-select') %>
     </div>
+
+    <div>
+      <%= form.label "veuillez choisir la categorie d'emissions : ", class: 'form-label' %>
+      <%= form.select :categorie_emission_id, CategorieEmission.all.map { |categorie| [categorie.nom, categorie.id] }%>
+    </div>
+
+
   </div>
   <div class="col mt-3">
     <div class="col-lg-3">

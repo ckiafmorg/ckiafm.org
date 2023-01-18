@@ -62,6 +62,9 @@ fr:
         banner: 'Bannière'
         square: 'carré'
         vertical: 'Verticale'
+    categorie_emissions: 
+      erreur:
+        failed_to_destroy: "Attention, votre catégorie n'a pas été détruite."
   validations:
     email_validator:
       invalid_email: 'Ce email est invalide'
