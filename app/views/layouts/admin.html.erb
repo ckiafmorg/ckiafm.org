@@ -12,6 +12,9 @@
 
   <body>
     <%= render 'admin/shared/nav' %>
+    <div class="aler alert-danger" role="alert">
+      <p><%=notice%></p>
+    </div>
     <main class="container">
       <%= yield %>
     </main>

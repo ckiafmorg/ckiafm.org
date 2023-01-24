@@ -35,3 +35,6 @@ Style/AndOr:
 
 Rails/ReversibleMigration:
   Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
