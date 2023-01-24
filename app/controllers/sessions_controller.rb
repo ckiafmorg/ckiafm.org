@@ -4,7 +4,7 @@ class SessionsController < Admin::AdminController
   skip_before_action :authorize
 
   def new
-    redirect_to admin_path if signed_in?
+    redirect_to admin_path if Current.user.signed_in?
   end
 
   def create
