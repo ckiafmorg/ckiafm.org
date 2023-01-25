@@ -9,5 +9,6 @@ class Emission < ApplicationRecord
   validates :status, presence: true, inclusion: { in: statuses.keys }
   validates :email, email: true, presence: true
 
-  has_many :diffusions, dependent: :destroy
+  has_many :unit_ressource_locators, dependent: :destroy
+  has_many :compte_media_sociauxes, through: :unit_ressource_locators
 end

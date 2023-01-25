@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_19_021617) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_25_151929) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -41,6 +41,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_021617) do
     t.uuid "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "compte_media_sociauxes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "plateforme"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "diffusions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -83,6 +89,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_021617) do
     t.string "nom", null: false
     t.string "format_id", null: false
     t.index ["nom"], name: "index_publicites_on_nom", unique: true
+  end
+
+  create_table "unit_ressource_locators", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "String_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
