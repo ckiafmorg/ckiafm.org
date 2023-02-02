@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class UnitRessourceLocatorTest < ActiveSupport::TestCase
+class MediaSociableTest < ActiveSupport::TestCase
   # def test_truth
   #   assert true
   # end

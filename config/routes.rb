@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'social_media/index'
+  get 'social_media/new'
   root 'home#show'
 
   resource :session, only: %i[new create destroy]
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
     resource :dashboard, only: [:show]
     resources :emissions do
       resources :diffusions
+      resources :social_media
     end
     resources :publicites
   end

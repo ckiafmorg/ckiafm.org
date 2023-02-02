@@ -3,5 +3,6 @@
 FactoryBot.define do
   factory :compte_media_sociaux do
     plateforme { 'MyString' }
+    url { 'MyString' }
   end
 end

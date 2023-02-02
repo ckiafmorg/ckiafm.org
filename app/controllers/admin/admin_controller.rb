@@ -9,6 +9,7 @@ module Admin
     def signed_in?
       Current.user ||= User.find(session[:user_id]) if session[:user_id]
     end
+
     helper_method :signed_in?
 
     def authorize
