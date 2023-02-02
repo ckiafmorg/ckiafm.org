@@ -4,6 +4,7 @@ fr:
     email_label: 'Courriel'
     password_label: 'Mot de passe'
     signin_button_text: 'Se connecter'
+    signout_button_text: 'Se déconnecter'
   admin:
     shared:
       form_action:
