@@ -13,10 +13,8 @@
   <body>
     <%= render 'shared/development_mode_banner' %>
     <%= render 'admin/shared/nav' %>
-    <div class="aler alert-danger" role="alert">
-      <p><%=notice%></p>
-    </div>
     <main class="container">
+      <%= render 'admin/shared/page_alerts' %>
       <%= yield %>
     </main>
   </body>
