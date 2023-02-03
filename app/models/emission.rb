@@ -10,4 +10,5 @@ class Emission < ApplicationRecord
   validates :email, email: true, presence: true
 
   has_many :social_medium, through: :is_social_mediable
+  has_many :diffusion, dependent: :destroy
 end
