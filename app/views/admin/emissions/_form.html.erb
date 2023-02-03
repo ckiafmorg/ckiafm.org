@@ -24,7 +24,7 @@
 
     <div>
       <%= form.label "veuillez choisir la categorie d'emissions : ", class: 'form-label' %>
-      <%= form.select :categorie_emission_id, CategorieEmission.all.map { |categorie| [categorie.nom, categorie.id] }%>
+      <%= form.select :categorie_emission_id, CategorieEmission.all.map { |categorie| [categorie.nom, categorie.id] }, class: 'form-select'%>
     </div>
 
 
