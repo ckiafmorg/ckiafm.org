@@ -1,0 +1,11 @@
+<%= form_with url: recherche_url, method: :get, role: :search, local: true do |form| %>
+  <%= form.search_field :q, class: 'form-control', placeholder: t('nav.search_placeholder'), value: @query %>
+<% end %>
+
+<% if @results.empty? %>
+<h3 class="mt-3 text-center text-muted">Aucun résultat trouvé</h3>
+<% end %>
+
+<% @results.each do |result| %>
+  <p><%= result.nom %></p>
+<% end %>

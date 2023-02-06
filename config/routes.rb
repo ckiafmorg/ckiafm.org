@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resource :session, only: %i[new create destroy]
   resource :lecteur, only: :show
+  resource :recherche, only: :show
 
   get :admin, to: redirect('/admin/dashboard'), as: :admin
   namespace :admin do

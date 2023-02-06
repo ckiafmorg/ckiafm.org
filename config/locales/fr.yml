@@ -1,4 +1,6 @@
 fr:
+  nav:
+    search_placeholder: 'Recherche...'
   auth:
     form_title: 'Connexion'
     email_label: 'Courriel'
