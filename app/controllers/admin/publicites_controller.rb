@@ -3,47 +3,41 @@
 module Admin
   class PublicitesController < Admin::AdminController
     def index
-      publicites = Publicite.all.order(:date_fin)
-
-      render :index, locals: { publicites: publicites }
+      @publicites = Publicite.all.order(:date_fin)
     end
 
     def new
-      pub = Publicite.new
-
-      render :new, locals: { pub: pub }
+      @pub = Publicite.new
     end
 
     def edit
-      pub = Publicite.find(params[:id])
-
-      render :edit, locals: { pub: pub }
+      @pub = Publicite.find(params[:id])
     end
 
     def create
-      pub = Publicite.new(publicite_params)
+      @pub = Publicite.new(publicite_params)
 
-      if pub.save
+      if @pub.save
         redirect_to admin_publicites_path
       else
-        render :new, locals: { pub: pub }
+        render :new
       end
     end
 
     def update
-      pub = Publicite.find(params[:id])
+      @pub = Publicite.find(params[:id])
 
-      if pub.update(publicite_params)
+      if @pub.update(publicite_params)
         redirect_to admin_publicites_path
       else
-        render :edit, locals: { pub: pub }
+        render :edit
       end
     end
 
     def destroy
-      pub = Publicite.find(params[:id])
+      @pub = Publicite.find(params[:id])
 
-      if pub.destroy
+      if @pub.destroy
         redirect_to admin_publicites_path
       else
         error.add("La publicité n'a pas pu etre supprimé")

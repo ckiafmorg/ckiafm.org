@@ -1,9 +1,9 @@
-<%= render 'admin/shared/page_header', titre: emission.nom %>
+<%= render 'admin/shared/page_header', titre: @emission.nom %>
 
 <h2><%= t 'admin.diffusions.title' %></h2>
 
-<% emission.diffusions.each do |diffusion| %>
+<% @emission.diffusions.each do |diffusion| %>
   <%= render 'admin/emissions/diffusion', diffusion: diffusion %>
 <% end %>
 
-<%= link_to t('admin.diffusions.create_diffusion_btn'), new_admin_emission_diffusion_path(emission), class: 'btn btn-primary' %>
+<%= link_to t('admin.diffusions.create_diffusion_btn'), new_admin_emission_diffusion_path(@emission), class: 'btn btn-primary' %>
