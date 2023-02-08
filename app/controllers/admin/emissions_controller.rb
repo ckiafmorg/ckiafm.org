@@ -3,31 +3,25 @@
 module Admin
   class EmissionsController < Admin::AdminController
     def index
-      emissions = Emission.all.order(:status)
-
-      render :index, locals: { emissions: emissions }
+      @emissions = Emission.all.order(:status)
     end
 
     def show
-      emission = Emission.find(params[:id])
-      diffusion = Diffusion.new
-
-      render :show, locals: { emission: emission, diffusion: diffusion }
+      @emission = Emission.find(params[:id])
+      @diffusion = Diffusion.new
     end
 
     def new
-      emission = Emission.new
-
-      render :new, locals: { emission: emission }
+      @emission = Emission.new
     end
 
     def create
-      emission = Emission.new(emission_params)
+      @emission = Emission.new(emission_params)
 
-      if emission.save
-        redirect_to [:admin, emission], notice: t('admin.emissions.successfully_created')
+      if @emission.save
+        redirect_to [:admin, @emission], notice: t('admin.emissions.successfully_created')
       else
-        render :new, locals: { emission: emission }
+        render :new
       end
     end
 

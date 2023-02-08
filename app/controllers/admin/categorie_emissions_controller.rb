@@ -3,27 +3,21 @@
 module Admin
   class CategorieEmissionsController < Admin::AdminController
     def index
-      categorie = CategorieEmission.all
-
-      render :index, locals: { categorie: categorie }
+      @categories = CategorieEmission.all
     end
 
     def new
-      categorie = CategorieEmission.new
-
-      render :new, locals: { categorie: categorie }
+      @categorie = CategorieEmission.new
     end
 
     def edit
-      categorie = CategorieEmission.find(params[:id])
-
-      render :edit, locals: { categorie: categorie }
+      @categorie = CategorieEmission.find(params[:id])
     end
 
     def create
-      categorie = CategorieEmission.new(categorie_params)
+      @categorie = CategorieEmission.new(categorie_params)
 
-      if categorie.save
+      if @categorie.save
         redirect_to admin_categorie_emissions_path
       else
         render :new, locals: { categorie: categorie }
@@ -41,12 +35,12 @@ module Admin
     end
 
     def destroy
-      categorie = CategorieEmission.find(params[:id])
+      @categorie = CategorieEmission.find(params[:id])
 
-      if categorie.destroy
+      if @categorie.destroy
         redirect_to admin_categorie_emissions_path
       else
-        redirecr_to admin_categorie_emissions_path, alert: t('admin.categorie_emission.erruer.failed_to_destroy')
+        redirect_to admin_categorie_emissions_path, alert: t('admin.categorie_emission.erruer.failed_to_destroy')
       end
     end
 
