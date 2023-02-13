@@ -23,7 +23,7 @@ gem 'stimulus-rails'
 gem 'pg', '~> 1.4'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 6.0'
+gem 'puma', '~> 6.1'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 # gem 'jsbundling-rails'
