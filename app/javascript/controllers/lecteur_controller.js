@@ -3,7 +3,7 @@ import {Controller} from '@hotwired/stimulus';
 export default class extends Controller {
     connect() {
         console.log("Web player js controller here");
-        fetch('https://ecoutez.ckiafm.org:8001/json.xsl')
+        fetch('https://stream2.statsradio.com/8148/stream?fbclid=IwAR15SLH6G3Cz00zpfp-eH7gVRJ9BUaE6GY5uix610D9Moq9_0o_90zCEQuc')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`)
