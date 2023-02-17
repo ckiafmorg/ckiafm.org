@@ -1,5 +1,7 @@
-<h1>Catégories actives</h1>
-<%= link_to t('Ajouter une nouvelle catégorie'), new_admin_categorie_emission_path, class: "btn btn-primary" %>
+<%= render 'admin/shared/page_header', titre: t('admin.nav.show_categories') %>
+
+<%= render 'admin/shared/create_item_button', btn_label: t('admin.categorie_emissions.create_category_btn'), btn_path:  new_admin_categorie_emission_path %>
+
 <% @categories.each do |categorie| %>
   <div class="card">
     <div class="card-body" style="background-color: <%= categorie.couleur %>">
