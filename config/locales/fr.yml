@@ -24,7 +24,7 @@ fr:
         description: 'Description'
         email: 'Email'
         status: 'Status'
-        speciale: 'Spéciale'
+        categorie: "Catégorie de l'émission"
     diffusions:
       title: 'Diffusions'
       successfully_created: 'La diffusion a été créée avec succès.'
