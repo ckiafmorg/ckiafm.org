@@ -10,9 +10,5 @@
       <%= form.color_field :couleur, class: "form-control form-control-color" %>
     </div>
   </div>
-  <div class="row mb-3">
-    <div class="col-lg-6">
-      <%= form.submit "Enregistrer la catégorie", class: "btn btn-primary" %>
-    </div>
-  </div>
+  <%= render 'admin/shared/form_actions',  cancel_path: admin_categorie_emissions_path, button_label: t('admin.shared.form_action.save_btn') %>
 <% end %>
