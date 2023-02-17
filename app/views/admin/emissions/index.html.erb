@@ -1,4 +1,6 @@
-<%= link_to t('admin.emissions.create_emission_btn'), new_admin_emission_path, class: 'btn btn-primary mb-3' %>
+<%= render 'admin/shared/page_header', titre: t('admin.nav.shows') %>
+
+<%= render 'admin/shared/create_item_button', btn_label: t('admin.emissions.create_emission_btn'), btn_path: new_admin_emission_path %>
 
 <% @emissions.each do |emission| %>
   <div class="card">

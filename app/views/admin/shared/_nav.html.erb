@@ -13,14 +13,17 @@
             <%= link_to t('admin.nav.shows'), admin_emissions_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Balados</a>
+            <%= link_to t('admin.nav.show_categories'), admin_categorie_emissions_path, class: 'nav-link' %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Utilisateurs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Équipe</a>
-          </li>
+          <%# <li class="nav-item"> %>
+          <%#   <a class="nav-link" href="#">Balados</a> %>
+          <%# </li> %>
+          <%# <li class="nav-item"> %>
+          <%#   <a class="nav-link" href="#">Utilisateurs</a> %>
+          <%# </li> %>
+          <%# <li class="nav-item"> %>
+          <%#   <a class="nav-link" href="#">Équipe</a> %>
+          <%# </li> %>
           <li class="nav-item">
             <%= link_to t('admin.nav.ads'), admin_publicites_path, class: 'nav-link' %>
           </li>

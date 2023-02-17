@@ -6,4 +6,4 @@
   <%= render 'admin/emissions/diffusion', diffusion: diffusion %>
 <% end %>
 
-<%= link_to t('admin.diffusions.create_diffusion_btn'), new_admin_emission_diffusion_path(@emission), class: 'btn btn-primary' %>
+<%= render 'admin/shared/create_item_button', btn_label: t('admin.diffusions.create_diffusion_btn'), btn_path: new_admin_emission_diffusion_path(@emission) %>

@@ -15,6 +15,7 @@ fr:
         save_btn: 'Enregistrer'
     nav:
       shows: 'Émissions'
+      show_categories: "Catégorie d'émission"
       ads: 'Publicités'
     emissions:
       successfully_created: "L'émission a été créé avec succès."
@@ -49,6 +50,7 @@ fr:
         diffuse_dimanche_label: 'Dimanche'
         type_diffusion_label: "Type de diffusion"
     pub:
+      create_pub_btn: 'Créer une publicité'
       form:
         nom_label: 'Nom'
         nom_help: 'Le nom sert uniquement à identifier la publicité pour un-e gestionnaire.'
@@ -67,6 +69,7 @@ fr:
         square: 'carré'
         vertical: 'Verticale'
     categorie_emissions: 
+      create_category_btn: "Créer une catégorie d'émission"
       erreur:
         failed_to_destroy: "Attention, votre catégorie n'a pas été détruite."
   validations:
