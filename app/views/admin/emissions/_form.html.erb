@@ -35,4 +35,5 @@
       <%= link_to t('admin.shared.form_action.back_btn'), admin_emissions_path, class: 'btn btn-light' %>
     </div>
   </div>
+  <%= render 'admin/shared/form_actions',  cancel_path: admin_emissions_path, button_label: t('admin.shared.form_action.save_btn') %>
 <% end %>
