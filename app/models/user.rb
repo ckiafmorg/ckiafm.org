@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   before_validation :strip_email_whitespace, on: %i[create update]
 
+  has_many :emissions, through: :emisisons_user
+
   def strip_email_whitespace
     self.email = email&.strip
   end

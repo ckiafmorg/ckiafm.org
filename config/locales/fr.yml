@@ -26,6 +26,7 @@ fr:
         email: 'Email'
         status: 'Status'
         categorie: "Catégorie de l'émission"
+        utilisateur: "Propriétaire de l'émission"
     diffusions:
       title: 'Diffusions'
       successfully_created: 'La diffusion a été créée avec succès.'

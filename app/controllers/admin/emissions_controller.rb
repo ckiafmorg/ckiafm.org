@@ -13,6 +13,7 @@ module Admin
 
     def new
       @emission = Emission.new
+      @utilisateurs = User.all
     end
 
     def create
@@ -28,7 +29,7 @@ module Admin
     private
 
     def emission_params
-      params.require(:emission).permit(:nom, :description, :email, :status, :categorie_emission_id)
+      params.require(:emission).permit(:nom, :description, :email, :status, :categorie_emission_id, :utilisateurs_id)
     end
   end
 end
