@@ -18,6 +18,7 @@ fr:
       shows: 'Émissions'
       show_categories: "Catégorie d'émission"
       ads: 'Publicités'
+      tags: 'Tags'
     emissions:
       successfully_created: "L'émission a été créé avec succès."
       create_emission_btn: 'Créer une émission'
@@ -28,6 +29,7 @@ fr:
         status: 'Status'
         categorie: "Catégorie de l'émission"
         utilisateur: "Propriétaire de l'émission"
+        tags: "Les tags de l'émission"
     diffusions:
       title: 'Diffusions'
       successfully_created: 'La diffusion a été créée avec succès.'
@@ -74,6 +76,10 @@ fr:
       create_category_btn: "Créer une catégorie d'émission"
       erreur:
         failed_to_destroy: "Attention, votre catégorie n'a pas été détruite."
+    tags:
+      create_tag_btn: "Ajouter un tag"
+      form:
+        nom: "Nom du tag"
     user:
       failed_to_destroy: "Une erreur est survenue lors de la suppression de l'utilisateur"
       form:

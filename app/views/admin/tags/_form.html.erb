@@ -1,0 +1,9 @@
+<%= form_with model: [:admin, @tag], local: true do |form| %>
+  <div class="row mb-3">
+    <div class="col-lg">
+      <%= form.label :nom, t('admin.tags.form.nom'), class: 'form-label' %>
+      <%= form.text_field :nom, class: 'form-control' %>
+    </div>
+  </div>
+  <%= render 'admin/shared/form_actions', cancel_path: admin_tags_path, button_label: t('admin.shared.form_action.save_btn') %>
+<% end %>
