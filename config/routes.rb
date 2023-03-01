@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     resources :publicites
     resources :categorie_emissions
     resources :users
+    resources :tags
   end
 end

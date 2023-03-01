@@ -14,6 +14,9 @@ class Emission < ApplicationRecord
 
   has_many :diffusions, dependent: :destroy
 
+  has_many :taggable, dependent: :nullify
+  has_many :tags, through: :taggable
+
   belongs_to :categorie_emission, dependent: :destroy
 
   has_many :user, through: :emisisons_user

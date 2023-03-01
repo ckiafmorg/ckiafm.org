@@ -10,6 +10,12 @@
         Émission <%= emission.status %><br/>
         <a href="mailto:<%= emission.email %>"><%= emission.email %></a>
       </p>
+      <p>
+        tags:
+        <% emission.tags.each  do |tags|  %>
+        <p><%= tags.nom %></p>
+        <% end %>
+          </p>
     </div>
   </div>
 <% end %>
