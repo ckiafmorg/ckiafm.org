@@ -7,6 +7,7 @@ fr:
     password_label: 'Mot de passe'
     signin_button_text: 'Se connecter'
     signout_button_text: 'Se déconnecter'
+    signup_button_text: "S'inscrire"
   admin:
     shared:
       close: 'Femer'
@@ -73,6 +74,19 @@ fr:
       create_category_btn: "Créer une catégorie d'émission"
       erreur:
         failed_to_destroy: "Attention, votre catégorie n'a pas été détruite."
+    user:
+      failed_to_destroy: "Une erreur est survenue lors de la suppression de l'utilisateur"
+      form:
+        header: "Créer un nouvel utilisateur"
+        password_label: "Mot de passe"
+        email_label: "Adresse courriel"
+        email_placeholder: "utilisateur@ckiafm.org"
+        password_placeholder: "Un mot de passe avec un minimum de 24 charactères"
+        btn_user: "Créer un nouvel utilisateur"
+        error_succes: "L'utilisateur a été supprimé."
+        role_label: "Role de l'utilisateur-rice"
+        role_producer: "Producteur-trice"
+        role_admin: "Admin"
   validations:
     email_validator:
       invalid_email: 'Ce email est invalide'

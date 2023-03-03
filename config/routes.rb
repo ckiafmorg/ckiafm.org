@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     end
     resources :publicites
     resources :categorie_emissions
+    resources :users
   end
 end

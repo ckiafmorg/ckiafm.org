@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test 'anonymous user a never signed in' do
+  test 'anonymous users a never signed in' do
     user = AnonymousUser.new
 
     signed_in = user.signed_in?
@@ -11,7 +11,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not signed_in
   end
 
-  test 'anonymous user are never admin' do
+  test 'anonymous users are never admin' do
     user = AnonymousUser.new
 
     admin = user.admin?

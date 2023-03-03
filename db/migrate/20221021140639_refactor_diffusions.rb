@@ -11,7 +11,7 @@ class RefactorDiffusions < ActiveRecord::Migration[7.0]
       t.remove :fin_minute, type: :integer
     end
 
-    # We can't set a default value here without the user logic
+    # We can't set a default value here without the users logic
     change_table :diffusions, bulk: true do |t|
       t.time :temps_debut, null: false
       t.time :temps_fin, null: false
