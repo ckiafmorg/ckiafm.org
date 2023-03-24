@@ -15,8 +15,8 @@ class Membre < ApplicationRecord
   private
 
   def create_on_stripe
-    params = {email: email, nom: nom, prenom: prenom}
-    response = Stripe::Membre.create(params)
+    params = { email: email, name: "#{prenom} #{nom}"}
+    response = Stripe::Customer.create(params)
     self.stripe_id = response.id
   end
   def active?; end
