@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class Payment < ApplicationRecord
   attr_accessor :credit_card_number, :credit_card_exp_month, :credit_card_exp_year, :credit_card_cvv
+
   belongs_to :subscription
   before_validation :create_on_stripe
 

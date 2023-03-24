@@ -11,13 +11,13 @@ class Membre < ApplicationRecord
 
   before_validation :create_on_stripe, on: :create
 
-
   private
 
   def create_on_stripe
-    params = { email: email, name: "#{prenom} #{nom}"}
+    params = { email: email, name: "#{prenom} #{nom}" }
     response = Stripe::Customer.create(params)
     self.stripe_id = response.id
   end
+
   def active?; end
 end

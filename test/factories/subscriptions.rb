@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :subscription do
-    nom { "MyString" }
+    nom { 'MyString' }
     prix_cents { 1 }
     moyen_payment { 1 }
     membres { nil }
