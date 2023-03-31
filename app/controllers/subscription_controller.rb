@@ -2,6 +2,9 @@
 
 class SubscriptionController < ApplicationController
   # protect_from_forgery with: :null_session
+  def new
+    @sub = Subscription.new
+  end
 
   def create
     @sub = Subscription.new(subscription_params.merge(prix_cents: rand(1000...10_000), payment_method: 'credit_card'))
