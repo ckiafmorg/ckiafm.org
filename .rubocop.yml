@@ -38,3 +38,6 @@ Rails/ReversibleMigration:
 
 Style/ConditionalAssignment:
   Enabled: false
+
+Rails/ThreeStateBooleanColumn:
+  Enabled: false
