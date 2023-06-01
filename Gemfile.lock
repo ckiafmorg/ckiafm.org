@@ -159,7 +159,7 @@ GEM
     pg (1.5.3)
     popper_js (2.11.7)
     prettier_print (1.2.1)
-    puma (6.2.2)
+    puma (6.3.0)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.7)
@@ -292,7 +292,7 @@ DEPENDENCIES
   jbuilder
   minitest-rails
   pg (~> 1.5)
-  puma (~> 6.2)
+  puma (~> 6.3)
   rails (~> 7.0.5)
   redis (~> 5.0)
   rubocop
