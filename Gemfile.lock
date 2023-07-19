@@ -140,7 +140,7 @@ GEM
     minitest-rails (7.0.0)
       minitest (~> 5.10)
       railties (~> 7.0.0)
-    msgpack (1.7.1)
+    msgpack (1.7.2)
     net-imap (0.3.6)
       date
       net-protocol
