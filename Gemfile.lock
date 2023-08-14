@@ -159,7 +159,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.3)
-    popper_js (2.11.7)
+    popper_js (2.11.8)
     prettier_print (1.2.1)
     puma (6.3.0)
       nio4r (~> 2.0)
