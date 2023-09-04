@@ -103,8 +103,8 @@ GEM
     ffi (1.15.5)
     friendly_id (5.5.0)
       activerecord (>= 4.0.0)
-    globalid (1.1.0)
-      activesupport (>= 5.0)
+    globalid (1.2.0)
+      activesupport (>= 6.1)
     hotwire-rails (0.1.3)
       rails (>= 6.0.0)
       stimulus-rails
