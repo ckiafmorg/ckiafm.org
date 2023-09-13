@@ -3,7 +3,7 @@
 module Admin
   class PublicitesController < Admin::AdminController
     def index
-      @publicites = Publicite.all.order(:date_fin)
+      @publicites = Publicite.order(:date_fin)
     end
 
     def new
