@@ -87,11 +87,11 @@ GEM
     bootstrap (5.3.2)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.8, < 3)
-    bootstrap-icons (1.0.13)
+    bootstrap-icons (1.0.14)
       nokogiri (~> 1)
-    bootstrap-icons-helper (2.0.1)
+    bootstrap-icons-helper (2.0.2)
       bootstrap-icons (~> 1)
-      rails (>= 6)
+      rails (>= 7.0)
     builder (3.2.4)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
@@ -130,7 +130,7 @@ GEM
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.6.0)
-    irb (1.9.0)
+    irb (1.9.1)
       rdoc
       reline (>= 0.3.8)
     jbuilder (2.11.5)
@@ -155,7 +155,7 @@ GEM
       railties (~> 7.1.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
-    net-imap (0.4.5)
+    net-imap (0.4.6)
       date
       net-protocol
     net-pop (0.1.2)
