@@ -6,7 +6,7 @@ class EmailValidator < ActiveModel::EachValidator
     return if email_is_valid? value
 
     record.errors.add(attribute, :invalid,
-                      message: (options[:message] || I18n.t('validations.email_validator.invalid_email')))
+                      message: options[:message] || I18n.t('validations.email_validator.invalid_email'))
   end
 
   def email_is_valid?(email)

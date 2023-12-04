@@ -14,6 +14,6 @@ class UrlValidator < ActiveModel::EachValidator
     return if valid
 
     record.errors.add(attribute, :invalid,
-                      message: (options[:message] || I18n.t('validations.url_validator.invalid_url')))
+                      message: options[:message] || I18n.t('validations.url_validator.invalid_url'))
   end
 end
