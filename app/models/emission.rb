@@ -19,5 +19,6 @@ class Emission < ApplicationRecord
 
   belongs_to :categorie_emission, dependent: :destroy
 
-  has_many :user, through: :emisisons_user
+  has_many :emissions_users, dependent: :nullify
+  has_many :users, through: :emissions_users
 end

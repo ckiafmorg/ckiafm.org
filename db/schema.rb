@@ -69,11 +69,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_03_01_201652) do
     t.index ["emission_id"], name: "index_diffusions_on_emission_id"
   end
 
-  create_table "emisisons_user", id: false, force: :cascade do |t|
-    t.uuid "user_id", null: false
-    t.uuid "emisison_id", null: false
-  end
-
   create_table "emissions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "nom", null: false
     t.text "description", null: false
@@ -85,6 +80,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_03_01_201652) do
     t.uuid "categorie_emission_id"
     t.index ["nom"], name: "index_emissions_on_nom", unique: true
     t.index ["slug"], name: "index_emissions_on_slug", unique: true
+  end
+
+  create_table "emissions_users", id: false, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.uuid "emission_id", null: false
   end
 
   create_table "publicites", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
