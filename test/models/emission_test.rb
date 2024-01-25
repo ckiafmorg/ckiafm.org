@@ -4,7 +4,7 @@ require 'test_helper'
 
 class EmissionTest < ActiveSupport::TestCase
   context 'validations' do
-    subject { build :emission }
+    subject { build(:emission) }
 
     should validate_presence_of :nom
     should validate_uniqueness_of :nom

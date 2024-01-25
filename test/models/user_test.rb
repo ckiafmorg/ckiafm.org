@@ -4,7 +4,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   context 'validations' do
-    subject { build :user }
+    subject { build(:user) }
 
     should have_secure_password
     should validate_presence_of :email
@@ -29,13 +29,13 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'etant donne un utilisateur admin quand #admin? alors retourn true' do
-    user = build :user, :admin
+    user = build(:user, :admin)
 
     assert user.admin?
   end
 
   test 'etant donne un utilisateur producteur quand #admin? alors retourn false' do
-    user = build :user
+    user = build(:user)
 
     assert_not user.admin?
   end

@@ -11,7 +11,7 @@ class AuthRedirectionTest < ActionDispatch::IntegrationTest
   end
 
   test 'redirige vers la page admin quand on y accede en etant connecte' do
-    user = create :user
+    user = create(:user)
 
     post session_path, params: { email: user.email, password: user.password }
     follow_redirect!

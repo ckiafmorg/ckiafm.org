@@ -10,7 +10,7 @@ class DiffusionTest < ActiveSupport::TestCase
   end
 
   test 'quand #jours_diffusion alors retourne una array de boolean si diffuse ou non ou index zero est dimanche' do
-    diffusion = build :diffusion, diffuse_mardi: true, diffuse_mercredi: true
+    diffusion = build(:diffusion, diffuse_mardi: true, diffuse_mercredi: true)
 
     jours = diffusion.jours_diffusion
 
