@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_03_01_201652) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_27_195220) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -51,13 +51,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_03_01_201652) do
   end
 
   create_table "diffusions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.boolean "diffuse_lundi"
-    t.boolean "diffuse_mardi"
-    t.boolean "diffuse_mercredi"
-    t.boolean "diffuse_jeudi"
-    t.boolean "diffuse_vendredi"
-    t.boolean "diffuse_samedi"
-    t.boolean "diffuse_dimanche"
+    t.boolean "diffuse_lundi", default: false, null: false
+    t.boolean "diffuse_mardi", default: false, null: false
+    t.boolean "diffuse_mercredi", default: false, null: false
+    t.boolean "diffuse_jeudi", default: false, null: false
+    t.boolean "diffuse_vendredi", default: false, null: false
+    t.boolean "diffuse_samedi", default: false, null: false
+    t.boolean "diffuse_dimanche", default: false, null: false
     t.boolean "rediffusion"
     t.uuid "emission_id", null: false
     t.datetime "created_at", null: false
