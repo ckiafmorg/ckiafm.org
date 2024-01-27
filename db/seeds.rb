@@ -21,18 +21,40 @@ Tag.create(nom: 'Gentrification')
 Tag.create(nom: 'Urbanisme')
 
 log 'Create emissions'
-emission = Emission.new(nom: 'Québec Réveille',
-                        description: "Quotidienne d'acutalité de la ville de Québec!",
-                        email: 'quebecreveille@ckiafm.org',
-                        status: Emission::STATUS[:active],
-                        categorie_emission_id: cat_actu.id)
-emission.users << User.first
-emission.tags << tag_qc
-emission.save
+emission_matin = Emission.new(nom: 'Québec Réveille',
+                              description: "Quotidienne d'acutalité de la ville de Québec!",
+                              email: 'quebecreveille@ckiafm.org',
+                              status: Emission::STATUS[:active],
+                              categorie_emission_id: cat_actu.id)
+emission_matin.users << User.first
+emission_matin.tags << tag_qc
+emission_matin.save
+
+emission_soir = Emission.new(nom: "L'émission du retour",
+                             description: "Quotidienne d'acutalité de fin de journée de la ville de Québec!",
+                             email: 'retour@ckiafm.org',
+                             status: Emission::STATUS[:active],
+                             categorie_emission_id: cat_actu.id)
+emission_soir.users << User.first
+emission_soir.tags << tag_qc
+emission_soir.save
 
 log 'Create diffusions'
 DiffusionHebdomadaire.create(diffuse_lundi: true,
-                             emission_id: Emission.first.id,
-                             temps_debut: Time.zone.parse('09:00'),
-                             temps_fin: Time.zone.parse('11:00'),
+                             diffuse_mardi: true,
+                             diffuse_mercredi: true,
+                             diffuse_jeudi: true,
+                             diffuse_vendredi: true,
+                             emission_id: emission_matin.id,
+                             temps_debut: Time.zone.parse('07:00'),
+                             temps_fin: Time.zone.parse('09:00'),
+                             date_debut: DateTime.parse('2024-01-21'))
+DiffusionHebdomadaire.create(diffuse_lundi: true,
+                             diffuse_mardi: true,
+                             diffuse_mercredi: true,
+                             diffuse_jeudi: true,
+                             diffuse_vendredi: true,
+                             emission_id: emission_soir.id,
+                             temps_debut: Time.zone.parse('15:00'),
+                             temps_fin: Time.zone.parse('17:00'),
                              date_debut: DateTime.parse('2024-01-21'))

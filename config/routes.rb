@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resource :lecteur, only: :show
   resource :recherche, only: :show
   resource :programmation, only: :show
+  resources :emissions, only: %i[index show]
 
   get :admin, to: redirect('/admin/dashboard'), as: :admin
   namespace :admin do
