@@ -39,6 +39,15 @@ emission_soir.users << User.first
 emission_soir.tags << tag_qc
 emission_soir.save
 
+emission_weekend = Emission.new(nom: 'Les longues entresvues du weekend',
+                                description: "Émission d'actualité de la fin de semaine composé de grandes entrevues.",
+                                email: 'longueentrevues@ckiafm.org',
+                                status: Emission::STATUS[:active],
+                                categorie_emission_id: cat_actu.id)
+emission_weekend.users << User.first
+emission_weekend.tags << tag_qc
+emission_weekend.save
+
 log 'Create diffusions'
 DiffusionHebdomadaire.create(diffuse_lundi: true,
                              diffuse_mardi: true,
@@ -57,4 +66,10 @@ DiffusionHebdomadaire.create(diffuse_lundi: true,
                              emission_id: emission_soir.id,
                              temps_debut: Time.zone.parse('15:00'),
                              temps_fin: Time.zone.parse('17:00'),
+                             date_debut: DateTime.parse('2024-01-21'))
+DiffusionHebdomadaire.create(diffuse_samedi: true,
+                             diffuse_dimanche: true,
+                             emission_id: emission_weekend.id,
+                             temps_debut: Time.zone.parse('09:30'),
+                             temps_fin: Time.zone.parse('12:00'),
                              date_debut: DateTime.parse('2024-01-21'))
