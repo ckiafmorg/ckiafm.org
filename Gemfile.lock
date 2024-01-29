@@ -255,6 +255,12 @@ GEM
       language_server-protocol (~> 3.17.0)
       prism (>= 0.19.0, < 0.20)
       sorbet-runtime (>= 0.5.10782)
+    ruby-lsp-rails (0.2.9)
+      actionpack (>= 6.0)
+      activerecord (>= 6.0)
+      railties (>= 6.0)
+      ruby-lsp (>= 0.13.0, < 0.14.0)
+      sorbet-runtime (>= 0.5.9897)
     ruby-progressbar (1.13.0)
     ruby-vips (2.2.0)
       ffi (~> 1.12)
@@ -331,6 +337,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   ruby-lsp
+  ruby-lsp-rails
   sassc-rails
   shoulda
   sprockets-rails

@@ -71,6 +71,7 @@ group :development, :test do
   gem 'rubocop-rails', require: false
 
   gem 'ruby-lsp', require: false
+  gem 'ruby-lsp-rails', require: false
 end
 
 group :development do
