@@ -27,14 +27,14 @@
       <%= form.select :categorie_emission_id, CategorieEmission.all.map { |categorie| [categorie.nom, categorie.id] }, {}, class: 'form-select' %>
     </div>
     <div class="col-lg">
-      <%= form.label :utilisateur, t('admin.emissions.form.utilisateur'), class: 'form-label' %>
-      <%= form.select :utilisateurs, @utilisateurs.map { |user| [user.email, user.id] }, { :multiple => true }, class: 'form-control' %>
+      <%= form.label :user_ids, t('admin.emissions.form.utilisateur'), class: 'form-label' %>
+      <%= form.select :user_ids, options_from_collection_for_select(@utilisateurs, :id, :email, @emission.user_ids), { multiple: true }, class: 'form-control' %>
     </div>
   </div>
   <div class="row-mb-3">
     <div class="col-lg">
-      <%= form.label :tags, t('admin.emissions.form.tags')%>
-      <%= form.select :tags, @tags.map{|tag| [tag.nom, tag.id] }, {}, class:"form-select", multiple: true %>
+      <%= form.label :tag_ids, t('admin.emissions.form.tags')%>
+      <%= form.select :tag_ids, options_from_collection_for_select(@tags, :id, :nom, @emission.tag_ids), { multiple: true }, class:"form-select" %>
     </div>
 
   </div>

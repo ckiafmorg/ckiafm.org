@@ -17,10 +17,14 @@ module Admin
       @tags = Tag.all
     end
 
+    def edit
+      @emission = Emission.find(params[:id])
+      @utilisateurs = User.all
+      @tags = Tag.all
+    end
+
     def create
       @emission = Emission.new(emission_params)
-      tag = Tag.find(params[:emission][:tags])
-      @emission.tags << tag
       if @emission.save
         redirect_to [:admin, @emission], notice: t('admin.emissions.successfully_created')
       else
@@ -28,11 +32,25 @@ module Admin
       end
     end
 
+    def update
+      @emission = Emission.find(params[:id])
+      if @emission.update(emission_params)
+        redirect_to [:admin, @emission], notice: t('admin.emissions.successfully_updated')
+      else
+        render :edit
+      end
+    end
+
     private
 
     def emission_params
-      params.require(:emission).permit(:nom, :description, :email, :status, :categorie_emission_id, :utilisateurs_id,
-                                       tags: [])
+      params.require(:emission).permit(:nom,
+                                       :description,
+                                       :email,
+                                       :status,
+                                       :categorie_emission_id,
+                                       user_ids: [],
+                                       tag_ids: [])
     end
   end
 end

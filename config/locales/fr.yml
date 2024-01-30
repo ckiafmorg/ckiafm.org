@@ -21,6 +21,7 @@ fr:
       tags: 'Tags'
     emissions:
       successfully_created: "L'émission a été créé avec succès."
+      successfully_updated: "L'émission a été modifié avec succès."
       create_emission_btn: 'Créer une émission'
       form:
         nom: 'Nom'
