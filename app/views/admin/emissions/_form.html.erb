@@ -34,7 +34,7 @@
   <div class="row-mb-3">
     <div class="col-lg">
       <%= form.label :tags, t('admin.emissions.form.tags')%>
-      <%= form.select :tags, @tags.map{|tag| [tag.nom, tag.id] }, {}, class:"form-select" %>
+      <%= form.select :tags, @tags.map{|tag| [tag.nom, tag.id] }, {}, class:"form-select", multiple: true %>
     </div>
 
   </div>
