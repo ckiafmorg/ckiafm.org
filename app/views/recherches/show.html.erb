@@ -1,4 +1,4 @@
-<%= form_with url: recherche_url, method: :get, role: :search, local: true do |form| %>
+<%= form_with url: recherche_url, method: :get, role: :search, local: true, class: 'mb-4' do |form| %>
   <%= form.search_field :q, class: 'form-control', placeholder: t('nav.search_placeholder'), value: @query %>
 <% end %>
 
@@ -7,5 +7,5 @@
 <% end %>
 
 <% @results.each do |result| %>
-  <p><%= result.nom %></p>
+  <p><%= link_to result.nom, result %></p>
 <% end %>
