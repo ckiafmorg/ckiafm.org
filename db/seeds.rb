@@ -24,7 +24,7 @@ log 'Create emissions'
 emission_matin = Emission.new(nom: 'Québec Réveille',
                               description: "Quotidienne d'acutalité de la ville de Québec!",
                               email: 'quebecreveille@ckiafm.org',
-                              status: Emission::STATUS[:active],
+                              status: :active,
                               categorie_emission_id: cat_actu.id)
 emission_matin.users << User.first
 emission_matin.tags << tag_qc
@@ -33,7 +33,7 @@ emission_matin.save
 emission_soir = Emission.new(nom: "L'émission du retour",
                              description: "Quotidienne d'acutalité de fin de journée de la ville de Québec!",
                              email: 'retour@ckiafm.org',
-                             status: Emission::STATUS[:active],
+                             status: :active,
                              categorie_emission_id: cat_actu.id)
 emission_soir.users << User.first
 emission_soir.tags << tag_qc
@@ -42,7 +42,7 @@ emission_soir.save
 emission_weekend = Emission.new(nom: 'Les longues entresvues du weekend',
                                 description: "Émission d'actualité de la fin de semaine composé de grandes entrevues.",
                                 email: 'longueentrevues@ckiafm.org',
-                                status: Emission::STATUS[:active],
+                                status: :active,
                                 categorie_emission_id: cat_actu.id)
 emission_weekend.users << User.first
 emission_weekend.tags << tag_qc
