@@ -5,7 +5,7 @@ class Emission < ApplicationRecord
   friendly_id :nom, use: :slugged
 
   # TODO: convert the status column to string
-  # and convert it to `enum status = %i[brouillon active vacance archive]`
+  # and convert it to `enum :status, %i[brouillon active vacance archive]`
   STATUS = { brouillon: 0, active: 1, vacance: 2, archive: 3 }.freeze
   enum status: STATUS
 
