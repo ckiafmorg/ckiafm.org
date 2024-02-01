@@ -15,10 +15,14 @@
       </p>
       <p>
         tags:
-        <% emission.tags.each  do |tags|  %>
-        <p><%= tags.nom %></p>
+        <% emission.tags.each  do |tag|  %>
+          <% if tag == emission.tags.last %>
+            #<%= tag.nom %>
+          <% else %>
+            #<%= tag.nom %>,
+          <% end %>
         <% end %>
-          </p>
+      </p>
     </div>
   </div>
 <% end %>
