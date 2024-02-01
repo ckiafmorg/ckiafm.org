@@ -4,6 +4,8 @@ class Emission < ApplicationRecord
   extend FriendlyId
   friendly_id :nom, use: :slugged
 
+  # TODO: convert the status column to string
+  # and convert it to `enum status = %i[brouillon active vacance archive]`
   STATUS = { brouillon: 0, active: 1, vacance: 2, archive: 3 }.freeze
   enum status: STATUS
 
@@ -21,4 +23,6 @@ class Emission < ApplicationRecord
 
   has_many :emissions_users, dependent: :nullify
   has_many :users, through: :emissions_users
+
+  has_many :social_media_accounts, as: :has_social_media_account, dependent: :destroy
 end
