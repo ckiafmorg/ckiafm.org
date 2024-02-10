@@ -1,4 +1,4 @@
-<%= form_with model: [:admin, @emission], local: true do |form| %>
+<%= form_with model: [:admin, @emission], local: true, data: { controller: 'admin--emission-form' } do |form| %>
   <div class="row mb-3">
     <div class="col-lg">
       <%= form.label :nom, t('admin.emissions.form.nom'), class: 'form-label' %>
@@ -31,12 +31,26 @@
       <%= form.select :user_ids, options_from_collection_for_select(@utilisateurs, :id, :email, @emission.user_ids), { multiple: true }, class: 'form-control' %>
     </div>
   </div>
-  <div class="row-mb-3">
+  <div class="row mb-3">
     <div class="col-lg">
-      <%= form.label :tag_ids, t('admin.emissions.form.tags')%>
+      <%= form.label :tag_ids, t('admin.emissions.form.tags'), class: 'form-label' %>
       <%= form.select :tag_ids, options_from_collection_for_select(@tags, :id, :nom, @emission.tag_ids), { multiple: true }, class:"form-select" %>
     </div>
-
   </div>
+  <%= form.fields_for :social_media_accounts do |account_form| %>
+    <%= account_form.hidden_field :id %>
+    <div class="row mb-3" data-admin--emission-form-target="socialNetworkFieldset">
+      <div class="col-lg">
+        <%= account_form.label :platform, t('admin.emissions.form.account_platform'), class: 'form-label' %>
+        <%= account_form.select :platform, options_for_select(SocialMediaAccount.platforms.keys.map { |p| [p.titleize, p] }), {}, class: 'form-select' %>
+        <%# TODO: Add a checkbox here to delete the account %>
+      </div>
+      <div class="col-lg">
+        <%= account_form.label :url, t('admin.emissions.form.account_url'), class: 'form-label' %>
+        <%= account_form.text_field :url, class: 'form-control' %>
+      </div>
+    </div>
+    <button id="add-account-btn" class="btn btn-outline-secondary" data-action="click->admin--emission-form#createNewAccountForm"><%= t('admin.emissions.form.add_account_btn') %></button>
+  <% end %>
   <%= render 'admin/shared/form_actions',  cancel_path: admin_emissions_path, button_label: t('admin.shared.form_action.save_btn') %>
 <% end %>

@@ -31,6 +31,9 @@ fr:
         categorie: "Catégorie de l'émission"
         utilisateur: "Propriétaire de l'émission"
         tags: "Les tags de l'émission"
+        account_platform: 'Platforme'
+        account_url: 'Lien public du compte'
+        add_account_btn: 'Ajouter un compte'
     diffusions:
       title: 'Diffusions'
       successfully_created: 'La diffusion a été créée avec succès.'

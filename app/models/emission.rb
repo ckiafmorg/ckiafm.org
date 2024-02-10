@@ -4,7 +4,8 @@ class Emission < ApplicationRecord
   extend FriendlyId
   friendly_id :nom, use: :slugged
 
-  enum :status, %i[brouillon active vacance archive].freeze
+  STATUSES = %i[brouillon active vacance archive].freeze
+  enum :status, STATUSES
 
   validates :nom, presence: true, uniqueness: true
   validates :description, presence: true
@@ -22,4 +23,9 @@ class Emission < ApplicationRecord
   has_many :users, through: :emissions_users
 
   has_many :social_media_accounts, as: :has_social_media_account, dependent: :destroy
+
+  accepts_nested_attributes_for :social_media_accounts,
+                                allow_destroy: true,
+                                update_only: true,
+                                reject_if: proc { |attributes| attributes[:platform].blank? || attributes[:url].blank? }
 end

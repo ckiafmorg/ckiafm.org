@@ -13,12 +13,14 @@ module Admin
 
     def new
       @emission = Emission.new
+      @emission.social_media_accounts.build
       @utilisateurs = User.all
       @tags = Tag.all
     end
 
     def edit
       @emission = Emission.find(params[:id])
+      @emission.social_media_accounts.build
       @utilisateurs = User.all
       @tags = Tag.all
     end
@@ -49,6 +51,7 @@ module Admin
                                        :email,
                                        :status,
                                        :categorie_emission_id,
+                                       social_media_accounts_attributes: %i[id platform url _destroy],
                                        user_ids: [],
                                        tag_ids: [])
     end

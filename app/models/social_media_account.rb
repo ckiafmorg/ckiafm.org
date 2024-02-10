@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-class SocialNetworkAccount < ApplicationRecord
-  enum :platform, %i[facebook instagram twitter tiktok bluesky mastodon]
+class SocialMediaAccount < ApplicationRecord
+  PLATFORMS = %i[facebook instagram twitter tiktok bluesky mastodon].freeze
+  enum :platform, PLATFORMS
 
   belongs_to :has_social_media_account, polymorphic: true
 
