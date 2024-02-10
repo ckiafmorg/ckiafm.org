@@ -1,2 +1,10 @@
 <h1><%= @emission.nom %></h1>
 <p><%= @emission.description %></p>
+
+<% unless @emission.social_media_accounts.empty? %>
+<ul class="list-unstyled">
+  <% @emission.social_media_accounts.each do |sma| %>
+    <li><%= link_to "#{bootstrap_icon(:facebook)} #{sma.platform}".html_safe, sma.url, class: 'social-media-account-link' %></li>
+  <% end %>
+</ul>
+<% end %>
