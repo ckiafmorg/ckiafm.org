@@ -11,8 +11,8 @@ User.new(email: 'admin@ckiafm.org',
          role: :admin)
     .save(validate: false)
 User.new(email: 'user@ckiafm.org',
-         password: 'abc123',
-         password_confirmation: 'abc123')
+         password: '123456',
+         password_confirmation: '123456')
     .save(validate: false)
 
 log 'Create categories'
