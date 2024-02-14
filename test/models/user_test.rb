@@ -28,13 +28,13 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.valid?
   end
 
-  test 'etant donne un utilisateur admin quand #admin? alors retourn true' do
+  test 'etant donne un utilisateur admin quand #admin? alors retourne true' do
     user = build(:user, :admin)
 
     assert user.admin?
   end
 
-  test 'etant donne un utilisateur producteur quand #admin? alors retourn false' do
+  test 'etant donne un utilisateur producteur quand #admin? alors retourne false' do
     user = build(:user)
 
     assert_not user.admin?

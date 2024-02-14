@@ -5,11 +5,15 @@ def log(msg)
 end
 
 log 'Create users'
-User.new(email: 'test@ckiafm.org',
+User.new(email: 'admin@ckiafm.org',
          password: '123456',
-         password_confirmation: '123456')
+         password_confirmation: '123456',
+         role: :admin)
     .save(validate: false)
-User.new(email: 'user@ckiafm.org', password: 'abc123', password_confirmation: 'abc123').save(validate: false)
+User.new(email: 'user@ckiafm.org',
+         password: 'abc123',
+         password_confirmation: 'abc123')
+    .save(validate: false)
 
 log 'Create categories'
 cat_actu = CategorieEmission.create(nom: 'Actualité', couleur: '#000000')
