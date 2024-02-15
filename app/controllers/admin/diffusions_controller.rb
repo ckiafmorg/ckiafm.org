@@ -2,6 +2,10 @@
 
 module Admin
   class DiffusionsController < Admin::AdminController
+    before_action do
+      ensure_user_is :admin
+    end
+
     def new
       @emission = Emission.find(params[:emission_id])
       # TODO: there should really have a form object for that

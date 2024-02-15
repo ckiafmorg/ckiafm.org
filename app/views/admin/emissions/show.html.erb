@@ -6,4 +6,6 @@
   <%= render 'admin/emissions/diffusion', diffusion: diffusion %>
 <% end %>
 
-<%= render 'admin/shared/create_item_button', btn_label: t('admin.diffusions.create_diffusion_btn'), btn_path: new_admin_emission_diffusion_path(@emission) %>
+<% if Current.user.admin? %>
+  <%= render 'admin/shared/create_item_button', btn_label: t('admin.diffusions.create_diffusion_btn'), btn_path: new_admin_emission_diffusion_path(@emission) %>
+<% end %>

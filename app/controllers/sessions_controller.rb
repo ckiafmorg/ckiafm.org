@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SessionsController < Admin::AdminController
-  skip_before_action :authorize
+  skip_before_action :signed_in?
 
   def new
     redirect_to admin_path if Current.user.signed_in?

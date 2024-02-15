@@ -2,6 +2,10 @@
 
 module Admin
   class PublicitesController < Admin::AdminController
+    before_action do
+      ensure_user_is :admin
+    end
+
     def index
       @publicites = Publicite.order(:date_fin)
     end

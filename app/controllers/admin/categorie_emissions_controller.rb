@@ -2,6 +2,10 @@
 
 module Admin
   class CategorieEmissionsController < Admin::AdminController
+    before_action do
+      ensure_user_is :admin
+    end
+
     def index
       @categories = CategorieEmission.all
     end

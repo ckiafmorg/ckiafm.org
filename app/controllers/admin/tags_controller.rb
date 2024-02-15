@@ -2,6 +2,10 @@
 
 module Admin
   class TagsController < Admin::AdminController
+    before_action do
+      ensure_user_is :admin
+    end
+
     def index
       @tags = Tag.all
     end
