@@ -39,18 +39,29 @@
   </div>
   <%= form.fields_for :social_media_accounts do |account_form| %>
     <%= account_form.hidden_field :id %>
-    <div class="row mb-3" data-admin--emission-form-target="socialNetworkFieldset">
-      <div class="col-lg">
-        <%= account_form.label :platform, t('admin.emissions.form.account_platform'), class: 'form-label' %>
-        <%= account_form.select :platform, options_for_select(SocialMediaAccount.platforms.keys.map { |p| [p.titleize, p] }), {}, class: 'form-select' %>
-        <%# TODO: Add a checkbox here to delete the account %>
+    <div class="mb-3" data-admin--emission-form-target="socialNetworkFieldset">
+      <div class="row">
+        <div class="col-lg">
+          <%= account_form.label :platform, t('admin.emissions.form.account_platform'), class: 'form-label' %>
+          <%= account_form.select :platform, options_for_select(SocialMediaAccount.platforms.keys.map { |p| [p.titleize, p] }, account_form.object.platform), {}, class: 'form-select' %>
+          <%# TODO: Add a checkbox here to delete the account %>
+        </div>
+        <div class="col-lg">
+          <%= account_form.label :nom, t('admin.emissions.form.platform_name'), class: 'form-label' %>
+          <%= account_form.text_field :nom, class: 'form-control' %>
+          <small class="text-muted">
+            <%= t('admin.emissions.form.platform_name_help') %>
+          </small>
+        </div>
       </div>
-      <div class="col-lg">
-        <%= account_form.label :url, t('admin.emissions.form.account_url'), class: 'form-label' %>
-        <%= account_form.text_field :url, class: 'form-control' %>
+      <div class="row">
+        <div class="col-lg">
+          <%= account_form.label :url, t('admin.emissions.form.account_url'), class: 'form-label' %>
+          <%= account_form.text_field :url, class: 'form-control' %>
+        </div>
       </div>
     </div>
   <% end %>
-  <button id="add-account-btn" class="btn btn-outline-secondary" data-action="click->admin--emission-form#createNewAccountForm"><%= t('admin.emissions.form.add_account_btn') %></button>
+  <button id="add-account-btn" class="btn btn-outline-secondary mt-3" data-action="click->admin--emission-form#createNewAccountForm"><%= t('admin.emissions.form.add_account_btn') %></button>
   <%= render 'admin/shared/form_actions',  cancel_path: admin_emissions_path, button_label: t('admin.shared.form_action.save_btn') %>
 <% end %>

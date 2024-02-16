@@ -101,6 +101,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_27_214815) do
   create_table "social_media_accounts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "url", null: false
     t.integer "platform", null: false
+    t.string "nom"
     t.string "has_social_media_account_type", null: false
     t.string "has_social_media_account_id", null: false
     t.datetime "created_at", null: false
