@@ -6,6 +6,7 @@ FactoryBot.define do
     description { Faker::Movie.quote }
     status { 'brouillon' }
     email { 'test@ckiafm.org' }
+    categorie_emission
 
     trait :active do
       status { 'active' }

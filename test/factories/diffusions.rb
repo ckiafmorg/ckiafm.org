@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  # TODO: create other factories for the other type of diffusion
   factory :diffusion do
     temps_debut { Time.zone.now }
     temps_fin { 1.hour.from_now }
