@@ -2,6 +2,6 @@
 
 class ProgrammationsController < ApplicationController
   def show
-    @diffusions = Diffusion.order(temps_debut: :asc).filter(&:en_onde_aujourdhui?)
+    @diffusions = Diffusion.find_programmation_de_la_journee
   end
 end
