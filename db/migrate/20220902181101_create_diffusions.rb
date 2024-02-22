@@ -14,7 +14,7 @@ class CreateDiffusions < ActiveRecord::Migration[7.0]
       t.boolean :diffuse_vendredi
       t.boolean :diffuse_samedi
       t.boolean :diffuse_dimanche
-      t.boolean :redifussion
+      t.boolean :redifussion, null: false, default: false
       t.references :emission, null: false, foreign_key: true, type: :uuid
 
       t.timestamps
