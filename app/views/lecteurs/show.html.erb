@@ -1,3 +1,11 @@
+<% unless @current_emission.nil? %>
+  <h1>Émission en cours: <%= @current_emission.nom %></h1>
+<% else %>
+  <h1>Il n'y a pas d'émission à l'horaire</h1>
+<% end %>
+
+<h3 class="currently-playing"></h3>
+
 <div class="lecteur mt-3" data-controller="lecteur">
   <audio controls="">
     <source src="https://stream2.statsradio.com/8148/stream" type="audio/mp3">

@@ -32,9 +32,22 @@ class Diffusion < ApplicationRecord
     end
   end
 
+  def en_cours_de_diffusion?
+    return false unless en_onde_aujourdhui?
+
+    current_time = Time.zone.now.strftime('%H:%M')
+
+    current_time >= temps_debut.strftime('%H:%M') && current_time <= temps_fin.strftime('%H:%M')
+  end
+
   def self.find_programmation_de_la_journee
     all
       .filter(&:en_onde_aujourdhui?)
       .sort_by { |a| a.temps_debut.strftime('%H:%M') }
+  end
+
+  def self.find_diffusion_en_cours
+    all
+      .filter(&:en_cours_de_diffusion?)
   end
 end

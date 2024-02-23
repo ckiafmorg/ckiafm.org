@@ -15,7 +15,10 @@
           <a class="nav-link" href="#">Balados</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">À Propos</a>
+          <a class="nav-link" href="#">À propos</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "#{bootstrap_icon('play-fill')} En direct".html_safe, lecteur_path, class: 'nav-link' %>
         </li>
       </ul>
       <%= form_with url: recherche_url, method: :get, role: :search, local: true, class: 'navbar-nav ms-auto' do |form| %>
