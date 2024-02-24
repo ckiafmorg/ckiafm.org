@@ -18,7 +18,7 @@ module Admin
       @tag = Tag.new(tags_params)
 
       if @tag.save
-        redirect_to admin_tags_path
+        redirect_to admin_tags_path, notice: t('admin.tags.created_successfully')
       else
         render :new
       end

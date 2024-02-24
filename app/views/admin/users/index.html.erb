@@ -1,14 +1,9 @@
-<h1>Utilisateurs actifs :</h1>
+<%= render 'admin/shared/page_header', titre: t('admin.nav.users') %>
 
-<% @user.each do |user| %>
-  <div class="card">
-    <div class="card-body">
-      <p class="float-end">
-        <%= link_to bootstrap_icon(:pencil), edit_admin_user_path(user)%>
-        <%= link_to bootstrap_icon(:trash), admin_user_path(user), data: { turbo_method: :delete, turbo_confirm: t('admin.user.form.error_succes')} %>
-      <h3><%= user.email %></h3>
-      </p>
-    </div>
-  </div>
+<%= render 'admin/shared/create_item_button', btn_label: t('admin.users.create_user_btn'), btn_path: new_admin_user_path %>
 
-<% end %>
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.email %></li>
+  <% end %>
+</ul>

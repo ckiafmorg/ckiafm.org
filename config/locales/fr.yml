@@ -19,6 +19,9 @@ fr:
       show_categories: "Catégorie d'émission"
       ads: 'Publicités'
       tags: 'Tags'
+      users: 'Utilisateurs'
+    users:
+      create_user_btn: "Créer un utilisateur"
     emissions:
       successfully_created: "L'émission a été créé avec succès."
       successfully_updated: "L'émission a été modifié avec succès."
@@ -83,11 +86,13 @@ fr:
       erreur:
         failed_to_destroy: "Attention, votre catégorie n'a pas été détruite."
     tags:
+      created_successfully: "Le tag a été créé avec succès."
       create_tag_btn: "Ajouter un tag"
       form:
         nom: "Nom du tag"
     user:
       failed_to_destroy: "Une erreur est survenue lors de la suppression de l'utilisateur"
+      created_successfully: "L'utilisateur a été créé avec succès."
       form:
         header: "Créer un nouvel utilisateur"
         password_label: "Mot de passe"
