@@ -9,7 +9,7 @@ class User < ApplicationRecord
   PASSWORD_MINIMAL_LENGTH = 24
 
   validates :email, email: true, presence: true, uniqueness: true, on: %i[create update]
-  validates :password, presence: true, on: :create, length: { minimum: PASSWORD_MINIMAL_LENGTH }
+  validates :password, presence: true, confirmation: true, on: :create, length: { minimum: PASSWORD_MINIMAL_LENGTH }
   validates :role, presence: true, inclusion: { in: roles.keys }
 
   before_validation :strip_email_whitespace, on: %i[create update]

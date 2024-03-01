@@ -22,6 +22,12 @@ fr:
       users: 'Utilisateurs'
     users:
       create_user_btn: "Créer un utilisateur"
+      successfully_deleted: "Utilisateur supprimé avec succès."
+      successfully_created: "Utilisateur créé avec succès."
+      successfully_updated: "L'utilisateur a été mis à jour avec succès."
+      deletion_error: "Il y a eu une erreur lors de la suppression de l'utilisateur."
+      error:
+        user_deleted: "Voulez-vous vraiment supprimer cet utilisateur?"
     emissions:
       successfully_created: "L'émission a été créé avec succès."
       successfully_updated: "L'émission a été modifié avec succès."

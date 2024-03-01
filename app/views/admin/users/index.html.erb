@@ -2,8 +2,23 @@
 
 <%= render 'admin/shared/create_item_button', btn_label: t('admin.users.create_user_btn'), btn_path: new_admin_user_path %>
 
-<ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @users.each do |user| %>
-    <li><%= user.email %></li>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.role %></td>
+      <td>
+        <%= link_to bootstrap_icon(:pencil), edit_admin_user_path(user) %>
+        <%= link_to bootstrap_icon(:trash), admin_user_path(user), data: { turbo_method: :delete, turbo_confirm: t('admin.users.error.user_deleted')} %>
+      </td>
+    </tr>
   <% end %>
-</ul>
+  </tbody>
+</table>
