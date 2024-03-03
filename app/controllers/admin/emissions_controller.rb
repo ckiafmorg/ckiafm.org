@@ -46,14 +46,16 @@ module Admin
     private
 
     def emission_params
-      params.require(:emission).permit(:nom,
-                                       :description,
-                                       :email,
-                                       :status,
-                                       :categorie_emission_id,
-                                       social_media_accounts_attributes: %i[id platform url _destroy],
-                                       user_ids: [],
-                                       tag_ids: [])
+      params.require(:emission).permit(
+        :nom,
+        :description,
+        :email,
+        :status,
+        :categorie_emission_id,
+        social_media_accounts_attributes: %i[id platform url _destroy],
+        user_ids: [],
+        tag_ids: []
+      )
     end
   end
 end

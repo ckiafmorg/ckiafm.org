@@ -51,7 +51,14 @@ module Admin
     private
 
     def publicite_params
-      params.require(:publicite).permit(:nom, :liens, :date_debut, :date_fin, :format_id, :image)
+      params.require(:publicite).permit(
+        :nom,
+        :liens,
+        :date_debut,
+        :date_fin,
+        :format_id,
+        :image
+      )
     end
   end
 end

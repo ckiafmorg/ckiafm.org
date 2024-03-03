@@ -59,9 +59,20 @@ module Admin
     def diffusion_params
       params.require(:diffusion)
             .except(:emission_id)
-            .permit(:temps_debut, :temps_fin, :date_debut, :diffuse_lundi,
-                    :diffuse_mardi, :diffuse_mercredi, :diffuse_jeudi, :diffuse_vendredi,
-                    :diffuse_vendredi, :diffuse_samedi, :diffuse_dimanche, :rediffusion)
+            .permit(
+              :temps_debut,
+              :temps_fin,
+              :date_debut,
+              :diffuse_lundi,
+              :diffuse_mardi,
+              :diffuse_mercredi,
+              :diffuse_jeudi,
+              :diffuse_vendredi,
+              :diffuse_vendredi,
+              :diffuse_samedi,
+              :diffuse_dimanche,
+              :rediffusion
+            )
     end
   end
 end
