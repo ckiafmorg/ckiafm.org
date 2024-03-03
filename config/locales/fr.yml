@@ -20,6 +20,7 @@ fr:
       ads: 'Publicités'
       tags: 'Tags'
       users: 'Utilisateurs'
+      membres: 'Membres'
     users:
       create_user_btn: "Créer un utilisateur"
       successfully_deleted: "Utilisateur supprimé avec succès."
@@ -110,6 +111,15 @@ fr:
         role_label: "Role de l'utilisateur-rice"
         role_producer: "Producteur-trice"
         role_admin: "Admin"
+    membres:
+      create_btn: "Ajouter un membre"
+      successfully_created: "Membre ajouté avec succès"
+      successfully_updated: "Membre modifié avec succès"
+      form:
+        nom_label: 'Nom'
+        prenom_label: 'Prénom'
+        email_label: 'Email'
+        phone_label: 'Téléphone'
   validations:
     email_validator:
       invalid_email: 'Ce email est invalide'

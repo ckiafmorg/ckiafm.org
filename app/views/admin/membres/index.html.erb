@@ -1,0 +1,22 @@
+<%= render 'admin/shared/page_header', titre: t('admin.nav.shows') %>
+
+<%= render 'admin/shared/create_item_button', btn_label: t('admin.membres.create_btn'), btn_path: new_admin_membre_path %>
+<table class="table">
+  <thead>
+    <th><%= t('admin.membres.form.prenom_label') %></th>
+    <th><%= t('admin.membres.form.nom_label') %></th>
+    <th><%= t('admin.membres.form.email_label') %></th>
+    <th><%= t('admin.membres.form.phone_label') %></th>
+  </thead>
+  <tbody>
+  <% @membres.each do |membre| %>
+    <tr>
+      <td><%= membre.prenom %></td>
+      <td><%= membre.nom %></td>
+      <td><%= membre.email %></td>
+      <td><%= membre.phone %></td>
+      <td><%= link_to bootstrap_icon(:pencil), edit_admin_membre_path(membre) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

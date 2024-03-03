@@ -1,0 +1,50 @@
+<%= form_with model: [:admin, membre], local: true do |form| %>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= form.label :prenom %>
+      <%= form.text_field :prenom, class: 'form-control', autofocus: true %>
+    </div>
+    <div class="col-lg-6">
+      <%= form.label :nom %>
+      <%= form.text_field :nom, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= form.label :email %>
+      <%= form.email_field :email, class: 'form-control' %>
+    </div>
+    <div class="col-lg-6">
+      <%= form.label :phone %>
+      <%= form.phone_field :phone, class: 'form-control', placeholder: '1-418-529-9026' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= form.label :adresse %>
+      <%= form.text_field :adresse, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= form.label :ville %>
+      <%= form.text_field :ville, class: 'form-control' %>
+    </div>
+    <div class="col-lg-6">
+      <%= form.label :code_postal %>
+      <%= form.text_field :code_postal, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= form.label :province %>
+      <%= form.text_field :province, class: 'form-control' %>
+    </div>
+    <div class="col-lg-6">
+      <%= form.label :pays %>
+      <%= form.text_field :pays, class: 'form-control' %>
+    </div>
+  </div>
+
+  <%= render 'admin/shared/form_actions', cancel_path: admin_membres_path, button_label: t('admin.shared.form_action.save_btn') %>
+<% end %>

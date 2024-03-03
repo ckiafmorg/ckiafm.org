@@ -171,6 +171,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.5)
+    phonelib (0.8.7)
     popper_js (2.11.8)
     prism (0.24.0)
     psych (5.1.2)
@@ -328,6 +329,7 @@ DEPENDENCIES
   jbuilder
   minitest-rails
   pg (~> 1.5)
+  phonelib
   puma (~> 6.4)
   rails (~> 7.1.3)
   redis (~> 5.1)

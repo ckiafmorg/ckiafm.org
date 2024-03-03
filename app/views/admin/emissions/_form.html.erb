@@ -1,17 +1,17 @@
 <%= form_with model: [:admin, @emission], local: true, data: { controller: 'admin--emission-form' } do |form| %>
-  <div class="row mb-3">
+  <div class="row">
     <div class="col-lg">
       <%= form.label :nom, t('admin.emissions.form.nom'), class: 'form-label' %>
       <%= form.text_field :nom, class: 'form-control' %>
     </div>
   </div>
-  <div class="row mb-3">
+  <div class="row">
     <div class="col-lg">
       <%= form.label :description, t('admin.emissions.form.description'), class: 'form-label' %>
       <%= form.text_area :description, class: 'form-control' %>
     </div>
   </div>
-  <div class="row mb-3">
+  <div class="row">
     <div class="col-lg">
       <%= form.label :email, t('admin.emissions.form.email'), class: 'form-label' %>
       <%= form.email_field :email, class: 'form-control' %>
@@ -21,7 +21,7 @@
       <%= form.select(:status, Emission.statuses.keys.map { |status| [status.titleize, status] }, {}, class: 'form-select') %>
     </div>
   </div>
-  <div class="row mb-3">
+  <div class="row">
     <div class="col-lg">
       <%= form.label :categorie_emission_id, t('admin.emissions.form.categorie'), class: 'form-label' %>
       <%= form.select :categorie_emission_id, CategorieEmission.all.map { |categorie| [categorie.nom, categorie.id] }, {}, class: 'form-select' %>
@@ -31,7 +31,7 @@
       <%= form.select :user_ids, options_from_collection_for_select(@utilisateurs, :id, :email, @emission.user_ids), { multiple: true }, class: 'form-control' %>
     </div>
   </div>
-  <div class="row mb-3">
+  <div class="row">
     <div class="col-lg">
       <%= form.label :tag_ids, t('admin.emissions.form.tags'), class: 'form-label' %>
       <%= form.select :tag_ids, options_from_collection_for_select(@tags, :id, :nom, @emission.tag_ids), { multiple: true }, class:"form-select" %>
@@ -62,6 +62,8 @@
       </div>
     </div>
   <% end %>
+
   <button id="add-account-btn" class="btn btn-outline-secondary mt-3" data-action="click->admin--emission-form#createNewAccountForm"><%= t('admin.emissions.form.add_account_btn') %></button>
+
   <%= render 'admin/shared/form_actions',  cancel_path: admin_emissions_path, button_label: t('admin.shared.form_action.save_btn') %>
 <% end %>

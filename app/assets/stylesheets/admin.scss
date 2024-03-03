@@ -1,1 +1,11 @@
 @import "bootstrap";
+
+form {
+  .row {
+    @extend .mb-3;
+  }
+
+  label {
+    @extend .mb-1;
+  }
+}
