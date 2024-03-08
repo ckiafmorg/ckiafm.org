@@ -21,6 +21,7 @@ fr:
       tags: 'Tags'
       users: 'Utilisateurs'
       membres: 'Membres'
+      memberships: 'Memberships'
     users:
       create_user_btn: "Créer un utilisateur"
       successfully_deleted: "Utilisateur supprimé avec succès."
@@ -120,6 +121,9 @@ fr:
         prenom_label: 'Prénom'
         email_label: 'Email'
         phone_label: 'Téléphone'
+    memberships:
+      create_btn: "Créer un membership"
+      successfully_created: "Membership créé avec succès"
   validations:
     email_validator:
       invalid_email: 'Ce email est invalide'

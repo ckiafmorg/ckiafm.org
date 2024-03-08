@@ -12,10 +12,12 @@ module Admin
 
     def new
       @membre = Membre.new(ville: 'Québec', province: 'Québec', pays: 'Canada')
+      @memberships = Membership.all
     end
 
     def edit
       @membre = Membre.find(params[:id])
+      @memberships = Membership.all
     end
 
     def create
@@ -23,6 +25,7 @@ module Admin
       if @membre.save
         redirect_to admin_membres_path, notice: t('admin.membres.successfully_created')
       else
+        @memberships = Membership.all
         render :new
       end
     end
@@ -32,6 +35,7 @@ module Admin
       if @membre.update(membre_params)
         redirect_to admin_membres_path, notice: t('admin.membres.successfully_updated')
       else
+        @memberships = Membership.all
         render :edit
       end
     end
@@ -48,7 +52,8 @@ module Admin
         :code_postal,
         :ville,
         :province,
-        :pays
+        :pays,
+        :membership_id
       )
     end
   end

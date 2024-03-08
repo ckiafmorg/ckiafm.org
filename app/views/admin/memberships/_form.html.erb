@@ -1,0 +1,19 @@
+<%= form_with model: [:admin, membership], local: true do |form| %>
+  <div class="row">
+    <div class="col">
+      <%= form.label :nom %>
+      <%= form.text_field :nom, class: 'form-control' %>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <%= form.label :reccurence %>
+        <%= form.select :reccurence, Membership.reccurences.keys.map { |rec| [rec.titleize, rec] }, {}, class: 'form-select' %>
+      </div>
+      <div class="col-lg-6">
+        <%= form.label :montant %>
+        <%= form.number_field :montant, step: 0.01, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <%= render 'admin/shared/form_actions', cancel_path: admin_memberships_path, button_label: t('admin.shared.form_action.save_btn') %>
+<% end %>

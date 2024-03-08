@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     resources :tags
     resources :users
     resources :membres
+    resources :memberships
   end
 end
