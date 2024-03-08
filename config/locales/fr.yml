@@ -96,6 +96,7 @@ fr:
     tags:
       created_successfully: "Le tag a été créé avec succès."
       create_tag_btn: "Ajouter un tag"
+      deletion_confirmation: "Voulez-vous vraiment supprimer ce tag ?"
       form:
         nom: "Nom du tag"
     user:

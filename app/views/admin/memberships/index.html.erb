@@ -7,6 +7,7 @@
     <th>Nom</th>
     <th>Reccurence</th>
     <th>Montant</th>
+    <th></th>
   </thead>
   <tbody>
     <% @memberships.each do |membership| %>
@@ -14,6 +15,7 @@
         <td><%= membership.nom %></td>
         <td><%= membership.reccurence %></td>
         <td><%= number_to_currency(membership.montant, format: "%n %u") %></td>
+        <td><%= link_to bootstrap_icon(:pencil), edit_admin_membership_path(membership) %></td>
       </tr>
     <% end %>
   </tbody>

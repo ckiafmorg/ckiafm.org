@@ -2,27 +2,27 @@
 
 <%= render 'admin/shared/create_item_button', btn_label: t('admin.emissions.create_emission_btn'), btn_path: new_admin_emission_path %>
 
-<% @emissions.each do |emission| %>
-  <div class="card">
-    <div class="card-body">
-      <div class="d-flex flex-row justify-content-between">
-        <h5 class="card-title"><%= link_to emission.nom, [:admin, emission] %></h5>
-        <span><%= link_to bootstrap_icon('pencil'), edit_admin_emission_path(emission) %></span>
-      </div>
-      <p class="card-text">
-        Émission <%= emission.status %><br/>
-        <a href="mailto:<%= emission.email %>"><%= emission.email %></a>
-      </p>
-      <p>
-        tags:
-        <% emission.tags.each  do |tag|  %>
-          <% if tag == emission.tags.last %>
-            #<%= tag.nom %>
-          <% else %>
-            #<%= tag.nom %>,
-          <% end %>
-        <% end %>
-      </p>
-    </div>
-  </div>
+<table class="table">
+  <thead>
+    <th>Nom</th>
+    <th>Email</th>
+    <th>Tags</th>
+    <th>Status</th>
+    <th>Catégorie</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @emissions.each do |emission| %>
+      <tr>
+        <td><%= link_to emission.nom, admin_emission_path(emission) %></td>
+        <td><%= emission.email %></td>
+        <td><%= format_tags_list(emission.tags) %></td>
+        <td><%= emission.status %></td>
+        <td><%= emission.categorie_emission.nom %></td>
+        <td>
+          <%= link_to bootstrap_icon('pencil'), edit_admin_emission_path(emission) %>
+        </td>
+      </tr>
+  </tbody>
 <% end %>
+</table>

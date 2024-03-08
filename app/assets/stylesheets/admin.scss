@@ -1,5 +1,12 @@
 @import "bootstrap";
 
+.color-pellet {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
 form {
   .row {
     @extend .mb-3;

@@ -2,8 +2,20 @@
 
 <%= render 'admin/shared/create_item_button', btn_label: t('admin.tags.create_tag_btn'), btn_path: new_admin_tag_path %>
 
-<ul>
-<% @tags.each do |tags| %>
-  <li><%= tags.nom %></li>
-<% end %>
-</ul>
+<table class="table">
+  <thead>
+    <th>Nom</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td><%= tag.nom %></td>
+        <td>
+          <%= link_to bootstrap_icon(:pencil), edit_admin_tag_path(tag) %>
+          <%= link_to bootstrap_icon(:trash), admin_tag_path(tag), data: { turbo_method: :delete, turbo_confirm: t('admin.tags.deletion_confirmation')} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

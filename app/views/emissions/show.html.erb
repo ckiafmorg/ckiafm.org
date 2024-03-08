@@ -23,7 +23,6 @@
             <div class="card mt-3 mb-3">
               <div class="card-body">
                 <div class="d-flex flex-row justify-content-between">
-                  <%# TODO: use translated string here #%>
                   <h5 class="card-title d-inline-block"><%= "(R) - " if diffusion.rediffusion %><%= diffusion.type.titleize %></h5>
                 </div>
                 <p class="card-text"><%= format_time diffusion.temps_debut %> - <%= format_time diffusion.temps_fin %><br/>

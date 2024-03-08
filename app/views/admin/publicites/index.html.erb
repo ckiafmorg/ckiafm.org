@@ -2,17 +2,26 @@
 
 <%= render 'admin/shared/create_item_button', btn_label: t('admin.pub.create_pub_btn'), btn_path: new_admin_publicite_path %>
 
-<% @publicites.each do |pub| %>
-  <div class="card mt-3 mb-3">
-    <div class="card-body">
-        <p class="float-end">
+<table class="table">
+  <thead>
+    <th>Nom</th>
+    <th>Date début</th>
+    <th>Date fin</th>
+    <th>Lien</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @publicites.each do |pub| %>
+      <tr>
+        <td><%= pub.nom %></td>
+        <td><%= pub.date_debut %></td>
+        <td><%= pub.date_fin %></td>
+        <td><%= pub.liens %></td>
+        <td>
           <%=  link_to bootstrap_icon(:pencil), edit_admin_publicite_path(pub)%>
           <%=  link_to bootstrap_icon(:trash), admin_publicite_path(pub), data: { turbo_method: :delete, turbo_confirm: t('admin.pub.error.pub_deleted')}%>
-        </p>     
-        <h3><%= pub.nom %></h3>
-        <p><%= t('admin.pub.form.date_debut_label') %>: <%= pub.date_debut %></p>
-        <p><%= t('admin.pub.form.date_fin_label') %>: <%= pub.date_fin %></p>
-        <p><%= t('admin.pub.form.liens_label') %>: <%= link_to pub.liens, pub.liens %> </p>
-    </div>
-  </div>
-<%end%>
+        </td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>

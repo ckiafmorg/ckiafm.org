@@ -1,11 +1,39 @@
-<%= render 'admin/shared/page_header', titre: @emission.nom %>
+<div class="d-flex justify-content-between align-items-center">
+  <%= render 'admin/shared/page_header', titre: @emission.nom %>
+  <div>
+  <%= link_to bootstrap_icon(:pencil), edit_admin_emission_path(@emission), class: 'btn btn-outline-primary' %>
+  </div>
+</div>
+<p><%= @emission.description %></p>
 
 <h2><%= t 'admin.diffusions.title' %></h2>
-
-<% @emission.diffusions.each do |diffusion| %>
-  <%= render 'admin/emissions/diffusion', diffusion: diffusion %>
-<% end %>
 
 <% if Current.user.admin? %>
   <%= render 'admin/shared/create_item_button', btn_label: t('admin.diffusions.create_diffusion_btn'), btn_path: new_admin_emission_diffusion_path(@emission) %>
 <% end %>
+
+<table class="table">
+  <thead>
+    <th>Jour de diffusions</th>
+    <th>Date début</th>
+    <th>Temps début</th>
+    <th>Temps fin</th>
+    <th>Rediffusion</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @emission.diffusions.each do |diffusion| %>
+      <tr>
+        <td><%= diffusion.jours_diffusion_formate %></td>
+        <td><%= diffusion.date_debut %></td>
+        <td><%= format_time diffusion.temps_debut %></td>
+        <td><%= format_time diffusion.temps_fin %></td>
+        <td><%= if diffusion.rediffusion then bootstrap_icon(:check2) end %></td>
+          <td>
+            <%= link_to bootstrap_icon(:pencil), edit_admin_emission_diffusion_path(diffusion.emission, diffusion) %>
+            <%= link_to bootstrap_icon(:trash), admin_emission_diffusion_path(diffusion.emission, diffusion), data: { turbo_method: :delete, turbo_confirm: t('admin.diffusions.delete_confirmation') } %>
+          </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

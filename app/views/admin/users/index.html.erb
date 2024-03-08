@@ -4,21 +4,20 @@
 
 <table class="table">
   <thead>
-    <tr>
-      <th>Email</th>
-      <th>Role</th>
-    </tr>
+    <th>Email</th>
+    <th>Role</th>
+    <th></th>
   </thead>
   <tbody>
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= user.email %></td>
-      <td><%= user.role %></td>
-      <td>
-        <%= link_to bootstrap_icon(:pencil), edit_admin_user_path(user) %>
-        <%= link_to bootstrap_icon(:trash), admin_user_path(user), data: { turbo_method: :delete, turbo_confirm: t('admin.users.error.user_deleted')} %>
-      </td>
-    </tr>
-  <% end %>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+        <td>
+          <%= link_to bootstrap_icon(:pencil), edit_admin_user_path(user) %>
+          <%= link_to bootstrap_icon(:trash), admin_user_path(user), data: { turbo_method: :delete, turbo_confirm: t('admin.users.error.user_deleted')} %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
