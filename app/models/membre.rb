@@ -10,4 +10,15 @@ class Membre < ApplicationRecord
   validates :ville, presence: true
   validates :province, presence: true
   validates :pays, presence: true
+
+  has_many :paiements, dependent: :destroy
+  belongs_to :membership
+
+  def actif?
+    paiements.last.date_fin_actif <= Time.zone.today
+  end
+
+  def fin_actif_membership
+    paiements.last.date_fin_actif
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_07_233843) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_08_053204) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -112,6 +112,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_233843) do
     t.index ["email"], name: "index_membres_on_email", unique: true
   end
 
+  create_table "paiements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "membre_id", null: false
+    t.decimal "montant", precision: 8, scale: 2, null: false
+    t.date "date_fin_actif", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["membre_id"], name: "index_paiements_on_membre_id"
+  end
+
   create_table "publicites", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "liens", null: false
     t.date "date_debut", null: false
@@ -164,6 +173,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_07_233843) do
   add_foreign_key "diffusions", "emissions"
   add_foreign_key "emissions", "categorie_emissions"
   add_foreign_key "membres", "memberships"
+  add_foreign_key "paiements", "membres"
   add_foreign_key "taggables", "emissions"
   add_foreign_key "taggables", "tags"
 end

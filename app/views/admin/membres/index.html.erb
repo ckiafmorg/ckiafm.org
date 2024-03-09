@@ -8,7 +8,9 @@
     <th><%= t('admin.membres.form.nom_label') %></th>
     <th><%= t('admin.membres.form.email_label') %></th>
     <th><%= t('admin.membres.form.phone_label') %></th>
-    <td></td>
+    <th>Actif jusqu'au</th>
+    <th></th>
+    <th></th>
   </thead>
   <tbody>
   <% @membres.each do |membre| %>
@@ -17,7 +19,12 @@
       <td><%= membre.nom %></td>
       <td><%= membre.email %></td>
       <td><%= membre.phone %></td>
-      <td><%= link_to bootstrap_icon(:pencil), edit_admin_membre_path(membre) %></td>
+      <td><%= membre.fin_actif_membership %></td>
+      <td>
+        <%= link_to bootstrap_icon(:pencil), edit_admin_membre_path(membre) %>
+        <%= link_to bootstrap_icon(:trash), admin_membre_path(membre), data: { turbo_method: :delete, turbo_confirm: t('admin.membres.deletion_confirmation')}  %>
+      </td>
+      <td><%= link_to "Renouveller", admin_membre_renouvellement_path(membre), class: 'btn btn-outline-secondary' %></td>
     </tr>
   <% end %>
   </tbody>

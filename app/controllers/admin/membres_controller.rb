@@ -7,7 +7,7 @@ module Admin
     end
 
     def index
-      @membres = Membre.all
+      @membres = Membre.includes(:paiements)
     end
 
     def new
@@ -22,12 +22,21 @@ module Admin
 
     def create
       @membre = Membre.new(membre_params)
-      if @membre.save
-        redirect_to admin_membres_path, notice: t('admin.membres.successfully_created')
-      else
+      begin
+        @membre.transaction do
+          raise StandardError, 'Impossible de créer le paiement' unless @membre.save
+
+          paiement = @membre.paiements.build(montant: @membre.membership.montant,
+                                             date_fin_actif: Time.zone.today + 1.year)
+          raise StandardError, 'Impossible de créer le paiement' unless paiement.save
+        end
+      rescue StandardError
         @memberships = Membership.all
         render :new
+        return
       end
+
+      redirect_to admin_membres_path, notice: t('admin.membres.successfully_created')
     end
 
     def update
@@ -37,6 +46,18 @@ module Admin
       else
         @memberships = Membership.all
         render :edit
+      end
+    end
+
+    def renouvellement
+      membre = Membre.find(params[:membre_id])
+
+      if membre.paiements.create(montant: membre.membership.montant,
+                                 date_fin_actif: membre.paiements.last.date_fin_actif + 1.year)
+
+        redirect_to admin_membres_path, notice: t('admin.membres.successfully_renewed')
+      else
+        redirect_to admin_membres_path, error: t('admin.membres.failed_renew')
       end
     end
 

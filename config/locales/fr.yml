@@ -117,6 +117,9 @@ fr:
       create_btn: "Ajouter un membre"
       successfully_created: "Membre ajouté avec succès"
       successfully_updated: "Membre modifié avec succès"
+      successfully_renewed: "Le membre a renouvelé son membership avec succès"
+      failed_renew: "Il y a eu une erreur lors du renouvellement du membership"
+      deletion_confirmation: 'Voulez-vous vraiment supprimer ce membre'
       form:
         nom_label: 'Nom'
         prenom_label: 'Prénom'

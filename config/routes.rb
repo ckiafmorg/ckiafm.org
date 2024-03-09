@@ -19,7 +19,9 @@ Rails.application.routes.draw do
     resources :categorie_emissions
     resources :tags
     resources :users
-    resources :membres
+    resources :membres do
+      get :renouvellement
+    end
     resources :memberships
   end
 end

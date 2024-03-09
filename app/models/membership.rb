@@ -7,4 +7,6 @@ class Membership < ApplicationRecord
   validates :nom, presence: true, uniqueness: true
   validates :montant, presence: true, numericality: true, comparison: { greater_than: 0 }
   validates :reccurence, presence: true, inclusion: { in: reccurences.keys }
+
+  has_many :membres, dependent: :restrict_with_exception
 end
