@@ -1,5 +1,14 @@
 @import "bootstrap";
 
+:root {
+  --light-teal: #f0fdfa;
+  --medium-teal: #99f6e4;
+  --dark-teal: #0f766e;
+  --light-pink: #fce7f3;
+  --medium-pink: #f472b6;
+  --dark-pink: #9d174d;
+}
+
 .lecteur {
   audio {
     width: 100%;
@@ -9,4 +18,25 @@
 
 .social-media-account-link {
   text-decoration: none;
+}
+
+.social-link {
+  color: black;
+  margin-right: .75rem;
+  svg {
+    height: 25px;
+    width: 25px;
+  }
+}
+.ckia-nav-bg {
+  background-color: var(--medium-teal);
+}
+
+.ckia-action-btn {
+  background-color: var(--medium-pink);
+  color: var(--light-pink);
+  &:hover {
+    background-color: var(--light-pink);
+    color: var(--medium-pink);
+  }
 }

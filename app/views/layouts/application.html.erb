@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100 w-100 d-flex flex-column">
   <head>
     <title>CKIA</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,11 +10,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="h-100 w-100 d-flex flex-column">
     <%= render 'shared/development_mode_banner' %>
     <%= render 'shared/nav' %>
-    <main class="container mt-3">
+    <main class="container mt-3 flex-shrink-0 flex-grow-1">
       <%= yield %>
     </main>
+    <%= render 'shared/footer' %>
   </body>
 </html>

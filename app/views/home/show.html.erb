@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-lg-6">
+    <h5>Actuellement en onde</h5>
+    <h3><%= @current_emission&.nom %></h3>
+    <%= link_to 'Écoutez en direct', lecteur_path, class: 'btn ckia-action-btn' %>
+  </div>
+  <div class="col-lg-6">
+    <p><%= @current_emission&.description %></p>
+  </div>
+</div>
