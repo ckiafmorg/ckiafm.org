@@ -37,6 +37,26 @@
       <%= form.select :tag_ids, options_from_collection_for_select(@tags, :id, :nom, @emission.tag_ids), { multiple: true }, class:"form-select" %>
     </div>
   </div>
+
+  <h5>Équipe</h5>
+  <%= form.fields_for :membre_equipes do |equipe_form| %>
+    <%= equipe_form.hidden_field :id %>
+    <div class="mb-3" data-admin--emission-form-target="membreEquipeFieldset">
+      <div class="row">
+        <div class="col-lg-6">
+          <%= equipe_form.label :nom %>
+          <%= equipe_form.text_field :nom, class: 'form-control' %>
+        </div>
+        <div class="col-lg-6">
+          <%= equipe_form.label :role %>
+          <%= equipe_form.text_field :role, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <button id="add-membre-btn" class="btn btn-outline-secondary my-3" data-action="click->admin--emission-form#createNewMembreForm"><%= t('admin.emissions.form.add_membre_btn') %></button>
+
+  <h5>Médias sociaux</h5>
   <%= form.fields_for :social_media_accounts do |account_form| %>
     <%= account_form.hidden_field :id %>
     <div class="mb-3" data-admin--emission-form-target="socialNetworkFieldset">
@@ -63,7 +83,7 @@
     </div>
   <% end %>
 
-  <button id="add-account-btn" class="btn btn-outline-secondary mt-3" data-action="click->admin--emission-form#createNewAccountForm"><%= t('admin.emissions.form.add_account_btn') %></button>
+  <button id="add-account-btn" class="btn btn-outline-secondary my-3" data-action="click->admin--emission-form#createNewAccountForm"><%= t('admin.emissions.form.add_account_btn') %></button>
 
   <%= render 'admin/shared/form_actions', button_label: t('admin.shared.form_action.save_btn') %>
 <% end %>

@@ -47,6 +47,7 @@ fr:
         platform_name: 'Nom de la platforme'
         platform_name_help: "Si la plateforme n'est pas une platforem dans la liste, vous pouvez choisir podcast et mettre le nom que vous voulez."
         add_account_btn: 'Ajouter un compte'
+        add_membre_btn: "Ajouter un membre à l'équipe"
     diffusions:
       title: 'Diffusions'
       successfully_created: 'La diffusion a été créée avec succès.'
