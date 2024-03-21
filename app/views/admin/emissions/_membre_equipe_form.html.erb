@@ -1,0 +1,20 @@
+<div class="membre-equipe-form-wrapper" data-new-record="<%= form.object.new_record? %>">
+  <%= form.hidden_field :id %>
+  <%= form.hidden_field :_destroy %>
+  <div class="mb-3" data-admin--emission-form-target="membreEquipeFieldset">
+    <div class="row">
+      <div class="col-lg-4">
+        <%= form.label :nom %>
+        <%= form.text_field :nom, class: 'form-control' %>
+      </div>
+      <div class="col-lg-4">
+        <%= form.label :role %>
+        <%= form.text_field :role, class: 'form-control' %>
+      </div>
+      <div class="col-lg-4">
+        <label>&nbsp;</label>
+        <button type="button" data-action="click->admin--emission-form#deleteMembre" class="btn btn-outline-danger btn-as-block">Supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>
