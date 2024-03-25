@@ -15,6 +15,10 @@ form {
   label {
     @extend .mb-1;
   }
+
+  textarea {
+    height: 25rem;
+  }
 }
 
 .btn-as-block {

@@ -22,6 +22,7 @@ fr:
       users: 'Utilisateurs'
       membres: 'Membres'
       memberships: 'Memberships'
+      articles: 'Articles'
     users:
       create_user_btn: "Créer un utilisateur"
       successfully_deleted: "Utilisateur supprimé avec succès."
@@ -131,6 +132,18 @@ fr:
     memberships:
       create_btn: "Créer un membership"
       successfully_created: "Membership créé avec succès"
+    articles:
+      create_btn: "Nouvel article"
+      created_successfully: "Aritcle créé avec succès"
+      udpated_successfully: "Aritcle mis à jour avec succès"
+      deleted_successfully: "Successfully deleted the article"
+      deletion_error: "Failed to delete the article"
+      deletion_confirmation: "Voulez-vous vraiment supprimer cet article?"
+      status:
+        draft: "Brouillon"
+        published: "Publié"
+      form:
+        published_at_label: "Date de publication"
   validations:
     email_validator:
       invalid_email: 'Ce email est invalide'

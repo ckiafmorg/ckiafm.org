@@ -23,5 +23,6 @@ Rails.application.routes.draw do
       get :renouvellement
     end
     resources :memberships
+    resources :articles
   end
 end

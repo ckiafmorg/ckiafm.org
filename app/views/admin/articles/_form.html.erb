@@ -1,0 +1,26 @@
+<%= form_with model: [:admin, article], local: true do |form| %>
+  <div class="row">
+    <div class="col">
+      <%= form.label :titre %>
+      <%= form.text_field :titre, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= form.label :status %>
+      <%= form.select :status, Article.statuses.keys.map { |status| [t("admin.articles.status.#{status}"), status] }, {}, class: 'form-select' %>
+    </div>
+    <div class="col-lg-6">
+      <%= form.label :published_at, t('admin.articles.form.published_at_label') %>
+      <%= form.date_field :published_at, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= form.label :contenu %>
+      <%= form.text_area :contenu, class: 'form-control' %>
+    </div>
+  </div>
+
+  <%= render 'admin/shared/form_actions', button_label: t('admin.shared.form_action.save_btn') %>
+<% end %>

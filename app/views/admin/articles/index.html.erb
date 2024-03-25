@@ -1,0 +1,25 @@
+<%= render 'admin/shared/page_header', titre: t('admin.nav.articles') %>
+
+<table class="table">
+  <thead>
+    <th>Titre</th>
+    <th>Status</th>
+    <th>Date de publication</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.titre %></td>
+        <td><%= fmt_article_status(article.status) %></td>
+        <td><%= article.published_at %></td>
+        <td>
+          <%= link_to bootstrap_icon(:pencil), edit_admin_article_path(article) %>
+          <%= link_to bootstrap_icon(:trash), admin_article_path(article), data: { turbo_method: :delete, turbo_confirm: t('admin.articles.deletion_confirmation')} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render 'admin/shared/create_item_button', btn_label: t('admin.tags.create_article_btn'), btn_path: new_admin_article_path %>
