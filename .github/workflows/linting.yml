@@ -21,3 +21,23 @@ jobs:
 
       - name: Run rubocop
         run: rubocop
+
+  erblint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@master
+        with:
+          bundler-cache: true
+
+      - name: Install ruby gems
+        run: |
+          gem install erb_lint --no-document
+
+      - name: Run rubocop
+        run: erblint app
+
