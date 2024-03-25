@@ -75,6 +75,8 @@ group :development, :test do
 
   gem 'ruby-lsp', require: false
   gem 'ruby-lsp-rails', require: false
+
+  gem 'erb_lint', require: false
 end
 
 group :development do

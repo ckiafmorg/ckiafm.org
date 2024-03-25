@@ -14,8 +14,8 @@
         <td><%= categorie.nom %></td>
         <td><span class="color-pellet" style="background-color: <%= categorie.couleur %>;"></span></td>
         <td>
-          <%=  link_to bootstrap_icon(:pencil), edit_admin_categorie_emission_path(categorie)%>
-          <%=  link_to bootstrap_icon(:trash), admin_categorie_emissions_path(categorie), data: { turbo_method: :delete, turbo_confirm: t('admin.pub.error.pub_deleted')}%>
+          <%= link_to bootstrap_icon(:pencil), edit_admin_categorie_emission_path(categorie) %>
+          <%= link_to bootstrap_icon(:trash), admin_categorie_emissions_path(categorie), data: { turbo_method: :delete, turbo_confirm: t('admin.pub.error.pub_deleted')} %>
         </td>
       </tr>
     <% end %>

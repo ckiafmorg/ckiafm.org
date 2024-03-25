@@ -22,7 +22,7 @@
       <td><%= membre.fin_actif_membership %></td>
       <td>
         <%= link_to bootstrap_icon(:pencil), edit_admin_membre_path(membre) %>
-        <%= link_to bootstrap_icon(:trash), admin_membre_path(membre), data: { turbo_method: :delete, turbo_confirm: t('admin.membres.deletion_confirmation')}  %>
+        <%= link_to bootstrap_icon(:trash), admin_membre_path(membre), data: { turbo_method: :delete, turbo_confirm: t('admin.membres.deletion_confirmation')} %>
       </td>
       <td><%= link_to "Renouveller", admin_membre_renouvellement_path(membre), class: 'btn btn-outline-secondary' %></td>
     </tr>

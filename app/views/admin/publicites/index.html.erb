@@ -1,4 +1,4 @@
-<%= render 'admin/shared/page_header', titre: t('admin.nav.ads')%>
+<%= render 'admin/shared/page_header', titre: t('admin.nav.ads') %>
 
 <%= render 'admin/shared/create_item_button', btn_label: t('admin.pub.create_pub_btn'), btn_path: new_admin_publicite_path %>
 
@@ -18,10 +18,10 @@
         <td><%= pub.date_fin %></td>
         <td><%= pub.liens %></td>
         <td>
-          <%=  link_to bootstrap_icon(:pencil), edit_admin_publicite_path(pub)%>
-          <%=  link_to bootstrap_icon(:trash), admin_publicite_path(pub), data: { turbo_method: :delete, turbo_confirm: t('admin.pub.error.pub_deleted')}%>
+          <%= link_to bootstrap_icon(:pencil), edit_admin_publicite_path(pub) %>
+          <%= link_to bootstrap_icon(:trash), admin_publicite_path(pub), data: { turbo_method: :delete, turbo_confirm: t('admin.pub.error.pub_deleted')} %>
         </td>
       </tr>
-    <%end%>
+    <% end %>
   </tbody>
 </table>

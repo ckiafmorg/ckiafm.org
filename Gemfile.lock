@@ -80,6 +80,13 @@ GEM
       execjs (~> 2)
     base64 (0.2.0)
     bcrypt (3.1.20)
+    better_html (2.1.1)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bigdecimal (3.1.7)
     bindex (0.8.1)
     bootsnap (1.18.3)
@@ -101,6 +108,13 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     drb (2.2.1)
+    erb_lint (0.5.0)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop
+      smart_properties
     erubi (1.12.0)
     execjs (2.9.1)
     factory_bot (6.4.6)
@@ -278,6 +292,7 @@ GEM
     shoulda-context (2.0.0)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
+    smart_properties (1.17.0)
     sorbet-runtime (0.5.11305)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -319,6 +334,7 @@ DEPENDENCIES
   bootstrap
   bootstrap-icons-helper
   debug
+  erb_lint
   factory_bot_rails
   faker
   friendly_id (~> 5.5.1)
