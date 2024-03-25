@@ -116,10 +116,12 @@ fr:
         role_admin: "Admin"
     membres:
       create_btn: "Ajouter un membre"
-      successfully_created: "Membre ajouté avec succès"
-      successfully_updated: "Membre modifié avec succès"
-      successfully_renewed: "Le membre a renouvelé son membership avec succès"
+      created_successfully: "Membre ajouté avec succès"
+      updated_successfully: "Membre modifié avec succès"
+      renewed_successfully: "Le membre a renouvelé son membership avec succès"
       failed_renew: "Il y a eu une erreur lors du renouvellement du membership"
+      deleted_successfully: "Le membres a bien été supprimé"
+      deletion_error: "Une erreur est survenue lors de la suppression du membre"
       deletion_confirmation: 'Voulez-vous vraiment supprimer ce membre'
       form:
         nom_label: 'Nom'

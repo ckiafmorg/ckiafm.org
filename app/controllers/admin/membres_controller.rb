@@ -36,16 +36,25 @@ module Admin
         return
       end
 
-      redirect_to admin_membres_path, notice: t('admin.membres.successfully_created')
+      redirect_to admin_membres_path, notice: t('admin.membres.created_successfully')
     end
 
     def update
       @membre = Membre.find(params[:id])
       if @membre.update(membre_params)
-        redirect_to admin_membres_path, notice: t('admin.membres.successfully_updated')
+        redirect_to admin_membres_path, notice: t('admin.membres.updated_successfully')
       else
         @memberships = Membership.all
         render :edit
+      end
+    end
+
+    def destroy
+      membre = Membre.find(params[:id])
+      if membre.destroy
+        redirect_to admin_membres_path, notice: t('admin.membres.deleted_successfully')
+      else
+        redirect_to admin_membres_path, error: t('admin.membres.deletion_error')
       end
     end
 
@@ -55,7 +64,7 @@ module Admin
       if membre.paiements.create(montant: membre.membership.montant,
                                  date_fin_actif: membre.paiements.last.date_fin_actif + 1.year)
 
-        redirect_to admin_membres_path, notice: t('admin.membres.successfully_renewed')
+        redirect_to admin_membres_path, notice: t('admin.membres.renewed_successfully')
       else
         redirect_to admin_membres_path, error: t('admin.membres.failed_renew')
       end
