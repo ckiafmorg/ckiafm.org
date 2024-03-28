@@ -1,3 +1,4 @@
 <% @articles.each do |article| %>
-  <%= link_to article.titre, blog_path(article) %>
+  <h3><%= link_to article.titre, blog_path(article), class: 'blog-index-link' %></h3>
+  <%= render 'blog/article_date', date: article.published_at %>
 <% end %>

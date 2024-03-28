@@ -39,6 +39,7 @@
     width: 25px;
   }
 }
+
 .ckia-nav-bg {
   background-color: var(--medium-teal);
 }
@@ -55,4 +56,13 @@
 .blog-article {
   max-width: 860px;
   margin: auto;
+}
+
+.blog-index-link {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
