@@ -11,4 +11,10 @@ class Article < ApplicationRecord
   validates :contenu, presence: true
   validates :published_at, presence: true
   validates :status, presence: true
+
+  default_scope { order(:published_at) }
+
+  def self.live
+    where('published_at < ?', Time.zone.now)
+  end
 end

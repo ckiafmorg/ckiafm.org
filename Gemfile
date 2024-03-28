@@ -19,6 +19,10 @@ gem 'hotwire-rails'
 gem 'importmap-rails'
 gem 'stimulus-rails'
 
+# markdown for blog and other textarea content
+gem 'kramdown'
+gem 'markdown_media'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.5'
 

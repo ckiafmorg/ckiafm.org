@@ -1,0 +1,5 @@
+<article class="blog-article">
+  <h1><%= @article.titre %></h1>
+  <p class="fs-8 fw-light"><%= @article.published_at %></p>
+  <%= render_markdown @article.contenu %>
+</article>

@@ -9,6 +9,17 @@
   --dark-pink: #9d174d;
 }
 
+/**
+ * Bootstrap missing font-size class
+ */
+.fs-7 {
+  font-size: $font-size-base * 0.9;
+}
+
+.fs-8 {
+  font-size: $font-size-base * 0.8;
+}
+
 .lecteur {
   audio {
     width: 100%;
@@ -39,4 +50,9 @@
     background-color: var(--light-pink);
     color: var(--medium-pink);
   }
+}
+
+.blog-article {
+  max-width: 860px;
+  margin: auto;
 }
