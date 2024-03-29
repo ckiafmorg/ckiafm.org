@@ -8,10 +8,12 @@ module Admin
 
     def new
       @article = Article.new
+      @tags = Tag.all
     end
 
     def edit
       @article = Article.find(params[:id])
+      @tags = Tag.all
     end
 
     def create
@@ -44,7 +46,7 @@ module Admin
     private
 
     def article_params
-      params.require(:article).permit(:titre, :status, :published_at, :contenu)
+      params.require(:article).permit(:titre, :status, :published_at, :contenu, tag_ids: [])
     end
   end
 end

@@ -2,7 +2,7 @@
 
 class BlogController < ApplicationController
   def index
-    @articles = Article.published.live
+    @articles = Article.published.live.includes(:tags)
   end
 
   def show

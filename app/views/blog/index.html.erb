@@ -1,4 +1,6 @@
+<div class="blog-width">
 <% @articles.each do |article| %>
   <h3><%= link_to article.titre, blog_path(article), class: 'blog-index-link' %></h3>
-  <%= render 'blog/article_date', date: article.published_at %>
+  <%= render 'blog/article_meta', article: article %>
 <% end %>
+</div>
