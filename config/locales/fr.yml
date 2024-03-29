@@ -8,21 +8,21 @@ fr:
     signin_button_text: 'Se connecter'
     signout_button_text: 'Se déconnecter'
     signup_button_text: "S'inscrire"
+  nav:
+    shows: 'Émissions'
+    show_categories: "Catégorie d'émission"
+    ads: 'Publicités'
+    tags: 'Tags'
+    users: 'Utilisateurs'
+    membres: 'Membres'
+    memberships: 'Memberships'
+    articles: 'Articles'
   admin:
     shared:
       close: 'Femer'
       form_action:
         back_btn: 'Retour'
         save_btn: 'Enregistrer'
-    nav:
-      shows: 'Émissions'
-      show_categories: "Catégorie d'émission"
-      ads: 'Publicités'
-      tags: 'Tags'
-      users: 'Utilisateurs'
-      membres: 'Membres'
-      memberships: 'Memberships'
-      articles: 'Articles'
     users:
       create_user_btn: "Créer un utilisateur"
       successfully_deleted: "Utilisateur supprimé avec succès."

@@ -10,35 +10,35 @@
           <li class="nav-item">
           </li>
           <li class="nav-item">
-            <%= link_to t('admin.nav.shows'), admin_emissions_path, class: 'nav-link' %>
+            <%= link_to t('nav.shows'), admin_emissions_path, class: 'nav-link' %>
           </li>
           <% if Current.user.admin? %>
             <li class="nav-item">
-              <%= link_to t('admin.nav.show_categories'), admin_categorie_emissions_path, class: 'nav-link' %>
+              <%= link_to t('nav.show_categories'), admin_categorie_emissions_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <%= link_to t('admin.nav.tags'), admin_tags_path, class: 'nav-link' %>
+              <%= link_to t('nav.tags'), admin_tags_path, class: 'nav-link' %>
             </li>
             <%# <li class="nav-item"> %>
               <%#   <a class="nav-link" href="#">Balados</a> %>
               <%# </li> %>
             <li class="nav-item">
-              <%= link_to t('admin.nav.users'), admin_users_path, class: 'nav-link' %>
+              <%= link_to t('nav.users'), admin_users_path, class: 'nav-link' %>
             </li>
             <%# <li class="nav-item"> %>
               <%#   <a class="nav-link" href="#">Équipe</a> %>
               <%# </li> %>
             <li class="nav-item">
-              <%= link_to t('admin.nav.ads'), admin_publicites_path, class: 'nav-link' %>
+              <%= link_to t('nav.ads'), admin_publicites_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <%= link_to t('admin.nav.membres'), admin_membres_path, class: 'nav-link' %>
+              <%= link_to t('nav.membres'), admin_membres_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <%= link_to t('admin.nav.memberships'), admin_memberships_path, class: 'nav-link' %>
+              <%= link_to t('nav.memberships'), admin_memberships_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
-              <%= link_to t('admin.nav.articles'), admin_articles_path, class: 'nav-link' %>
+              <%= link_to t('nav.articles'), admin_articles_path, class: 'nav-link' %>
             </li>
           <% end %>
         </ul>
