@@ -41,7 +41,7 @@ class Diffusion < ApplicationRecord
   end
 
   def self.find_programmation_de_la_journee
-    all
+    includes(:emission)
       .filter(&:en_onde_aujourdhui?)
       .sort_by { |a| a.temps_debut.strftime('%H:%M') }
   end
