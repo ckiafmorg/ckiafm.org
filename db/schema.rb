@@ -161,13 +161,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_205045) do
     t.index ["has_social_media_account_type", "has_social_media_account_id"], name: "index_social_media_accounts_on_has_social_media_account"
   end
 
-  create_table "taggables", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "emission_id", null: false
+  create_table "taggings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "taggable_type", null: false
+    t.uuid "taggable_id", null: false
     t.uuid "tag_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["emission_id"], name: "index_taggables_on_emission_id"
-    t.index ["tag_id"], name: "index_taggables_on_tag_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["taggable_type", "taggable_id"], name: "index_taggings_on_taggable"
   end
 
   create_table "tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -193,6 +194,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_205045) do
   add_foreign_key "membre_equipes", "emissions"
   add_foreign_key "membres", "memberships"
   add_foreign_key "paiements", "membres"
-  add_foreign_key "taggables", "emissions"
-  add_foreign_key "taggables", "tags"
+  add_foreign_key "taggings", "tags"
 end

@@ -3,6 +3,6 @@
 class Tag < ApplicationRecord
   validates :nom, presence: true, uniqueness: true
 
-  has_many :taggable, dependent: :nullify
-  has_many :emissions, through: :taggable
+  has_many :taggings, dependent: :destroy
+  has_many :emissions, through: :taggings, source: :taggable, source_type: Tagging::EMISSION
 end
