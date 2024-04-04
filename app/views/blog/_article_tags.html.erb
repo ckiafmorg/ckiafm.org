@@ -1,1 +1,1 @@
-<p class="fs-8 fw-light"><%= bootstrap_icon(:tag) %> <%= tags.map { |t| t.nom }.join(', ') %></p>
+<p class="fs-8 fw-light"><%= bootstrap_icon(:tag) %> <%= tags.map { |t| link_to t.nom, t}.join(', ').html_safe %></p>

@@ -1,0 +1,7 @@
+<% emissions.each do |emission| %>
+  <h4><%= link_to emission.nom, emission_path(emission) %></h4>
+  <div class="d-flex flex-direction-row justify-content-between">
+    <!-- TODO: put the next diffusion here -->
+    <p class="fs-8 fw-light"><%= bootstrap_icon(:tag) %> <%= emission.tags.map { |t| link_to t.nom, t}.join(', ').html_safe %></p>
+  </div>
+<% end %>

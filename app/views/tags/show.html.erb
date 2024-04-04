@@ -1,0 +1,11 @@
+<h1><%= @tag.nom %></h1>
+<div class="row">
+  <div class="col-lg-6">
+    <h2 class="text-decoration-underline"><%= t('nav.shows') %></h2>
+    <%= render 'emissions/emissions_list', emissions: @tag.emissions %>
+  </div>
+  <div class="col-lg-6">
+    <h2 class="text-decoration-underline"><%= t('nav.articles') %></h2>
+    <%= render 'blog/articles_list', articles: @tag.articles %>
+  </div>
+</div>

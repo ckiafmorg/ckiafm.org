@@ -9,6 +9,15 @@
   --dark-pink: #9d174d;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 /**
  * Bootstrap missing font-size class
  */
@@ -27,12 +36,7 @@
   }
 }
 
-.social-media-account-link {
-  text-decoration: none;
-}
-
 .social-link {
-  color: black;
   margin-right: .75rem;
   svg {
     height: 25px;
@@ -56,13 +60,4 @@
 .blog-width {
   max-width: 860px;
   margin: auto;
-}
-
-.blog-index-link {
-  color: black;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }

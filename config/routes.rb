@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resource :programmation, only: :show
   resources :emissions, only: %i[index show]
   resources :blog, only: %i[index show]
+  resources :tags, only: %i[show]
 
   get :admin, to: redirect('/admin/dashboard'), as: :admin
   namespace :admin do

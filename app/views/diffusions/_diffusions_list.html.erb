@@ -1,0 +1,10 @@
+<% diffusions.each do |diffusion| %>
+  <p class="d-flex flex-row justify-content-between align-items-center my-0">
+    <span class="fw-bold"><%= format_time diffusion.temps_debut %> - <%= format_time diffusion.temps_fin %></span>
+    <span><%= link_to "#{diffusion.emission.nom}#{ if diffusion.rediffusion then ' - rediffusion' else '' end }", diffusion.emission %></span>
+    <span><%= diffusion.emission.categorie_emission.nom %></span>
+  </p>
+  <% unless diffusion == @diffusions.last %>
+    <hr>
+  <% end %>
+<% end %>

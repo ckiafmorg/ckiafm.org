@@ -31,4 +31,6 @@ class Emission < ApplicationRecord
   accepts_nested_attributes_for :social_media_accounts,
                                 allow_destroy: true,
                                 reject_if: proc { |attrs| attrs[:platform].blank? || attrs[:url].blank? }
+
+  def prochaine_diffusion; end
 end

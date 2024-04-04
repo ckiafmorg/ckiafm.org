@@ -1,0 +1,37 @@
+<h1><%= @emission.nom %></h1>
+<p><%= @emission.description %></p>
+
+<% unless @emission.social_media_accounts.empty? %>
+  <ul class="list-unstyled">
+    <% @emission.social_media_accounts.each do |sma| %>
+      <li><%= link_to "#{bootstrap_icon(social_media_icon_name(sma))} #{social_media_platform_name(sma)}".html_safe, sma.url %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% unless @emission.diffusions.empty? %>
+  <% if @emission.diffusions.size > 1 %>
+    <h4>Diffusions</h4>
+  <% else %>
+    <h4>Diffusion</h4>
+  <% end %>
+  <% @emission.diffusions.in_groups_of(2).each do |row| %>
+    <div class="row">
+      <% row.each do |diffusion| %>
+        <% unless diffusion.nil? %>
+          <div class="col-lg-6">
+            <div class="card mt-3 mb-3">
+              <div class="card-body">
+                <div class="d-flex flex-row justify-content-between">
+                  <h5 class="card-title d-inline-block"><%= "(R) - " if diffusion.rediffusion %><%= diffusion.type.titleize %></h5>
+                </div>
+                <p class="card-text"><%= format_time diffusion.temps_debut %> - <%= format_time diffusion.temps_fin %><br>
+                <%= diffusion.jours_diffusion_formate %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
