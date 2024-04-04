@@ -13,6 +13,7 @@ class DiffusionSpeciale < Diffusion
 
   def jours_diffusion_formate
     # TODO: use translation and localisatin here
+    # TODO, we should probably handle this kind of stuff in a view partial
     "Le #{jour_de_la_semaine date_debut.wday} #{date_debut}"
   end
 
