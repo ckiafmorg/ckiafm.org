@@ -1,13 +1,13 @@
 <%= form_with model: [:admin, article], local: true do |form| %>
   <div class="row">
     <div class="col">
-      <%= form.label :titre %>
+      <%= form.label :titre, t('admin.articles.form.titre_label'), class: 'form-label' %>
       <%= form.text_field :titre, class: 'form-control' %>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-6">
-      <%= form.label :status %>
+      <%= form.label :status, t('admin.articles.form.status'), class: 'form-label' %>
       <%= form.select :status, Article.statuses.keys.map { |status| [t("admin.articles.status.#{status}"), status] }, {}, class: 'form-select' %>
     </div>
     <div class="col-lg-6">
@@ -18,14 +18,14 @@
   <div class="row">
     <div class="col">
       <div class="col-lg-6">
-      <%= form.label :tag_ids, t('admin.articles.form.tags'), class: 'form-label' %>
+      <%= form.label :tag_ids, t('admin.articles.form.tags_label'), class: 'form-label' %>
       <%= form.select :tag_ids, options_from_collection_for_select(@tags, :id, :nom, @article.tag_ids), { multiple: true }, class:"form-select" %>
     </div>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <%= form.label :contenu %>
+      <%= form.label :contenu, t('admin.articles.form.contenu_label'), class: 'form-label' %>
       <%= form.text_area :contenu, class: 'form-control' %>
     </div>
   </div>

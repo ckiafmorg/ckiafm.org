@@ -152,7 +152,11 @@ fr:
         draft: "Brouillon"
         published: "Publié"
       form:
+        titre_label: 'Titre'
+        status_label: 'Status'
         published_at_label: "Date de publication"
+        tags_label: 'Tags'
+        contenu_label: 'Contenu'
   validations:
     email_validator:
       invalid_email: 'Ce email est invalide'
