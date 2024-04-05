@@ -57,6 +57,8 @@ fr:
         categorie: "Catégorie de l'émission"
         utilisateur: "Propriétaire de l'émission"
         tags: "Les tags de l'émission"
+        equipe_subtitle: 'Équipe'
+        media_sociaux_subtitle: 'Médias sociaux'
         add_account_btn: 'Ajouter un compte'
         add_membre_btn: "Ajouter un membre à l'équipe"
     diffusions:
