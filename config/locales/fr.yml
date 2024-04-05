@@ -98,6 +98,9 @@ fr:
         vertical: 'Verticale'
     categorie_emissions: 
       create_category_btn: "Créer une catégorie d'émission"
+      form:
+        nom_label: 'Nom'
+        couleur_label: 'Couleur'
       erreur:
         failed_to_destroy: "Attention, votre catégorie n'a pas été détruite."
     tags:
