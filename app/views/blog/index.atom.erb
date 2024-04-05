@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>CKIA FM - Blog</title>
+  <link rel="alternate" type="text/html" href="<%= blog_index_url %>" />
+  <link rel="self" href="<%= blog_index_url format: :atom %>"/>
+  <updated><%= @articles.last.published_at %></updated>
+  <author>
+    <name>CKIA FM</name>
+    <email>info@ckiafm.org</email>
+  </author>
+  <id><%= blog_index_url format: :atom %></id>
+
+  <% @articles.each do |article| %>
+  <entry>
+    <title><%= article.titre %></title>
+    <link rel="alternative" type="text/html" href="<%= blog_path(article) %>"/>
+    <id><%= blog_path(article) %></id>
+    <published><%= article.published_at %></published>
+    <published><%= article.updated_at %></published>
+    <summary></summary>
+    <% article.tags.each do |tag| %>
+      <category term="<%= tag.nom %>" />
+    <% end %>
+    <content type="html">
+    <%= render_markdown article.contenu %>
+    </content>
+  </entry>
+  <% end %>
+</feed>
