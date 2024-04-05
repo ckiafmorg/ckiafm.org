@@ -129,10 +129,15 @@ fr:
       deletion_error: "Une erreur est survenue lors de la suppression du membre"
       deletion_confirmation: 'Voulez-vous vraiment supprimer ce membre'
       form:
-        nom_label: 'Nom'
         prenom_label: 'Prénom'
+        nom_label: 'Nom'
         email_label: 'Email'
         phone_label: 'Téléphone'
+        adresse_label: 'Adresse'
+        ville_label: 'Ville'
+        code_postal_label: 'Code postal'
+        pays_label: 'Pays'
+        membership_label: 'Membership'
     memberships:
       create_btn: "Créer un membership"
       successfully_created: "Membership créé avec succès"

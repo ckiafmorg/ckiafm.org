@@ -1,51 +1,51 @@
 <%= form_with model: [:admin, membre], local: true do |form| %>
   <div class="row">
     <div class="col-lg-6">
-      <%= form.label :prenom %>
+      <%= form.label :prenom, t('admin.membres.form.prenom_label'), class: 'form-label' %>
       <%= form.text_field :prenom, class: 'form-control', autofocus: true %>
     </div>
     <div class="col-lg-6">
-      <%= form.label :nom %>
+      <%= form.label :nom, t('admin.membres.form.nom_label'), class: 'form-label' %>
       <%= form.text_field :nom, class: 'form-control' %>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-6">
-      <%= form.label :email %>
+      <%= form.label :email, t('admin.membres.form.email_label'), class: 'form-label' %>
       <%= form.email_field :email, class: 'form-control' %>
     </div>
     <div class="col-lg-6">
-      <%= form.label :phone %>
+      <%= form.label :phone, t('admin.membres.form.phone_label'), class: 'form-label' %>
       <%= form.phone_field :phone, class: 'form-control', placeholder: '1-418-529-9026' %>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-6">
-      <%= form.label :adresse %>
+      <%= form.label :adresse, t('admin.membres.form.adresse_label'), class: 'form-label' %>
       <%= form.text_field :adresse, class: 'form-control' %>
     </div>
     <div class="col-lg-6">
-      <%= form.label :ville %>
+      <%= form.label :ville, t('admin.membres.form.ville_label'), class: 'form-label' %>
       <%= form.text_field :ville, class: 'form-control' %>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-6">
-      <%= form.label :code_postal %>
+      <%= form.label :code_postal, t('admin.membres.form.code_postal_label'), class: 'form-label' %>
       <%= form.text_field :code_postal, class: 'form-control' %>
     </div>
     <div class="col-lg-6">
-      <%= form.label :province %>
+      <%= form.label :province, t('admin.membres.form.province_label'), class: 'form-label' %>
       <%= form.text_field :province, class: 'form-control' %>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-6">
-      <%= form.label :pays %>
+      <%= form.label :pays, t('admin.membres.form.pays_label'), class: 'form-label' %>
       <%= form.text_field :pays, class: 'form-control' %>
     </div>
     <div class="col-lg-6">
-      <%= form.label :membership_id %>
+      <%= form.label :membership_id, t('admin.membres.form.membership_label'), class: 'form-label' %>
       <%= form.select :membership_id, options_from_collection_for_select(memberships, :id, :nom, membre.membership_id), {}, class: 'form-select' %>
     </div>
   </div>
