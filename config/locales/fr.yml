@@ -28,6 +28,11 @@ fr:
       successfully_created: "Utilisateur créé avec succès."
       successfully_updated: "L'utilisateur a été mis à jour avec succès."
       deletion_error: "Il y a eu une erreur lors de la suppression de l'utilisateur."
+      form:
+        email_label: 'Email'
+        role_label: 'Role'
+        password_label: 'Mot de passe'
+        password_confirmation_label: 'Confirmez le mot de passe'
       error:
         user_deleted: "Voulez-vous vraiment supprimer cet utilisateur?"
     emissions:

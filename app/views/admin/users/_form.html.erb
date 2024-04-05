@@ -1,21 +1,21 @@
 <%= form_with model: [:admin, user], local: true do |form| %>
   <div class="row">
     <div class="col-lg-6">
-      <%= form.label :email %>
+      <%= form.label :email, t('admin.users.form.email_label'), class: 'form-label' %>
       <%= form.email_field :email, class: 'form-control', autofocus: true %>
     </div>
     <div class="col-lg-6">
-      <%= form.label :role %>
+      <%= form.label :role, t('admin.usrs.form.role_label'), class: 'form-label' %>
       <%= form.select(:role, User.roles.keys.map { |role| [role.titleize, role] }, {}, class: 'form-select') %>
     </div>
   </div>
   <div class="row">
     <div class="col-lg-6">
-      <%= form.label :password %>
+      <%= form.label :password, t('admin.users.form.password_label'), class: 'form-label' %>
       <%= form.password_field :password, class: 'form-control' %>
     </div>
     <div class="col-lg-6">
-      <%= form.label :password_confirmation %>
+      <%= form.label :password_confirmation, t('admin.users.form.password_confirmation_label'), class: 'form-label' %>
       <%= form.password_field :password_confirmation, class: 'form-control' %>
     </div>
   </div>
