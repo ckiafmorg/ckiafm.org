@@ -4,16 +4,16 @@
   <div class="mb-3" data-admin--emission-form-target="membreEquipeFieldset">
     <div class="row">
       <div class="col-lg-4">
-        <%= form.label :nom %>
+        <%= form.label :nom, t('admin.emissions.membre_equipe_form.nom_label'), class: 'form-label' %>
         <%= form.text_field :nom, class: 'form-control' %>
       </div>
       <div class="col-lg-4">
-        <%= form.label :role %>
+        <%= form.label :role, t('admin.emissions.membre_equipe_form.role_label'), class: 'form-label' %>
         <%= form.text_field :role, class: 'form-control' %>
       </div>
       <div class="col-lg-4">
         <label>&nbsp;</label>
-        <button type="button" data-action="click->admin--emission-form#deleteMembre" class="btn btn-outline-danger btn-as-block">Supprimer</button>
+        <button type="button" data-action="click->admin--emission-form#deleteMembre" class="btn btn-outline-danger btn-as-block"><%= t('admin.emissions.membre_equipe_form.delete_btn_label') %></button>
       </div>
     </div>
   </div>

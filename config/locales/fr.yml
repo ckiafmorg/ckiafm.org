@@ -39,6 +39,16 @@ fr:
       successfully_created: "L'émission a été créé avec succès."
       successfully_updated: "L'émission a été modifié avec succès."
       create_emission_btn: 'Créer une émission'
+      membre_equipe_form:
+        nom_label: 'Nom'
+        role_label: 'Role'
+        delete_btn_label: 'Supprimer'
+      media_sociaux_form:
+        platform_label: 'Plateforme'
+        nom_label: 'Nom de la plateforme'
+        nom_help: "Si la plateforme n'est pas une platforem dans la liste, vous pouvez choisir podcast et mettre le nom que vous voulez."
+        url_label: 'Lien public du compte'
+        delete_btn_label: 'Supprimer'
       form:
         nom: 'Nom'
         description: 'Description'
@@ -47,10 +57,6 @@ fr:
         categorie: "Catégorie de l'émission"
         utilisateur: "Propriétaire de l'émission"
         tags: "Les tags de l'émission"
-        account_platform: 'Platforme'
-        account_url: 'Lien public du compte'
-        platform_name: 'Nom de la platforme'
-        platform_name_help: "Si la plateforme n'est pas une platforem dans la liste, vous pouvez choisir podcast et mettre le nom que vous voulez."
         add_account_btn: 'Ajouter un compte'
         add_membre_btn: "Ajouter un membre à l'équipe"
     diffusions:
