@@ -1,11 +1,11 @@
 <%= form_with model: [:admin, membership], local: true do |form| %>
   <div class="row">
     <div class="col-lg-6">
-      <%= form.label :nom %>
+      <%= form.label :nom, t('admin.memberships.form.nom_label'), class: 'form-label' %>
       <%= form.text_field :nom, class: 'form-control' %>
     </div>
     <div class="col-lg-6">
-      <%= form.label :montant %>
+      <%= form.label :montant, t('admin.memberships.form.montant_label'), class: 'form-label' %>
       <%= form.number_field :montant, step: 0.01, class: 'form-control' %>
     </div>
   </div>

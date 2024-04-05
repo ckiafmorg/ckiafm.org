@@ -142,6 +142,9 @@ fr:
     memberships:
       create_btn: "Créer un membership"
       successfully_created: "Membership créé avec succès"
+      form:
+        nom_label: 'Nom'
+        montant_label: 'Montant'
     articles:
       create_btn: "Nouvel article"
       created_successfully: "Aritcle créé avec succès"
