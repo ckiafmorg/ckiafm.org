@@ -22,6 +22,7 @@ gem 'stimulus-rails'
 # markdown for blog and other textarea content
 gem 'kramdown'
 gem 'markdown_media'
+gem 'stringex'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.5'
