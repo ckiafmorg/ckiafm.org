@@ -90,3 +90,6 @@ emission_weekend.diffusions.create(diffuse_samedi: true,
                                    temps_debut: Time.zone.parse('09:30'),
                                    temps_fin: Time.zone.parse('12:00'),
                                    date_debut: DateTime.parse('2024-01-21'))
+
+log "Create articles"
+Article.create(titre: "Un article de test", contenu: "## a test article\nUn peu de ontenu ici", published_at: "2024-03-01", status: 10)
