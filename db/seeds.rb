@@ -92,4 +92,5 @@ emission_weekend.diffusions.create(diffuse_samedi: true,
                                    date_debut: DateTime.parse('2024-01-21'))
 
 log "Create articles"
-Article.create(titre: "Un article de test", contenu: "## a test article\nUn peu de ontenu ici", published_at: "2024-03-01", status: 10)
+article = Article.create(titre: "Un article de test", contenu: "## a test article\nUn peu de ontenu ici", published_at: "2024-03-01", status: 10)
+article.tags << tag_qc
