@@ -2,6 +2,10 @@
 
 module Admin
   class MembershipsController < AdminController
+    before_action do
+      ensure_user_is :admin
+    end
+
     def index
       @memberships = Membership.all
     end

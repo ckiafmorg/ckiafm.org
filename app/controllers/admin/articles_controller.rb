@@ -2,6 +2,10 @@
 
 module Admin
   class ArticlesController < AdminController
+    before_action do
+      ensure_user_is :admin
+    end
+
     def index
       @articles = Article.all
     end
