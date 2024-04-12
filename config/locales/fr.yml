@@ -172,6 +172,13 @@ fr:
         published_at_label: "Date de publication"
         tags_label: 'Tags'
         contenu_label: 'Contenu'
+    emission_episodes:
+      create_btn: 'Ajouter un épisode'
+      created_successfully: 'Épisode créée avec succès'
+      deleted_successfully: 'Épisode supprimée avec succès'
+      updated_successfully: 'Épisode mis à jour avec succès'
+      deletion_error: "Une erreur s'est produite lors de la suppression de l'épisode"
+      delete_confirmation: 'Voulez-vous vraiment supprimer cet épisode ?'
   validations:
     email_validator:
       invalid_email: 'Ce email est invalide'

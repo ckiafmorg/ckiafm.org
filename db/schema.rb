@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_21_205045) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_11_174355) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -77,6 +77,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_205045) do
     t.date "date_debut", null: false
     t.string "type"
     t.index ["emission_id"], name: "index_diffusions_on_emission_id"
+  end
+
+  create_table "emission_episodes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "titre"
+    t.datetime "published_at", null: false
+    t.text "description"
+    t.uuid "emission_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emission_id"], name: "index_emission_episodes_on_emission_id"
   end
 
   create_table "emissions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -190,6 +200,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_205045) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "diffusions", "emissions"
+  add_foreign_key "emission_episodes", "emissions"
   add_foreign_key "emissions", "categorie_emissions"
   add_foreign_key "membre_equipes", "emissions"
   add_foreign_key "membres", "memberships"

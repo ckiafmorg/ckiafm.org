@@ -29,10 +29,38 @@
         <td><%= format_time diffusion.temps_debut %></td>
         <td><%= format_time diffusion.temps_fin %></td>
         <td><%= if diffusion.rediffusion then bootstrap_icon(:check2) end %></td>
-          <td>
-            <%= link_to bootstrap_icon(:pencil), edit_admin_emission_diffusion_path(diffusion.emission, diffusion) %>
-            <%= link_to bootstrap_icon(:trash), admin_emission_diffusion_path(diffusion.emission, diffusion), data: { turbo_method: :delete, turbo_confirm: t('admin.diffusions.delete_confirmation') } %>
-          </td>
+        <td>
+          <%= link_to bootstrap_icon(:pencil), edit_admin_emission_diffusion_path(diffusion.emission, diffusion) %>
+          <%= link_to bootstrap_icon(:trash), admin_emission_diffusion_path(diffusion.emission, diffusion), data: { turbo_method: :delete, turbo_confirm: t('admin.diffusions.delete_confirmation') } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render 'admin/shared/create_item_button', btn_label: t('admin.emission_episodes.create_btn'), btn_path: new_admin_emission_emission_episode_path(@emission) %>
+
+<table class="table">
+  <thead>
+    <th>Nom</th>
+    <th>Date de diffusion</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @emission.episodes.each do |episode| %>
+      <tr>
+        <td>
+          <% if episode.titre.empty? %>
+            <%= "Épisode du #{format_date episode.published_at}" %>
+          <% else %>
+            <%= episode.titre %>
+          <% end %>
+        </td>
+        <td><%= format_date episode.published_at %></td>
+        <td>
+          <%= link_to bootstrap_icon(:pencil), edit_admin_emission_emission_episode_path(episode.emission, episode) %>
+          <%= link_to bootstrap_icon(:trash), admin_emission_emission_episode_path(episode.emission, episode), data: { turbo_method: :delete, turbo_confirm: t('admin.emission_episodes.delete_confirmation') } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

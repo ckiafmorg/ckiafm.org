@@ -7,7 +7,7 @@ module Admin
     end
 
     def show
-      @emission = Emission.find(params[:id])
+      @emission = Emission.includes(:diffusions).includes(:episodes).find(params[:id])
       @diffusion = Diffusion.new
     end
 

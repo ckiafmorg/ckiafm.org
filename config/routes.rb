@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resource :dashboard, only: [:show]
     resources :emissions do
       resources :diffusions
+      resources :emission_episodes
     end
     resources :publicites
     resources :categorie_emissions

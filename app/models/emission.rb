@@ -15,6 +15,7 @@ class Emission < ApplicationRecord
   belongs_to :categorie_emission, dependent: :destroy
 
   has_many :diffusions, dependent: :destroy
+  has_many :episodes, dependent: :destroy, class_name: 'EmissionEpisode'
 
   has_many :taggings, dependent: :destroy, as: :taggable
   has_many :tags, through: :taggings
