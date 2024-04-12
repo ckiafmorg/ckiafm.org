@@ -1,4 +1,0 @@
-<% articles.each do |article| %>
-  <h4><%= link_to article.titre, blog_path(article) %></h4>
-  <%= render 'blog/article_meta', article: article %>
-<% end %>
