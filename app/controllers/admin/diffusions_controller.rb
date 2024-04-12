@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class DiffusionsController < Admin::AdminController
+  class DiffusionsController < AdminController
     before_action do
       ensure_user_is :admin
     end

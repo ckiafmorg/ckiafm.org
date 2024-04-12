@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class EmissionsController < Admin::AdminController
+  class EmissionsController < AdminController
     def index
       @emissions = Emission.order(:status)
     end

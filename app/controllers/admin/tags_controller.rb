@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class TagsController < Admin::AdminController
+  class TagsController < AdminController
     before_action do
       ensure_user_is :admin
     end
