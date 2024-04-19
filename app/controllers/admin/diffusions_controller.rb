@@ -8,11 +8,7 @@ module Admin
 
     def new
       @emission = Emission.find(params[:emission_id])
-      # TODO: there should really have a form object for that
       @diffusion = Diffusion.new
-
-      # TODO: faire un form object pour diffusion
-      @diffusion.rediffusion = true if @emission.diffusions.count.positive?
     end
 
     def edit
@@ -21,7 +17,7 @@ module Admin
     end
 
     def create
-      @emission = Emission.find(params.dig(:diffusion, :emission_id))
+      @emission = Emission.find(params[:emission_id])
       @type_diffusion = params.dig(:diffusion, :type_diffusion).to_sym
       @diffusion = DiffusionFactory.create_for(@type_diffusion, diffusion_params)
       @emission.diffusions << @diffusion
@@ -58,7 +54,7 @@ module Admin
 
     def diffusion_params
       params.require(:diffusion)
-            .except(:emission_id)
+            .except(:type_diffusion)
             .permit(
               :temps_debut,
               :temps_fin,

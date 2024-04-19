@@ -1,7 +1,5 @@
 <h2><%= t('admin.diffusions.form.title') %></h2>
 <%= form_with model: [:admin, emission, diffusion], local: true, data: { controller: "admin--diffusion-form" } do |form| %>
-  <%= form.hidden_field :emission_id, value: emission.id %>
-
   <div class="row">
     <div class="col-lg">
       <%= form.label :type_diffusion, t('admin.diffusions.form.type_diffusion_label'), class: 'form-label' %>
