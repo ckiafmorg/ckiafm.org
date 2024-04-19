@@ -17,10 +17,10 @@ jobs:
 
       - name: Install ruby gems
         run: |
-          gem install rubocop rubocop-performance rubocop-rails rubocop-rspec --no-document
+          bundle install --with test
 
       - name: Run rubocop
-        run: rubocop
+        run: bundle exec rubocop
 
   erblint:
     runs-on: ubuntu-latest
