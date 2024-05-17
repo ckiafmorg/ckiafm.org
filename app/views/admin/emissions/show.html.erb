@@ -26,8 +26,8 @@
       <tr>
         <td><%= diffusion.jours_diffusion_formate %></td>
         <td><%= diffusion.date_debut %></td>
-        <td><%= format_time diffusion.temps_debut %></td>
-        <td><%= format_time diffusion.temps_fin %></td>
+        <td><%= format_time diffusion.debut %></td>
+        <td><%= format_time diffusion.fin %></td>
         <td><%= if diffusion.rediffusion then bootstrap_icon(:check2) end %></td>
         <td>
           <%= link_to bootstrap_icon(:pencil), edit_admin_emission_diffusion_path(diffusion.emission, diffusion) %>

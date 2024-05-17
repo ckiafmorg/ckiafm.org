@@ -44,8 +44,8 @@ emission_matin.diffusions.create(diffuse_lundi: true,
                                  diffuse_jeudi: true,
                                  diffuse_vendredi: true,
                                  type: 'DiffusionHebdomadaire',
-                                 temps_debut: Time.zone.parse('07:00'),
-                                 temps_fin: Time.zone.parse('09:00'),
+                                 temps_debut: '07:00:00',
+                                 temps_fin: '09:00:00',
                                  date_debut: DateTime.parse('2024-01-21'))
 emission_matin.diffusions.create(diffuse_lundi: true,
                                  diffuse_mardi: true,
@@ -54,8 +54,8 @@ emission_matin.diffusions.create(diffuse_lundi: true,
                                  diffuse_vendredi: true,
                                  rediffusion: true,
                                  type: 'DiffusionHebdomadaire',
-                                 temps_debut: Time.zone.parse('21:00'),
-                                 temps_fin: Time.zone.parse('23:00'),
+                                 temps_debut: '21:00:00',
+                                 temps_fin: '23:00:00',
                                  date_debut: DateTime.parse('2024-01-21'))
 
 emission_soir = Emission.new(nom: "L'émission du retour",
@@ -72,8 +72,8 @@ emission_soir.diffusions.create(diffuse_lundi: true,
                                 diffuse_jeudi: true,
                                 diffuse_vendredi: true,
                                 type: 'DiffusionHebdomadaire',
-                                temps_debut: Time.zone.parse('15:00'),
-                                temps_fin: Time.zone.parse('17:00'),
+                                temps_debut: '15:00:00',
+                                temps_fin: '17:00:00',
                                 date_debut: DateTime.parse('2024-01-21'))
 
 emission_weekend = Emission.new(nom: 'Les longues entresvues du weekend',
@@ -87,8 +87,8 @@ emission_weekend.save
 emission_weekend.diffusions.create(diffuse_samedi: true,
                                    diffuse_dimanche: true,
                                    type: 'DiffusionHebdomadaire',
-                                   temps_debut: Time.zone.parse('09:30'),
-                                   temps_fin: Time.zone.parse('12:00'),
+                                   temps_debut: '09:30:00',
+                                   temps_fin: '12:00:00',
                                    date_debut: DateTime.parse('2024-01-21'))
 
 log "Create articles"

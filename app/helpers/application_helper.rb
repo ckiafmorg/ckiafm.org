@@ -2,7 +2,8 @@
 
 module ApplicationHelper
   def format_time(time)
-    time.strftime('%H:%M')
+    # We don't need to display the seconds
+    time.to_s[0..-4]
   end
 
   def format_date(date)
