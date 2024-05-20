@@ -74,8 +74,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_181529) do
     t.datetime "updated_at", null: false
     t.date "date_debut", null: false
     t.string "type"
-    t.string "temps_debut", null: false
-    t.string "temps_fin", null: false
+    t.string "temps_debut", default: "", null: false
+    t.string "temps_fin", default: "", null: false
     t.index ["emission_id"], name: "index_diffusions_on_emission_id"
   end
 
@@ -155,8 +155,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_181529) do
     t.date "date_fin", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "nom", null: false
-    t.string "format_id", null: false
+    t.string "nom", default: "", null: false
+    t.string "format_id", default: "", null: false
     t.index ["nom"], name: "index_publicites_on_nom", unique: true
   end
 
