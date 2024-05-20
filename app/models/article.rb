@@ -18,6 +18,6 @@ class Article < ApplicationRecord
   default_scope { order(:published_at) }
 
   def self.live
-    where('published_at < ?', Time.zone.now)
+    where(published_at: ...Time.zone.now)
   end
 end

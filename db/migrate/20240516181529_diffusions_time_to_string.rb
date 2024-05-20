@@ -8,8 +8,8 @@ class DiffusionsTimeToString < ActiveRecord::Migration[7.1]
     end
 
     change_table :diffusions, bulk: true do |t|
-      t.string :temps_debut, null: false
-      t.string :temps_fin, null: false
+      t.string :temps_debut, null: false, default: ''
+      t.string :temps_fin, null: false, default: ''
     end
   end
 end
