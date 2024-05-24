@@ -1,0 +1,40 @@
+<div class="entree-feuille-route-form-wrapper" data-new-record="<%= form.object.new_record? %>">
+  <%= form.hidden_field :id %>
+  <%= form.hidden_field :_destroy %>
+  <div class="row">
+    <div class="col-lg">
+      <%= form.label :titre_piece, class: 'form-label' %>
+      <%= form.text_field :titre_piece, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg">
+      <%= form.label :temps_debut, class: 'form-label' %>
+      <%= form.text_field :temps_debut, class: 'form-control' %>
+    </div>
+    <div class="col-lg">
+      <%= form.label :temps_fin, class: 'form-label' %>
+      <%= form.text_field :temps_fin, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg">
+      <%= form.label :vocal, class: 'form-label' %>
+      <%= form.select(:vocal, EntreeFeuilleRoute.vocals.keys.map { |lang| [lang.titleize, lang] }, {}, class: 'form-select') %>
+    </div>
+    <div class="col-lg">
+      <%= form.label :origine, class: 'form-label' %>
+      <%= form.select(:origine, EntreeFeuilleRoute.origines.keys.map { |origin| [origin.titleize, origin] }, {}, class: 'form-select') %>
+    </div>
+    <div class="col-lg">
+      <%= form.label :source, class: 'form-label' %>
+      <%= form.select(:source, EntreeFeuilleRoute.sources.keys.map { |src| [src.titleize, src] }, {}, class: 'form-select') %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg">
+      <label>&nbsp;</label>
+      <button type="button" data-action="click->admin--emission-episode-form#deleteEntree" class="btn btn-outline-danger btn-as-block"><%= t('admin.shared.delete_btn') %></button>
+    </div>
+  </div>
+</div>

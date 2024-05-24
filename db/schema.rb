@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_16_181529) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_23_175938) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -105,6 +105,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_181529) do
   create_table "emissions_users", id: false, force: :cascade do |t|
     t.uuid "user_id", null: false
     t.uuid "emission_id", null: false
+  end
+
+  create_table "entree_feuille_routes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "vocal", default: 0, null: false
+    t.integer "origine", default: 0, null: false
+    t.integer "source", default: 0, null: false
+    t.string "titre_piece", default: "", null: false
+    t.string "temps_debut", default: "", null: false
+    t.string "temps_fin", default: "", null: false
+    t.uuid "emission_episode_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emission_episode_id"], name: "index_entree_feuille_routes_on_emission_episode_id"
   end
 
   create_table "memberships", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -202,6 +215,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_181529) do
   add_foreign_key "diffusions", "emissions"
   add_foreign_key "emission_episodes", "emissions"
   add_foreign_key "emissions", "categorie_emissions"
+  add_foreign_key "entree_feuille_routes", "emission_episodes"
   add_foreign_key "membre_equipes", "emissions"
   add_foreign_key "membres", "memberships"
   add_foreign_key "paiements", "membres"

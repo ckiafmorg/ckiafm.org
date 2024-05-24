@@ -19,6 +19,7 @@ fr:
   admin:
     shared:
       close: 'Femer'
+      delete_btn: 'Supprimer'
       form_action:
         back_btn: 'Retour'
         save_btn: 'Enregistrer'
@@ -42,13 +43,11 @@ fr:
       membre_equipe_form:
         nom_label: 'Nom'
         role_label: 'Role'
-        delete_btn_label: 'Supprimer'
       media_sociaux_form:
         platform_label: 'Plateforme'
         nom_label: 'Nom de la plateforme'
         nom_help: "Si la plateforme n'est pas une platforem dans la liste, vous pouvez choisir podcast et mettre le nom que vous voulez."
         url_label: 'Lien public du compte'
-        delete_btn_label: 'Supprimer'
       form:
         nom: 'Nom'
         description: 'Description'
@@ -179,6 +178,8 @@ fr:
       updated_successfully: 'Épisode mis à jour avec succès'
       deletion_error: "Une erreur s'est produite lors de la suppression de l'épisode"
       delete_confirmation: 'Voulez-vous vraiment supprimer cet épisode ?'
+      form:
+        add_entree_feuille_route_btn: 'Ajouter une entrée à la feuille de route'
   validations:
     email_validator:
       invalid_email: 'Ce email est invalide'

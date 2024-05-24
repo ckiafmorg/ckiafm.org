@@ -5,11 +5,13 @@ module Admin
     def new
       @emission = Emission.find(params[:emission_id])
       @episode = EmissionEpisode.new
+      @episode.entrees.build
     end
 
     def edit
       @emission = Emission.find(params[:emission_id])
       @episode = EmissionEpisode.find(params[:id])
+      @episode.entrees.build
     end
 
     def create
@@ -47,7 +49,13 @@ module Admin
     private
 
     def emission_episode_params
-      params.require(:emission_episode).permit(:titre, :published_at, :description, :emission_id)
+      params.require(:emission_episode).permit(
+        :titre,
+        :published_at,
+        :description,
+        :emission_id,
+        entrees_attributes: %i[id titre_piece temps_debut temps_fin vocal origine source _destroy]
+      )
     end
   end
 end

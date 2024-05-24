@@ -1,4 +1,5 @@
-<%= form_with model: [:admin, emission, episode], local: true do |form| %>
+<%= form_with model: [:admin, emission, episode], local: true, data: { controller: 'admin--emission-episode-form' } do |form| %>
+
   <div class="row">
     <div class="col-lg-6">
       <%= form.label :titre, class: 'form-label' %>
@@ -13,6 +14,26 @@
     <div class="col-lg-12">
       <%= form.label :description, class: 'form-label' %>
       <%= form.text_area :description, class: 'form-control' %>
+    </div>
+  </div>
+
+  <h5>Feuille de route</h5>
+  <%= form.fields_for :entrees do |episode_form| %>
+    <%= render 'admin/emission_episodes/entree_feuille_route_form', form: episode_form %>
+  <% end %>
+
+  <template data-admin--emission-episode-form-target="entreeTemplate">
+  <%= form.fields_for :entrees, EntreeFeuilleRoute.new, child_index: 'NEW_RECORD' do |episode_form| %>
+    <%= render 'admin/emission_episodes/entree_feuille_route_form', form: episode_form %>
+  <% end %>
+
+  </template>
+
+  <div data-admin--emission-episode-form-target="entreeTarget"></div>
+
+  <div class="row">
+    <div class="col">
+      <button id="add-entree-feuille-route-btn" class="btn btn-outline-secondary my-3" data-action="click->admin--emission-episode-form#newEntree"><%= t('admin.emission_episodes.form.add_entree_feuille_route_btn') %></button>
     </div>
   </div>
 
