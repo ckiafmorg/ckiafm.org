@@ -163,7 +163,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
-    markdown_media (2.0.0)
+    markdown_media (2.0.1)
       kramdown
     mini_magick (4.13.1)
     mini_mime (1.1.5)
