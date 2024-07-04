@@ -1,0 +1,46 @@
+<%= form_with model: [:admin, balado], local: true do |form| %>
+  <div class="row">
+    <div class="col">
+      <%= form.label :titre, t('admin.balados.form.titre'), class: 'form-label' %>
+      <%= form.text_field :titre, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= form.label :description, t('admin.balados.form.description'), class: 'form-label' %>
+      <%= form.text_area :description, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= form.label :email, t('admin.balados.form.email'), class: 'form-label' %>
+      <%= form.email_field :email, class: 'form-control' %>
+    </div>
+    <div class="col">
+      <%= form.label :user_id, t('admin.balados.form.user'), class: 'form-label' %>
+      <%= form.select :user_id, User.all.map {|u| [u.email, u.id]}, {}, class: 'form-select' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= form.label :website, t('admin.balados.form.website'), class: 'form-label' %>
+      <%= form.text_field :website, class: 'form-control' %>
+    </div>
+    <div class="col-lg">
+      <%= form.label :tag_ids, t('admin.emissions.form.tags'), class: 'form-label' %>
+      <%= form.select :tag_ids, options_from_collection_for_select(Tag.all, :id, :nom, balado.tag_ids), { multiple: true }, class:"form-select" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= form.label :published_at, t('admin.balados.form.published_at'), class: 'form-label' %>
+      <%= form.date_field :published_at, class: 'form-control' %>
+    </div>
+    <div class="col">
+      <%= form.label :status, t('admin.balados.form.status_label'), class: 'form-label' %>
+      <%= form.select :status, Balado.statuses.keys.map {|status| [t("admin.shared.status.#{status}"), status]}, {}, class: 'form-select' %>
+    </div>
+  </div>
+
+  <%= render 'admin/shared/form_actions' %>
+<% end %>

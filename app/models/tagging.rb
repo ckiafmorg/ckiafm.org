@@ -3,7 +3,8 @@
 class Tagging < ApplicationRecord
   TAGGABLES = [
     EMISSION = 'Emission',
-    ARTICLE = 'Article'
+    ARTICLE = 'Article',
+    BALADO = 'Balado'
   ].freeze
 
   belongs_to :tag

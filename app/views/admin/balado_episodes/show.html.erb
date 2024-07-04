@@ -1,0 +1,9 @@
+<h1><%= @episode.titre %></h1>
+<%= format_status(@episode.status).html_safe %>
+
+<%= render_markdown @episode.description %>
+
+<% unless @episode.transcript.empty? %>
+  <h2>Transcription</h2>
+  <%= render_markdown @episode.transcript %>
+<% end %>

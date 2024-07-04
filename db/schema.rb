@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_23_175938) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_14_192908) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -51,6 +51,35 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_23_175938) do
     t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "balado_episodes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "titre", null: false
+    t.string "slug"
+    t.text "description", null: false
+    t.text "transcript"
+    t.datetime "published_at", null: false
+    t.integer "status", default: 0, null: false
+    t.string "audio_url"
+    t.uuid "balado_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["balado_id"], name: "index_balado_episodes_on_balado_id"
+  end
+
+  create_table "balados", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "titre", null: false
+    t.text "description", null: false
+    t.datetime "published_at", null: false
+    t.string "email", default: "", null: false
+    t.string "website", default: "", null: false
+    t.string "slug"
+    t.integer "status", default: 0, null: false
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["titre"], name: "index_balados_on_titre", unique: true
+    t.index ["user_id"], name: "index_balados_on_user_id"
   end
 
   create_table "categorie_emissions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -212,6 +241,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_23_175938) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "balado_episodes", "balados"
+  add_foreign_key "balados", "users"
   add_foreign_key "diffusions", "emissions"
   add_foreign_key "emission_episodes", "emissions"
   add_foreign_key "emissions", "categorie_emissions"

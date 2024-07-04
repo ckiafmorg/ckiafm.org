@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Rails.application.routes.draw do
+Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   root 'home#show'
 
   resource :session, only: %i[new create destroy]
@@ -27,5 +27,8 @@ Rails.application.routes.draw do
     end
     resources :memberships
     resources :articles
+    resources :balados do
+      resources :balado_episodes
+    end
   end
 end

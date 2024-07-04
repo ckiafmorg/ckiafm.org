@@ -16,6 +16,7 @@ fr:
     membres: 'Membres'
     memberships: 'Memberships'
     articles: 'Articles'
+    balados: Balados
   admin:
     shared:
       close: 'Femer'
@@ -183,6 +184,26 @@ fr:
       delete_confirmation: 'Voulez-vous vraiment supprimer cet épisode ?'
       form:
         add_entree_feuille_route_btn: 'Ajouter une entrée à la feuille de route'
+    balados:
+      create_btn: "Nouveau balado"
+      deletion_confirmation: "Voulez-vous vraiment supprimer ce balado ?"
+      created_successfully: "Le balado a été créé avec succès"
+      updated_successfully: "Le balado a été mis à jour avec succès"
+      deleted_successfully: "Le balado a été supprimé avec succès"
+      deletion_error: "Une erreur s'est produite lors de la suppression du balado"
+      status:
+        brouillon: Brouillon
+        active: Actif
+      form:
+        titre: Titre
+        description: Description
+        published_at: "Date de publication"
+        email: Email
+        website: "Site Web"
+        status_label: Status
+        user: Utilisateur
+    balado_episodes:
+      create_btn: 'Ajouter un nouvel épisode'
   validations:
     email_validator:
       invalid_email: 'Ce email est invalide'

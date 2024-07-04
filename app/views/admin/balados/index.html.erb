@@ -1,0 +1,29 @@
+<%= render 'admin/shared/page_header', titre: t('nav.balados') %>
+
+<%= render 'admin/shared/create_item_button', btn_label: t('admin.balados.create_btn'), btn_path: new_admin_balado_path %>
+
+<table class="table">
+  <thead>
+    <th>Titre</th>
+    <th>Email</th>
+    <th>Status</th>
+    <th>Date de publication</th>
+    <th>Utilisateur</th>
+    <th></th>
+  </thead>
+  <tbody>
+<% @balados.each do |balado| %>
+  <tr>
+    <td><%= link_to balado.titre, admin_balado_path(balado) %></td>
+    <td><%= balado.email %></td>
+    <td><%= format_status(balado.status).html_safe %></td>
+    <td><%= format_date balado.published_at %></td>
+    <td><%= balado.user.email %></td>
+    <td>
+          <%= link_to bootstrap_icon(:pencil), edit_admin_balado_path(balado) %>
+          <%= link_to bootstrap_icon(:trash), admin_balado_path(balado), data: { turbo_method: :delete, turbo_confirm: t('admin.balados.deletion_confirmation')} %>
+        </td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
