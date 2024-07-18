@@ -48,6 +48,11 @@ fr:
         nom_label: 'Nom de la plateforme'
         nom_help: "Si la plateforme n'est pas une platforem dans la liste, vous pouvez choisir podcast et mettre le nom que vous voulez."
         url_label: 'Lien public du compte'
+      status:
+        active: 'Active'
+        brouillon: 'Brouillon'
+        vacance: 'Vacance'
+        archive: 'Archivé'
       form:
         nom: 'Nom'
         description: 'Description'

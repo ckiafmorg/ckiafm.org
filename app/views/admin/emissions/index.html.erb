@@ -17,12 +17,12 @@
         <td><%= link_to emission.nom, admin_emission_path(emission) %></td>
         <td><%= emission.email %></td>
         <td><%= format_tags_list(emission.tags) %></td>
-        <td><%= emission.status %></td>
+        <td><%= t("admin.emissions.status.#{emission.status}") %></td>
         <td><%= emission.categorie_emission.nom %></td>
         <td>
           <%= link_to bootstrap_icon('pencil'), edit_admin_emission_path(emission) %>
         </td>
       </tr>
+    <% end %>
   </tbody>
-<% end %>
 </table>
