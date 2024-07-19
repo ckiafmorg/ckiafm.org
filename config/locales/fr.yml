@@ -23,6 +23,12 @@ fr:
       form_action:
         back_btn: 'Retour'
         save_btn: 'Enregistrer'
+      status:
+        live: 'Active'
+        published: 'Publié'
+        draft: 'Brouillon'
+        vacation: 'Vacance'
+        archived: 'Archivé'
     users:
       create_user_btn: "Créer un utilisateur"
       successfully_deleted: "Utilisateur supprimé avec succès."
@@ -48,11 +54,6 @@ fr:
         nom_label: 'Nom de la plateforme'
         nom_help: "Si la plateforme n'est pas une platforem dans la liste, vous pouvez choisir podcast et mettre le nom que vous voulez."
         url_label: 'Lien public du compte'
-      status:
-        active: 'Active'
-        brouillon: 'Brouillon'
-        vacance: 'Vacance'
-        archive: 'Archivé'
       form:
         nom: 'Nom'
         description: 'Description'
@@ -167,9 +168,6 @@ fr:
       deleted_successfully: "Successfully deleted the article"
       deletion_error: "Failed to delete the article"
       deletion_confirmation: "Voulez-vous vraiment supprimer cet article?"
-      status:
-        draft: "Brouillon"
-        published: "Publié"
       form:
         titre_label: 'Titre'
         status_label: 'Status'

@@ -4,7 +4,7 @@ class Emission < ApplicationRecord
   extend FriendlyId
   friendly_id :nom, use: :slugged
 
-  STATUSES = %i[brouillon active vacance archive].freeze
+  STATUSES = %i[draft live vacation archived].freeze
   enum :status, STATUSES
 
   validates :nom, presence: true, uniqueness: true

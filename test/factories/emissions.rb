@@ -4,20 +4,20 @@ FactoryBot.define do
   factory :emission do
     nom { Faker::Movie.title }
     description { Faker::Movie.quote }
-    status { 'brouillon' }
+    status { 'draft' }
     email { 'test@ckiafm.org' }
     categorie_emission
 
     trait :active do
-      status { 'active' }
+      status { 'live' }
     end
 
     trait :vacance do
-      status { 'vacance' }
+      status { 'vacation' }
     end
 
     trait :archive do
-      status { 'archive' }
+      status { 'archived' }
     end
   end
 end

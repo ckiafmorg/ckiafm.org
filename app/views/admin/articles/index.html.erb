@@ -13,7 +13,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.titre %></td>
-        <td><%= fmt_article_status(article.status) %></td>
+        <td><%= format_status(article.status).html_safe %></td>
         <td><%= article.published_at %></td>
         <td>
           <%= link_to bootstrap_icon(:pencil), edit_admin_article_path(article) %>
