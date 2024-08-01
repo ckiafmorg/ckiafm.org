@@ -3,29 +3,43 @@
 require 'test_helper'
 
 class TagsControllerTest < ActionDispatch::IntegrationTest
-  # TODO: test creating a new Tag
-
-  def test_non_admin_user_can_not_get_new_tag_form
+  def test_user_cannot_create_tag
     sign_in(create(:user))
+
     get new_admin_tag_url
+
     assert_response :forbidden
   end
 
-  def test_admin_user_can_get_new_tag_form
+  def test_admin_can_create_tag
     sign_in(create(:user, :admin))
+
     get new_admin_tag_url
+
     assert_response :success
   end
 
-  def test_non_admin_user_can_not_get_tags_index
+  def test_user_cannot_access_tags_index
     sign_in(create(:user))
+
     get admin_tags_url
+
     assert_response :forbidden
   end
 
-  def test_admin_user_can_get_tags_index
+  def test_admin_can_access_tags_index
     sign_in(create(:user, :admin))
+
     get admin_tags_url
+
     assert_response :success
+  end
+
+  def test_admin_creating_tag
+    sign_in(create(:user, :admin))
+
+    post admin_tags_url, params: { tag: { nom: 'gentrification' } }
+
+    assert_redirected_to admin_tags_url
   end
 end
