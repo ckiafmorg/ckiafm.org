@@ -2,9 +2,13 @@
 
 FactoryBot.define do
   factory :article do
-    titre { 'MyString' }
-    contenu { 'MyText' }
-    published_at { '2024-03-21 16:50:45' }
-    status { 1 }
+    titre { Faker::Book.title }
+    contenu { Faker::Markdown.random }
+    published_at { Faker::Date.in_date_period }
+    status { :published }
+
+    trait :draft do
+      status { :draft }
+    end
   end
 end
