@@ -83,7 +83,6 @@
               ]
               ++ (with pkgs; [
                 nodejs_22
-                ruby-lsp
               ]);
           };
         };
