@@ -234,12 +234,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1srlq3gqirzdkhv12ljpnp5cb0f8jfrl3n8xs9iivyz2c7khvdyp";
+      sha256 = "0mdgj9yw1hmx3xh2qxyjc31y8igmxzd9h0c245ay2zkz76pl4k5c";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.18.3";
+    version = "1.18.4";
   };
   bootstrap = {
     dependencies = ["autoprefixer-rails" "popper_js"];
@@ -865,12 +865,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "10ly2wind06nylyqa5724ld2l0l46d3ag4fm04ifjgw7qdlpf94d";
+      sha256 = "06m0778v9cx3q0w6lf9hnq9fr943kg0ggrm55nx51h7wxflh1i7s";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "3.3.4.0";
+    version = "3.3.4.1";
   };
   pg = {
     groups = ["default"];
@@ -1218,12 +1218,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "063qgvqbyv354icl2sgx758z22wzq38hd9skc3n96sbpv0cdc1qv";
+      sha256 = "0ac6j1j72zq2qfwmwvsihl8ajjh2z6jk6y4558gjxc9ryf7j7zzc";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "1.31.3";
+    version = "1.32.0";
   };
   rubocop-factory_bot = {
     dependencies = ["rubocop"];
@@ -1270,12 +1270,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0fj8jzhyq6jkxqlw7ciyn6wcljafq1rfhk5v9m10yi9xk5ws49mh";
+      sha256 = "1jiz0mzdvhkp9bj1yzpx7ykwb363n2mx5y204l8ksphqn403m528";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "0.17.10";
+    version = "0.17.11";
   };
   ruby-lsp-rails = {
     dependencies = ["ruby-lsp"];
@@ -1396,12 +1396,12 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0hkqlckzmcww4ig3ws9cng91zffavj08gd6rmfbbaf9bw0yfzdra";
+      sha256 = "186z63z9si63f8ink66pir0i1hbaksn36cqqk6qafv147mndyh63";
       target = "ruby";
       type = "gem";
     };
     targets = [];
-    version = "0.5.11504";
+    version = "0.5.11514";
   };
   sprockets = {
     dependencies = ["concurrent-ruby" "rack"];
