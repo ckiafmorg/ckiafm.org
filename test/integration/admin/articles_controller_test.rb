@@ -49,7 +49,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     article = create(:article)
     tag = create(:tag)
 
-    put admin_article_url(article), params: { article: { titre: 'Some article', contenu: 'Some article content', status: :published, published_at: '2024-01-01', tag_ids: [tag.id] } }
+    put admin_article_url(article), params: { article: { titre: 'Some updated article', contenu: 'Some article content', status: :published, published_at: '2024-01-01', tag_ids: [tag.id] } }
 
     assert_redirected_to admin_articles_url
     assert article.status, :published
@@ -62,5 +62,14 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     delete admin_article_url(article)
 
     assert_redirected_to admin_articles_url
+  end
+
+  def test_user_cannot_delete_article
+    sign_in(create(:user))
+    article = create(:article)
+
+    delete admin_article_url(article)
+
+    assert_response :forbidden
   end
 end
