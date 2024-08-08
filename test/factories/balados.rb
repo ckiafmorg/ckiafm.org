@@ -2,11 +2,14 @@
 
 FactoryBot.define do
   factory :balado do
-    titre { 'MyString' }
-    description { 'MyText' }
-    published_at { '2024-06-14 14:46:23' }
-    email { 'MyString' }
-    slug { 'MyString' }
+    titre { Faker::Name.unique.name }
+    description { Faker::Lorem.paragraphs }
+    published_at { '2024-06-14' }
+    email { Faker::Internet.email }
     status { 1 }
+
+    trait :draft do
+      status { 0 }
+    end
   end
 end

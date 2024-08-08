@@ -2,6 +2,10 @@
 
 module Admin
   class BaladosController < AdminController
+    before_action do
+      ensure_user_is :admin
+    end
+
     def index
       @balados = Balado.all
     end
