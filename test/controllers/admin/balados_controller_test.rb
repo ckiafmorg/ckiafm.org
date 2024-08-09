@@ -23,7 +23,17 @@ class BaladosControllerTest < ActionDispatch::IntegrationTest
     sign_in(create(:user, :admin))
     user = create(:user)
 
-    post admin_balados_url, params: { balado: { titre: 'A new balado', description: 'A new balado description', published_at: '2024-05-01', email: 'newbalado@ckiafm.org', website: 'https://newbalado.fm', status: :published, user_id: user.id } }
+    post admin_balados_url, params: {
+      balado: {
+        titre: 'A new balado',
+        description: 'A new balado description',
+        published_at: '2024-05-01',
+        email: 'newbalado@ckiafm.org',
+        website: 'https://newbalado.fm',
+        status: :published,
+        user_id: user.id
+      }
+    }
 
     assert_redirected_to admin_balados_url
   end
@@ -33,7 +43,17 @@ class BaladosControllerTest < ActionDispatch::IntegrationTest
     user = create(:user)
     balado = create(:balado, user_id: user.id)
 
-    put admin_balado_url(balado), params: { balado: { titre: 'An updated title for the new podcast', description: 'An updated description of the new balado', published_at: '2024-05-01', email: 'newbalado@ckiafm.org', website: 'https://newbalado.fm', status: :published, user_id: user.id } }
+    put admin_balado_url(balado), params: {
+      balado: {
+        titre: 'An updated title for the new podcast',
+        description: 'An updated description of the new balado',
+        published_at: '2024-05-01',
+        email: 'newbalado@ckiafm.org',
+        website: 'https://newbalado.fm',
+        status: :published,
+        user_id: user.id
+      }
+    }
 
     assert_redirected_to admin_balados_url
   end
