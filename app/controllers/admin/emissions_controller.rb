@@ -2,6 +2,10 @@
 
 module Admin
   class EmissionsController < AdminController
+    before_action do
+      ensure_user_is :admin
+    end
+
     def index
       @emissions = Emission.order(:status)
     end
@@ -28,6 +32,8 @@ module Admin
     end
 
     def create
+      @utilisateurs = User.all
+      @tags = Tag.all
       @emission = Emission.new(emission_params)
       if @emission.save
         redirect_to [:admin, @emission], notice: t('admin.emissions.successfully_created')
@@ -37,6 +43,8 @@ module Admin
     end
 
     def update
+      @utilisateurs = User.all
+      @tags = Tag.all
       @emission = Emission.find(params[:id])
       if @emission.update(emission_params)
         redirect_to [:admin, @emission], notice: t('admin.emissions.successfully_updated')
