@@ -58,12 +58,15 @@ class BaladosControllerTest < ActionDispatch::IntegrationTest
     assert_response :forbidden
   end
 
-  # FIXME: this should be a view test
-  # def test_user_can_only_see_its_balados
-  #   user = create(:user)
-  #   balado1 = create(:balado)
-  #   balado2 = create(:balado, user_id: user.id)
-  #
-  #   get admin_balados_url
-  # end
+  def test_user_can_only_see_its_balados
+    user = create(:user)
+    sign_in(user)
+    create(:balado, titre: 'balado1')
+    create(:balado, titre: 'balado2', user_id: user.id)
+
+    get admin_balados_url
+
+    assert_not @response.body.include?('balado1')
+    assert @response.body.include?('balado2')
+  end
 end

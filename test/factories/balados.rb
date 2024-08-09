@@ -7,6 +7,7 @@ FactoryBot.define do
     published_at { '2024-06-14' }
     email { Faker::Internet.email }
     status { 1 }
+    user
 
     trait :draft do
       status { 0 }

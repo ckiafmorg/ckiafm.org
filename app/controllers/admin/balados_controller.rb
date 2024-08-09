@@ -2,12 +2,16 @@
 
 module Admin
   class BaladosController < AdminController
-    before_action do
+    before_action except: :index do
       ensure_user_is :admin
     end
 
     def index
-      @balados = Balado.all
+      if Current.user.admin?
+        @balados = Balado.all
+      else
+        @balados = Current.user.balados
+      end
     end
 
     def show
