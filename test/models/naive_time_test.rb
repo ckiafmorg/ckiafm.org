@@ -106,7 +106,7 @@ class NaiveTimeTest < ActiveSupport::TestCase # rubocop:disable Metrics/ClassLen
   test '#now create a NaiveTime with the current time' do
     t = NaiveTime.now
 
-    assert_not_equal 0, t.hours
+    assert_equal Time.zone.now.hour, t.hours
     assert_not_equal 0, t.minutes
     assert_not_equal 0, t.seconds
   end
