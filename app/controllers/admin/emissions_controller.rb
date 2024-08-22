@@ -2,7 +2,7 @@
 
 module Admin
   class EmissionsController < AdminController
-    before_action do
+    before_action except: %i[index show edit update] do
       ensure_user_is :admin
     end
 
