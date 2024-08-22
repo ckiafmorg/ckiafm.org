@@ -1,1 +1,25 @@
 <%= render 'admin/shared/page_header', titre: "ADMIN DASHBOARD" %>
+
+<% if Current.user.admin? %>
+<% else %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title fw-bold">Vos émissions</h5>
+        <p class="card-body fs-1"><%= @emissions.count %></p>
+        <%= link_to "Voir les émissions", admin_emissions_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title fw-bold">Vos balados</h5>
+        <p class="card-body fs-1"><%= @balados.count %></p>
+        <%= link_to "Voir les balados", admin_balados_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

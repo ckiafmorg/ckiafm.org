@@ -14,7 +14,8 @@ class User < ApplicationRecord
 
   before_validation :strip_email_whitespace, on: %i[create update]
 
-  has_many :emissions, through: :emisisons_user
+  has_many :emissions_user, dependent: :nullify
+  has_many :emissions, through: :emissions_user
   has_many :balados, dependent: :destroy
 
   def strip_email_whitespace
