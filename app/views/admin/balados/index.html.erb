@@ -21,7 +21,9 @@
     <td><%= balado.user.email %></td>
     <td>
           <%= link_to bootstrap_icon(:pencil), edit_admin_balado_path(balado) %>
-          <%= link_to bootstrap_icon(:trash), admin_balado_path(balado), data: { turbo_method: :delete, turbo_confirm: t('admin.balados.deletion_confirmation')} %>
+          <% if Current.user.admin? %>
+            <%= link_to bootstrap_icon(:trash), admin_balado_path(balado), data: { turbo_method: :delete, turbo_confirm: t('admin.balados.deletion_confirmation')} %>
+          <% end %>
         </td>
   </tr>
 <% end %>

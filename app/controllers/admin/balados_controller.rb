@@ -2,7 +2,7 @@
 
 module Admin
   class BaladosController < AdminController
-    before_action except: :index do
+    before_action except: %i[index show edit update] do
       ensure_user_is :admin
     end
 
