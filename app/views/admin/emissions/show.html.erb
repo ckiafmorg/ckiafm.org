@@ -30,8 +30,10 @@
         <td><%= format_time diffusion.fin %></td>
         <td><%= if diffusion.rediffusion then bootstrap_icon(:check2) end %></td>
         <td>
-          <%= link_to bootstrap_icon(:pencil), edit_admin_emission_diffusion_path(diffusion.emission, diffusion) %>
-          <%= link_to bootstrap_icon(:trash), admin_emission_diffusion_path(diffusion.emission, diffusion), data: { turbo_method: :delete, turbo_confirm: t('admin.diffusions.delete_confirmation') } %>
+          <% if Current.user.admin? %>
+            <%= link_to bootstrap_icon(:pencil), edit_admin_emission_diffusion_path(diffusion.emission, diffusion) %>
+            <%= link_to bootstrap_icon(:trash), admin_emission_diffusion_path(diffusion.emission, diffusion), data: { turbo_method: :delete, turbo_confirm: t('admin.diffusions.delete_confirmation') } %>
+          <% end %>
         </td>
       </tr>
     <% end %>
