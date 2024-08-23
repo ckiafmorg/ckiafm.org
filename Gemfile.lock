@@ -295,7 +295,7 @@ GEM
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
     smart_properties (1.17.0)
-    sorbet-runtime (0.5.11535)
+    sorbet-runtime (0.5.11537)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
