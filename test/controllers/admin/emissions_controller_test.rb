@@ -17,6 +17,30 @@ class EmissionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  def test_user_can_see_its_emissions
+    user = create(:user)
+    emission = create(:emission)
+    create(:emissions_user, user_id: user.id, emission_id: emission.id)
+
+    sign_in(user)
+
+    get admin_emission_url(emission)
+
+    assert_response :success
+  end
+
+  def test_user_can_edit_its_emissions
+    user = create(:user)
+    emission = create(:emission)
+    create(:emissions_user, user_id: user.id, emission_id: emission.id)
+
+    sign_in(user)
+
+    get edit_admin_emission_url(emission)
+
+    assert_response :success
+  end
+
   def test_admin_creating_emission
     sign_in(create(:user, :admin))
     user = create(:user)
