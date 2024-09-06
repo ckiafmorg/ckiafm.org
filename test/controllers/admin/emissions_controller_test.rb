@@ -41,6 +41,9 @@ class EmissionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  # TODO: user cannot see others emissions
+  # TODO: user cannot edit others emissions
+
   def test_admin_creating_emission
     sign_in(create(:user, :admin))
     user = create(:user)
