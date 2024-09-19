@@ -10,6 +10,11 @@ AllCops:
     - 'db/seeds.rb'
     - 'vendor/**/*'
     - 'bin/bundle'
+    - 'db/migrate/20240919183028_add_service_name_to_active_storage_blobs.active_storage.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/*'
 
 Metrics/MethodLength:
   Max: 20
