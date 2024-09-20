@@ -78,9 +78,6 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
 
-  gem 'ruby-lsp', require: false
-  gem 'ruby-lsp-rails', require: false
-
   gem 'erb_lint', require: false
 end
 
