@@ -19,4 +19,8 @@ class Balado < ApplicationRecord
   has_many :tags, through: :taggings
 
   belongs_to :user
+
+  def self.live
+    where(published_at: ...Time.zone.now)
+  end
 end
