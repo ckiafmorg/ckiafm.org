@@ -1,5 +1,5 @@
 <article class="blog-width">
   <h1><%= @article.titre %></h1>
-  <%= render 'blog/article_meta', article: @article %>
+  <%= render 'articles/article_meta', article: @article %>
   <%= render_markdown @article.contenu %>
 </article>
