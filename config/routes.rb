@@ -10,6 +10,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   resources :emissions, only: %i[index show]
   resources :blog, only: %i[index show]
   resources :tags, only: %i[show]
+  resources :balados, only: %i[index show]
 
   get :admin, to: redirect('/admin/dashboard'), as: :admin
   namespace :admin do
