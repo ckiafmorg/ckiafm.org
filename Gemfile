@@ -88,3 +88,5 @@ group :development do
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 end
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
