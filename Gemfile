@@ -89,6 +89,6 @@ group :development do
   # gem "rack-mini-profiler"
 end
 
-gem "dockerfile-rails", ">= 1.6", :group => :development
+gem 'dockerfile-rails', '>= 1.6', :group => :development
 
-gem "aws-sdk-s3", "~> 1.167", :require => false
+gem 'aws-sdk-s3', '~> 1.167', :require => false
