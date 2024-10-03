@@ -7,5 +7,6 @@ pkgs.mkShell {
     pkgs.libyaml
     pkgs.postgresql
     pkgs.nodejs
+    pkgs.flyctl
   ];
 }
