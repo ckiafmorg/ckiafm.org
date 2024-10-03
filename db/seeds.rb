@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+return if Rails.env.production?
+
 def log(msg)
   puts "Seed: #{msg}" # rubocop:disable Rails/Output
 end
