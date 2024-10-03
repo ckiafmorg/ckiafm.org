@@ -2,6 +2,6 @@
 
 class BaladosController < ApplicationController
   def index
-    @balados = Balado.published.live
+    @balados = Balado.published.live.includes(:episodes)
   end
 end
