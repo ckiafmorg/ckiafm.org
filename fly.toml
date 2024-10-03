@@ -4,7 +4,7 @@
 #
 
 app = 'ckia-fm-staging'
-primary_region = 'ord'
+primary_region = 'yul'
 console_command = '/rails/bin/rails console'
 
 [build]
