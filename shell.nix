@@ -8,5 +8,6 @@ pkgs.mkShell {
     pkgs.postgresql
     pkgs.nodejs
     pkgs.flyctl
+    pkgs.vscode-langservers-extracted
   ];
 }
