@@ -13,4 +13,8 @@ class BaladoEpisode < ApplicationRecord
   validates :status, presence: true, inclusion: { in: statuses.keys }
 
   belongs_to :balado, dependent: :destroy
+
+  def self.live
+    where(published_at: ...Time.zone.now)
+  end
 end
