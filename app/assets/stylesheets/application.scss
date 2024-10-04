@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "fonts.scss";
 
 :root {
   --light-teal: #f0fdfa;
@@ -7,6 +8,8 @@
   --light-pink: #fce7f3;
   --medium-pink: #f472b6;
   --dark-pink: #9d174d;
+  --body-font: "Raleway";
+  --header-font: "Novecento";
 }
 
 a {

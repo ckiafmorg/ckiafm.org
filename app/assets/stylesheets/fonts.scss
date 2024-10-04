@@ -1,0 +1,44 @@
+/**
+ * Raleway
+ **/
+@font-face {
+  font-family: Raleway;
+  src: url(fonts/raleway/Raleway-Regular.ttf);
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(fonts/raleway/Raleway-Bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(fonts/raleway/Raleway-Bold.ttf);
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(fonts/raleway/Raleway-BoldItalic.ttf);
+  font-weight: bold;
+  font-style: italic;
+}
+
+/**
+ * Novecento
+ **/
+@font-face {
+  font-family: Novecento;
+  src: url(fonts/novecento/novecento-bold.ttf), url(fonts/novecento/novecento-bold.otf);
+  font-weight: bold;
+}
+
+* {
+  font-family: var(--body-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--header-font);
+  font-weight: bold;
+}
