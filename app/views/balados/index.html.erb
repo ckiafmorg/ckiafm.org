@@ -2,12 +2,13 @@
   <div class="row">
     <% row.each do |balado| %>
       <div class="col-md">
-        <h2><%= balado.titre %></h2>
+        <h2><%= link_to balado.titre, balado_path(balado) %></h2>
         <p class="float-md-end"><%= balado.episodes.count %> épisode(s)</p>
         <p><%= balado.description %></p>
         <% if balado.episodes.count > 0 %>
           <h5>Dernier épisode</h5>
           <p><%= balado.episodes.last.titre %></p>
+          <%= render 'balados/balado_player', episode: balado.episodes.last %>
         <% end %>
       </div>
     <% end %>
