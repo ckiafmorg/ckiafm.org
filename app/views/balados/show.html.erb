@@ -1,0 +1,6 @@
+<h1><%= @balado.titre %></h1>
+
+<h2 class="text-decoration-underline mb-3">Tous les épisodes</h2>
+<% @balado.episodes.each do |episode| %>
+  <h3><%= episode.titre %></h3>
+<% end %>
