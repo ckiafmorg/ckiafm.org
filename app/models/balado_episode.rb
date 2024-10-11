@@ -4,6 +4,9 @@ class BaladoEpisode < ApplicationRecord
   extend FriendlyId
   friendly_id :titre, use: :slugged
 
+  # TODO: add some validation on the file, but also make sure we have either an url or a file
+  has_one_attached :audio_file
+
   STATUSES = %i[draft published].freeze
   enum :status, STATUSES
 
@@ -16,5 +19,13 @@ class BaladoEpisode < ApplicationRecord
 
   def self.live
     where(published_at: ...Time.zone.now)
+  end
+
+  def audio_src
+    if audio_url.empty?
+      audio_file.url
+    else
+      audio_url
+    end
   end
 end
