@@ -1,6 +1,6 @@
 <h1><%= @balado.titre %></h1>
 
-<h2 class="text-decoration-underline mb-3">Tous les épisodes</h2>
+<h3 class="text-decoration-underline mb-3">Tous les épisodes</h3>
 <% @balado.episodes.each do |episode| %>
-  <h3><%= episode.titre %></h3>
+  <p class="fw-bold text-decoration-underline"><%= episode.titre %></p>
 <% end %>
