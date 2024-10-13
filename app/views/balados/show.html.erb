@@ -2,6 +2,7 @@
 
 <% unless @latest_episode.nil? %>
   <h5><%= @latest_episode.titre %></h5>
+  <p><%= @latest_episode.short_description %></p>
 
   <% unless @other_episodes.empty? %>
     <h3 class="text-decoration-underline mb-3">Tous les épisodes</h3>
