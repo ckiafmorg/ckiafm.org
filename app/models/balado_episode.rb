@@ -12,6 +12,7 @@ class BaladoEpisode < ApplicationRecord
 
   validates :titre, presence: true
   validates :description, presence: true
+  validates :short_description, presence: true
   validates :published_at, presence: true
   validates :status, presence: true, inclusion: { in: statuses.keys }
 

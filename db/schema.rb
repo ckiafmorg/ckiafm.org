@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_19_183030) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_13_015532) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_19_183030) do
     t.uuid "balado_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "short_description", default: "", null: false
     t.index ["balado_id"], name: "index_balado_episodes_on_balado_id"
   end
 

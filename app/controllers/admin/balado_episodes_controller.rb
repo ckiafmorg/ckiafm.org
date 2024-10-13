@@ -39,7 +39,8 @@ module Admin
     private
 
     def episode_params
-      params.require(:balado_episode).permit(:titre, :description, :transcript, :published_at, :status, :audio_url)
+      params.require(:balado_episode).permit(:titre, :short_description, :description, :transcript, :published_at,
+                                             :status, :audio_url)
     end
   end
 end

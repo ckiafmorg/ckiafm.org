@@ -204,6 +204,16 @@ fr:
         user: Utilisateur
     balado_episodes:
       create_btn: 'Ajouter un nouvel épisode'
+      form:
+        titre: 'Titre'
+        short_description: 'Résumé / Coutre description'
+        description: 'Description'
+        transcript: 'Transcription'
+        audio_url: "Lien vers le fichier audio"
+        audio_url_secondary_text: "Uniquement si le fichier est hébergé sur une plateforme externe"
+        audio_file: "Fichier audio de l'épisode"
+        published_at: 'Date de publication'
+        status: 'Status'
   validations:
     email_validator:
       invalid_email: 'Ce email est invalide'
