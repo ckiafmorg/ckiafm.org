@@ -1,16 +1,19 @@
-<% @balados.in_groups_of(2).each do |row| %>
+<% @balados.each do |balado| %>
   <div class="row">
-    <% row.each do |balado| %>
-      <div class="col-md">
-        <h2><%= link_to balado.titre, balado_path(balado) %></h2>
-        <p class="float-md-end"><%= balado.episodes.count %> épisode(s)</p>
-        <p><%= balado.description %></p>
-        <% if balado.episodes.count > 0 %>
-          <h5>Dernier épisode</h5>
-          <p><%= balado.episodes.last.titre %></p>
-          <%= render 'balados/balado_player', episode: balado.episodes.last %>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="col-md">
+      <h2><%= link_to balado.titre, balado_path(balado) %></h2>
+      <p><%= balado.description %></p>
+      <p><%= mail_to balado.email %></p>
+      <p><%= link_to bootstrap_icon(:rss), balado_path(balado, :atom) %></p>
+    </div>
+    <div class="col-md">
+      <% if balado.episodes.count > 0 %>
+        <h6>Dernier épisode</h6>
+        <h4><%= link_to balado.episodes.last.titre, balado_path(balado) %></h4>
+        <p><%= balado.episodes.last.short_description %></p>
+        <%= render 'balados/balado_player', episode: balado.episodes.last %>
+        <p><%= link_to "Pour écouter plus d'épisodes", balado_path(balado) %></p>
+      <% end %>
+    </div>
   </div>
 <% end %>
