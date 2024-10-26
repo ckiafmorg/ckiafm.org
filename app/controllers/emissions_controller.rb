@@ -4,6 +4,6 @@ class EmissionsController < ApplicationController
   def index; end
 
   def show
-    @emission = Emission.active.friendly.find(params[:id])
+    @emission = Emission.live.find(params[:id])
   end
 end
