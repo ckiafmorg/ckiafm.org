@@ -1,13 +1,25 @@
 <h1><%= @balado.titre %></h1>
 
-<% unless @latest_episode.nil? %>
-  <h5><%= @latest_episode.titre %></h5>
-  <p><%= @latest_episode.short_description %></p>
-
-  <% unless @other_episodes.empty? %>
-    <h3 class="text-decoration-underline mb-3">Tous les épisodes</h3>
-    <% @other_episodes.each do |episode| %>
-      <h5><%= episode.titre %></h5>
+<div class="row">
+  <div class="col-md">
+    <p><%= @balado.description %></p>
+    <p><%= mail_to @balado.email %></p>
+    <p><%= link_to bootstrap_icon(:rss), balado_path(@balado, :atom) %></p>
+  </div>
+  <div class="col-md">
+    <% if @balado.episodes.count > 0 %>
+      <h6>Dernier épisode</h6>
+      <h4><%= @balado.episodes.last.titre %></h4>
+      <p><%= @balado.episodes.last.short_description %></p>
+      <%= render 'balados/balado_player', episode: @balado.episodes.last %>
     <% end %>
-  <% end %>
-<% end %>
+    <% if @balado.episodes.count > 1 %>
+      <% @balado.episodes.reverse[1..].each do |episode| %>
+        <h6>Tous les épisodes</h6>
+        <h4><%= episode.titre %></h4>
+        <p><%= episode.short_description %></p>
+        <%= render 'balados/balado_player', episode: episode %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
