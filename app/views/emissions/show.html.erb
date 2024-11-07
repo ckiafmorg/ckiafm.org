@@ -1,13 +1,19 @@
-<h1><%= @emission.nom %></h1>
-<p><%= @emission.description %></p>
+<div class="row">
+  <div class="col-md">
+    <h1><%= @emission.nom %></h1>
+    <p><%= @emission.description %></p>
 
-<% unless @emission.social_media_accounts.empty? %>
-  <ul class="list-unstyled">
-    <% @emission.social_media_accounts.each do |sma| %>
-      <li><%= link_to "#{bootstrap_icon(social_media_icon_name(sma))} #{social_media_platform_name(sma)}".html_safe, sma.url, class: 'social-media-account-link' %></li>
+    <% unless @emission.social_media_accounts.empty? %>
+      <ul class="list-unstyled">
+        <% @emission.social_media_accounts.each do |sma| %>
+          <li><%= link_to "#{bootstrap_icon(social_media_icon_name(sma))} #{social_media_platform_name(sma)}".html_safe, sma.url, class: 'social-media-account-link' %></li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+  <div class="col-md">
+  </div>
+</div>
 
 <% unless @emission.diffusions.empty? %>
   <% if @emission.diffusions.size > 1 %>
