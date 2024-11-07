@@ -11,4 +11,10 @@ class EmissionEpisode < ApplicationRecord
                                   attrs[:titre_piece].blank? || attrs[:temps_debut].blank? || attrs[:temps_fin].blank?
                                 }
   validates :published_at, presence: true
+
+  def titre_or_default
+    return titre unless titre.empty?
+
+    "Épisode du #{published_at.strftime('%Y-%m-%d %H:%M')}"
+  end
 end

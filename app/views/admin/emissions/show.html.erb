@@ -52,11 +52,7 @@
     <% @emission.episodes.each do |episode| %>
       <tr>
         <td>
-          <% if episode.titre.empty? %>
-            <%= "Épisode du #{format_date episode.published_at}" %>
-          <% else %>
-            <%= episode.titre %>
-          <% end %>
+          <%= episode.titre_or_default %>
         </td>
         <td><%= format_date episode.published_at %></td>
         <td>
