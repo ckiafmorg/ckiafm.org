@@ -1,7 +1,7 @@
-<h1><%= @balado.titre %></h1>
 
 <div class="row">
   <div class="col-md">
+    <h1><%= @balado.titre %></h1>
     <p><%= @balado.description %></p>
     <p><%= mail_to @balado.email %></p>
     <p><%= link_to bootstrap_icon(:rss), balado_path(@balado, :atom) %></p>
