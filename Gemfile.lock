@@ -85,7 +85,7 @@ GEM
     aws-sdk-kms (1.95.0)
       aws-sdk-core (~> 3, >= 3.210.0)
       aws-sigv4 (~> 1.5)
-    aws-sdk-s3 (1.170.1)
+    aws-sdk-s3 (1.171.0)
       aws-sdk-core (~> 3, >= 3.210.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.5)
@@ -338,7 +338,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  aws-sdk-s3 (~> 1.170)
+  aws-sdk-s3 (~> 1.171)
   bcrypt (~> 3.1.20)
   bootsnap
   bootstrap
