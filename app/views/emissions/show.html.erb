@@ -12,32 +12,45 @@
     <% end %>
   </div>
   <div class="col-md">
-  </div>
-</div>
-
-<% unless @emission.diffusions.empty? %>
-  <% if @emission.diffusions.size > 1 %>
-    <h4>Diffusions</h4>
-  <% else %>
-    <h4>Diffusion</h4>
-  <% end %>
-  <% @emission.diffusions.in_groups_of(2).each do |row| %>
-    <div class="row">
-      <% row.each do |diffusion| %>
+    <% unless @emission.diffusions.empty? %>
+      <% if @emission.diffusions.size > 1 %>
+        <h4>Diffusions</h4>
+      <% else %>
+        <h4>Diffusion</h4>
+      <% end %>
+      <% @emission.diffusions.each do |diffusion| %>
         <% unless diffusion.nil? %>
-          <div class="col-lg-6">
-            <div class="card mt-3 mb-3">
-              <div class="card-body">
-                <div class="d-flex flex-row justify-content-between">
-                  <h5 class="card-title d-inline-block"><%= "(R) - " if diffusion.rediffusion %><%= diffusion.type.titleize %></h5>
-                </div>
-                <p class="card-text"><%= format_time diffusion.debut %> - <%= format_time diffusion.fin %><br>
-                <%= diffusion.jours_diffusion_formate %></p>
+          <div class="card mt-3 mb-3">
+            <div class="card-body">
+              <div class="d-flex flex-row justify-content-between">
+                <h5 class="card-title d-inline-block"><%= "(R) - " if diffusion.rediffusion %><%= diffusion.type.titleize %></h5>
               </div>
+              <p class="card-text"><%= format_time diffusion.debut %> - <%= format_time diffusion.fin %><br>
+              <%= diffusion.jours_diffusion_formate %></p>
             </div>
           </div>
         <% end %>
       <% end %>
-    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <% unless @emission.episodes.empty? %>
+    <% if @emission.episodes.size > 1 %>
+      <h4>Épisodes</h4>
+    <% else %>
+      <h4>Épisode</h4>
+    <% end %>
+
+    <% @emission.episodes.each do |episode| %>
+      <h3><%= episode.titre_or_default %></h3>
+      <!-- TODO: add short_description to emission_episode -->
+      <!-- <p><#= episode.short_description %></p> -->
+      <!-- TODO: find a way to get those audio file -->
+      <!-- <audio controls="" class="w-100"> -->
+      <!--   <source src="<#= episode.audio_src %>" type="audio/mp3"> -->
+      <!-- </audio> -->
+    <% end %>
   <% end %>
-<% end %>
+</div>
