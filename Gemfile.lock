@@ -185,9 +185,9 @@ GEM
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.4)
-    minitest-rails (7.1.1)
+    minitest-rails (7.2.0)
       minitest (~> 5.20)
-      railties (>= 7.1.0, < 8.0.0)
+      railties (>= 7.2.0, < 8.0.0)
     msgpack (1.7.5)
     net-imap (0.5.2)
       date
@@ -208,7 +208,7 @@ GEM
     pg (1.5.9)
     phonelib (0.10.3)
     popper_js (2.11.8)
-    psych (5.2.1)
+    psych (5.2.2)
       date
       stringio
     puma (6.5.0)
