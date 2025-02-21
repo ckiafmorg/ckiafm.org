@@ -25,7 +25,7 @@ Metrics/MethodLength:
 
 Layout/LineLength:
   Exclude:
-  - 'test/**/*'
+    - 'test/**/*'
 
 Metrics/CyclomaticComplexity:
   Max: 10
@@ -50,3 +50,10 @@ Style/ConditionalAssignment:
 
 Rails/ThreeStateBooleanColumn:
   Enabled: false
+
+Rails/Delegate:
+  Exclude:
+    - app/models/diffusion_deux_semaines.rb
+    - app/models/diffusion_hebdomadaire.rb
+    - app/models/diffusion_mensuelle.rb
+    - app/models/diffusion_speciale.rb
