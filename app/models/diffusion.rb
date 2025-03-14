@@ -51,7 +51,7 @@ class Diffusion < ApplicationRecord
 
     current_time = NaiveTime.now
 
-    current_time >= debut && current_time <= fin
+    current_time.between?(debut, fin)
   end
 
   def self.find_programmation_de_la_journee
