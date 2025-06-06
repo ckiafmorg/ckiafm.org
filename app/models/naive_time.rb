@@ -19,9 +19,9 @@ class NaiveTime # rubocop:disable Metrics/ClassLength
   def self.from_str(str)
     values = str.split(':')
 
-    hours = values[0].to_i || 0
-    minutes = values[1].to_i || 0
-    seconds = values[2].to_i || 0
+    hours = values[0].to_i
+    minutes = values[1].to_i
+    seconds = values[2].to_i
 
     NaiveTime.new(hours, minutes, seconds)
   end
