@@ -2,6 +2,7 @@
 
 class Article < ApplicationRecord
   extend FriendlyId
+
   friendly_id :titre, use: :slugged
 
   has_many :taggings, dependent: :destroy, as: :taggable

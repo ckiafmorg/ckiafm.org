@@ -2,6 +2,7 @@
 
 class EpisodeBalado < ApplicationRecord
   extend FriendlyId
+
   friendly_id :titre, use: :slugged
 
   STATUSES = %i[draft live].freeze

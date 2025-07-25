@@ -2,6 +2,7 @@
 
 class Balado < ApplicationRecord
   extend FriendlyId
+
   friendly_id :titre, use: :slugged
 
   STATUSES = %i[draft published].freeze

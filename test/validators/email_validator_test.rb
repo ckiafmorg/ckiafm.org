@@ -4,6 +4,7 @@ require 'test_helper'
 
 class EmailValidable
   include ActiveModel::Validations
+
   attr_accessor :email
 
   validates :email, email: true
