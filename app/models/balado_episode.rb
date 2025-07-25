@@ -2,6 +2,7 @@
 
 class BaladoEpisode < ApplicationRecord
   extend FriendlyId
+
   friendly_id :titre, use: :slugged
 
   # TODO: add some validation on the file, but also make sure we have either an url or a file

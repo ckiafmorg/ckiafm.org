@@ -2,6 +2,7 @@
 
 class Emission < ApplicationRecord
   extend FriendlyId
+
   friendly_id :nom, use: :slugged
 
   STATUSES = %i[draft live vacation archived].freeze
