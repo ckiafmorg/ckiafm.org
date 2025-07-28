@@ -207,7 +207,7 @@ GEM
     parser (3.3.9.0)
       ast (~> 2.4.1)
       racc
-    pg (1.5.9)
+    pg (1.6.0-x86_64-linux)
     phonelib (0.10.11)
     popper_js (2.11.8)
     pp (0.6.2)
@@ -376,7 +376,7 @@ DEPENDENCIES
   kramdown
   markdown_media
   minitest-rails
-  pg (~> 1.5)
+  pg (~> 1.6)
   phonelib
   puma (~> 6.6)
   rails (~> 7.2.2)
