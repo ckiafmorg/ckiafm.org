@@ -124,7 +124,7 @@ GEM
     dockerfile-rails (1.7.10)
       rails (>= 3.0.0)
     drb (2.2.3)
-    erb (5.0.2)
+    erb (5.0.3)
     erb_lint (0.9.0)
       activesupport
       better_html (>= 2.0.1)
