@@ -218,7 +218,7 @@ GEM
     psych (5.2.6)
       date
       stringio
-    puma (7.0.4)
+    puma (7.1.0)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.18)
@@ -379,7 +379,7 @@ DEPENDENCIES
   minitest-rails
   pg (~> 1.6)
   phonelib
-  puma (~> 7.0)
+  puma (~> 7.1)
   rails (~> 7.2.2)
   redis (~> 5.4)
   rubocop
