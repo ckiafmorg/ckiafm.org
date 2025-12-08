@@ -58,7 +58,7 @@ gem 'bootsnap', require: false
 gem 'image_processing', '~> 1.14'
 
 # friendly_id
-gem 'friendly_id', '~> 5.5.1'
+gem 'friendly_id', '~> 5.6.0'
 
 # validate phone number
 gem 'phonelib'
